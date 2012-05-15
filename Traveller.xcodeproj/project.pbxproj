@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		686E47B71561DC1500887BCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686E47B61561DC1500887BCD /* UIKit.framework */; };
+		686E47B91561DC1500887BCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686E47B81561DC1500887BCD /* Foundation.framework */; };
+		686E47BB1561DC1500887BCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686E47BA1561DC1500887BCD /* CoreGraphics.framework */; };
+		686E47C11561DC1500887BCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 686E47BF1561DC1500887BCD /* InfoPlist.strings */; };
+		686E47C31561DC1500887BCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 686E47C21561DC1500887BCD /* main.m */; };
+		686E47C71561DC1500887BCD /* TAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 686E47C61561DC1500887BCD /* TAppDelegate.m */; };
+		686E47CA1561DC1500887BCD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686E47C81561DC1500887BCD /* MainStoryboard.storyboard */; };
+		686E47CD1561DC1500887BCD /* TFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686E47CC1561DC1500887BCD /* TFirstViewController.m */; };
+		686E47CF1561DC1500887BCD /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 686E47CE1561DC1500887BCD /* first.png */; };
+		686E47D11561DC1500887BCD /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686E47D01561DC1500887BCD /* first@2x.png */; };
+		686E47D41561DC1500887BCD /* TSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686E47D31561DC1500887BCD /* TSecondViewController.m */; };
+		686E47D61561DC1500887BCD /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 686E47D51561DC1500887BCD /* second.png */; };
+		686E47D81561DC1500887BCD /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 686E47D71561DC1500887BCD /* second@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		686E47B21561DC1500887BCD /* Traveller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		686E47B61561DC1500887BCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		686E47B81561DC1500887BCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		686E47BA1561DC1500887BCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		686E47BE1561DC1500887BCD /* Traveller-Info.plist */ = {isa = PBXFileReference; path = "Traveller-Info.plist"; sourceTree = "<group>"; };
+		686E47C01561DC1500887BCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		686E47C21561DC1500887BCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		686E47C41561DC1500887BCD /* Traveller-Prefix.pch */ = {isa = PBXFileReference; path = "Traveller-Prefix.pch"; sourceTree = "<group>"; };
+		686E47C51561DC1500887BCD /* TAppDelegate.h */ = {isa = PBXFileReference; path = TAppDelegate.h; sourceTree = "<group>"; };
+		686E47C61561DC1500887BCD /* TAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAppDelegate.m; sourceTree = "<group>"; };
+		686E47C91561DC1500887BCD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		686E47CB1561DC1500887BCD /* TFirstViewController.h */ = {isa = PBXFileReference; path = TFirstViewController.h; sourceTree = "<group>"; };
+		686E47CC1561DC1500887BCD /* TFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFirstViewController.m; sourceTree = "<group>"; };
+		686E47CE1561DC1500887BCD /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		686E47D01561DC1500887BCD /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		686E47D21561DC1500887BCD /* TSecondViewController.h */ = {isa = PBXFileReference; path = TSecondViewController.h; sourceTree = "<group>"; };
+		686E47D31561DC1500887BCD /* TSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSecondViewController.m; sourceTree = "<group>"; };
+		686E47D51561DC1500887BCD /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		686E47D71561DC1500887BCD /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		686E47AF1561DC1500887BCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				686E47B71561DC1500887BCD /* UIKit.framework in Frameworks */,
+				686E47B91561DC1500887BCD /* Foundation.framework in Frameworks */,
+				686E47BB1561DC1500887BCD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		686E47A71561DC1500887BCD = {
+			isa = PBXGroup;
+			children = (
+				686E47BC1561DC1500887BCD /* Traveller */,
+				686E47B51561DC1500887BCD /* Frameworks */,
+				686E47B31561DC1500887BCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		686E47B31561DC1500887BCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				686E47B21561DC1500887BCD /* Traveller.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		686E47B51561DC1500887BCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				686E47B61561DC1500887BCD /* UIKit.framework */,
+				686E47B81561DC1500887BCD /* Foundation.framework */,
+				686E47BA1561DC1500887BCD /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		686E47BC1561DC1500887BCD /* Traveller */ = {
+			isa = PBXGroup;
+			children = (
+				686E47C51561DC1500887BCD /* TAppDelegate.h */,
+				686E47C61561DC1500887BCD /* TAppDelegate.m */,
+				686E47C81561DC1500887BCD /* MainStoryboard.storyboard */,
+				686E47CB1561DC1500887BCD /* TFirstViewController.h */,
+				686E47CC1561DC1500887BCD /* TFirstViewController.m */,
+				686E47CE1561DC1500887BCD /* first.png */,
+				686E47D01561DC1500887BCD /* first@2x.png */,
+				686E47D21561DC1500887BCD /* TSecondViewController.h */,
+				686E47D31561DC1500887BCD /* TSecondViewController.m */,
+				686E47D51561DC1500887BCD /* second.png */,
+				686E47D71561DC1500887BCD /* second@2x.png */,
+				686E47BD1561DC1500887BCD /* Supporting Files */,
+			);
+			path = Traveller;
+			sourceTree = "<group>";
+		};
+		686E47BD1561DC1500887BCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				686E47BE1561DC1500887BCD /* Traveller-Info.plist */,
+				686E47BF1561DC1500887BCD /* InfoPlist.strings */,
+				686E47C21561DC1500887BCD /* main.m */,
+				686E47C41561DC1500887BCD /* Traveller-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		686E47B11561DC1500887BCD /* Traveller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 686E47DB1561DC1500887BCD /* Build configuration list for PBXNativeTarget "Traveller" */;
+			buildPhases = (
+				686E47AE1561DC1500887BCD /* Sources */,
+				686E47AF1561DC1500887BCD /* Frameworks */,
+				686E47B01561DC1500887BCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Traveller;
+			productName = Traveller;
+			productReference = 686E47B21561DC1500887BCD /* Traveller.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		686E47A91561DC1500887BCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = T;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Washington and Lee University";
+			};
+			buildConfigurationList = 686E47AC1561DC1500887BCD /* Build configuration list for PBXProject "Traveller" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 686E47A71561DC1500887BCD;
+			productRefGroup = 686E47B31561DC1500887BCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				686E47B11561DC1500887BCD /* Traveller */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		686E47B01561DC1500887BCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				686E47C11561DC1500887BCD /* InfoPlist.strings in Resources */,
+				686E47CA1561DC1500887BCD /* MainStoryboard.storyboard in Resources */,
+				686E47CF1561DC1500887BCD /* first.png in Resources */,
+				686E47D11561DC1500887BCD /* first@2x.png in Resources */,
+				686E47D61561DC1500887BCD /* second.png in Resources */,
+				686E47D81561DC1500887BCD /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		686E47AE1561DC1500887BCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				686E47C31561DC1500887BCD /* main.m in Sources */,
+				686E47C71561DC1500887BCD /* TAppDelegate.m in Sources */,
+				686E47CD1561DC1500887BCD /* TFirstViewController.m in Sources */,
+				686E47D41561DC1500887BCD /* TSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		686E47BF1561DC1500887BCD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				686E47C01561DC1500887BCD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		686E47C81561DC1500887BCD /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				686E47C91561DC1500887BCD /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		686E47D91561DC1500887BCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		686E47DA1561DC1500887BCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		686E47DC1561DC1500887BCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Traveller/Traveller-Prefix.pch";
+				INFOPLIST_FILE = "Traveller/Traveller-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		686E47DD1561DC1500887BCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Traveller/Traveller-Prefix.pch";
+				INFOPLIST_FILE = "Traveller/Traveller-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		686E47AC1561DC1500887BCD /* Build configuration list for PBXProject "Traveller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				686E47D91561DC1500887BCD /* Debug */,
+				686E47DA1561DC1500887BCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		686E47DB1561DC1500887BCD /* Build configuration list for PBXNativeTarget "Traveller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				686E47DC1561DC1500887BCD /* Debug */,
+				686E47DD1561DC1500887BCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 686E47A91561DC1500887BCD /* Project object */;
+}
