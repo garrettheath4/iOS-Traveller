@@ -104,7 +104,7 @@
                             <outlet property="delegate" destination="yy2-cb-nba" id="DaX-H5-SMS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Stations" id="FYC-XA-QEo"/>
+                    <tabBarItem key="tabBarItem" title="Stations" image="BusOrig.png" id="FYC-XA-QEo"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="653" y="471"/>
@@ -163,10 +163,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BusOrig.png" width="25" height="25"/>
         <image name="Dispatch.png" width="30" height="22"/>
         <image name="elipsis.png" width="30" height="24"/>
-        <image name="icon_warning.png" width="30" height="30"/>
-        <image name="locationOrig.png" width="30" height="30"/>
+        <image name="icon_warning.png" width="25" height="25"/>
+        <image name="locationOrig.png" width="25" height="25"/>
     </resources>
     <classes>
         <class className="T3DispatchViewController" superclassName="UIViewController">
