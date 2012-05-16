@@ -15,6 +15,19 @@
 		FAF01F7E156474890018FB18 /* T5AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F7D156474890018FB18 /* T5AppDelegate.m */; };
 		FAF01F81156474890018FB18 /* T5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F80156474890018FB18 /* T5ViewController.m */; };
 		FAF01F84156474890018FB18 /* T5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F82156474890018FB18 /* T5ViewController.xib */; };
+		FAF01F8F1564749F0018FB18 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F8E1564749F0018FB18 /* Notes */; };
+		FAF01F9B156474B10018FB18 /* BusOrig.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F91156474B10018FB18 /* BusOrig.png */; };
+		FAF01F9C156474B10018FB18 /* Dispatch.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F92156474B10018FB18 /* Dispatch.png */; };
+		FAF01F9D156474B10018FB18 /* Dispatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F93156474B10018FB18 /* Dispatch@2x.png */; };
+		FAF01F9E156474B10018FB18 /* elipsis.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F94156474B10018FB18 /* elipsis.png */; };
+		FAF01F9F156474B10018FB18 /* elipsis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F95156474B10018FB18 /* elipsis@2x.png */; };
+		FAF01FA0156474B10018FB18 /* icon_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F96156474B10018FB18 /* icon_warning.png */; };
+		FAF01FA1156474B10018FB18 /* LargeMap.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F97156474B10018FB18 /* LargeMap.pdf */; };
+		FAF01FA2156474B10018FB18 /* locationOrig.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F98156474B10018FB18 /* locationOrig.png */; };
+		FAF01FA3156474B10018FB18 /* SmallMap.gif in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F99156474B10018FB18 /* SmallMap.gif */; };
+		FAF01FA4156474B10018FB18 /* TravellerLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F9A156474B10018FB18 /* TravellerLogo.jpg */; };
+		FAF01FA6156475550018FB18 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FA5156475550018FB18 /* CoreLocation.framework */; };
+		FAF01FA81564755B0018FB18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FA71564755B0018FB18 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +35,28 @@
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAF01F71156474890018FB18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FAF01F75156474890018FB18 /* Traveller5-Info.plist */ = {isa = PBXFileReference; path = "Traveller5-Info.plist"; sourceTree = "<group>"; };
+		FAF01F75156474890018FB18 /* Traveller5-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Traveller5-Info.plist"; sourceTree = "<group>"; };
 		FAF01F77156474890018FB18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAF01F79156474890018FB18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FAF01F7B156474890018FB18 /* Traveller5-Prefix.pch */ = {isa = PBXFileReference; path = "Traveller5-Prefix.pch"; sourceTree = "<group>"; };
-		FAF01F7C156474890018FB18 /* T5AppDelegate.h */ = {isa = PBXFileReference; path = T5AppDelegate.h; sourceTree = "<group>"; };
+		FAF01F7B156474890018FB18 /* Traveller5-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Traveller5-Prefix.pch"; sourceTree = "<group>"; };
+		FAF01F7C156474890018FB18 /* T5AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T5AppDelegate.h; sourceTree = "<group>"; };
 		FAF01F7D156474890018FB18 /* T5AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T5AppDelegate.m; sourceTree = "<group>"; };
-		FAF01F7F156474890018FB18 /* T5ViewController.h */ = {isa = PBXFileReference; path = T5ViewController.h; sourceTree = "<group>"; };
+		FAF01F7F156474890018FB18 /* T5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T5ViewController.h; sourceTree = "<group>"; };
 		FAF01F80156474890018FB18 /* T5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T5ViewController.m; sourceTree = "<group>"; };
 		FAF01F83156474890018FB18 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/T5ViewController.xib; sourceTree = "<group>"; };
+		FAF01F8E1564749F0018FB18 /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
+		FAF01F91156474B10018FB18 /* BusOrig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BusOrig.png; sourceTree = "<group>"; };
+		FAF01F92156474B10018FB18 /* Dispatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dispatch.png; sourceTree = "<group>"; };
+		FAF01F93156474B10018FB18 /* Dispatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dispatch@2x.png"; sourceTree = "<group>"; };
+		FAF01F94156474B10018FB18 /* elipsis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elipsis.png; sourceTree = "<group>"; };
+		FAF01F95156474B10018FB18 /* elipsis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "elipsis@2x.png"; sourceTree = "<group>"; };
+		FAF01F96156474B10018FB18 /* icon_warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_warning.png; sourceTree = "<group>"; };
+		FAF01F97156474B10018FB18 /* LargeMap.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LargeMap.pdf; sourceTree = "<group>"; };
+		FAF01F98156474B10018FB18 /* locationOrig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationOrig.png; sourceTree = "<group>"; };
+		FAF01F99156474B10018FB18 /* SmallMap.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SmallMap.gif; sourceTree = "<group>"; };
+		FAF01F9A156474B10018FB18 /* TravellerLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TravellerLogo.jpg; sourceTree = "<group>"; };
+		FAF01FA5156475550018FB18 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FAF01FA71564755B0018FB18 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF01FA81564755B0018FB18 /* MapKit.framework in Frameworks */,
+				FAF01FA6156475550018FB18 /* CoreLocation.framework in Frameworks */,
 				FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */,
 				FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */,
 				FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */,
@@ -50,6 +78,8 @@
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
+				FAF01FA71564755B0018FB18 /* MapKit.framework */,
+				FAF01FA5156475550018FB18 /* CoreLocation.framework */,
 				FAF01F73156474890018FB18 /* Traveller5 */,
 				FAF01F6C156474890018FB18 /* Frameworks */,
 				FAF01F6A156474890018FB18 /* Products */,
@@ -77,11 +107,13 @@
 		FAF01F73156474890018FB18 /* Traveller5 */ = {
 			isa = PBXGroup;
 			children = (
+				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
 				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
 				FAF01F7F156474890018FB18 /* T5ViewController.h */,
 				FAF01F80156474890018FB18 /* T5ViewController.m */,
 				FAF01F82156474890018FB18 /* T5ViewController.xib */,
+				FAF01F8E1564749F0018FB18 /* Notes */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
 			);
 			path = Traveller5;
@@ -96,6 +128,23 @@
 				FAF01F7B156474890018FB18 /* Traveller5-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAF01F90156474B10018FB18 /* Traveller Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F91156474B10018FB18 /* BusOrig.png */,
+				FAF01F92156474B10018FB18 /* Dispatch.png */,
+				FAF01F93156474B10018FB18 /* Dispatch@2x.png */,
+				FAF01F94156474B10018FB18 /* elipsis.png */,
+				FAF01F95156474B10018FB18 /* elipsis@2x.png */,
+				FAF01F96156474B10018FB18 /* icon_warning.png */,
+				FAF01F97156474B10018FB18 /* LargeMap.pdf */,
+				FAF01F98156474B10018FB18 /* locationOrig.png */,
+				FAF01F99156474B10018FB18 /* SmallMap.gif */,
+				FAF01F9A156474B10018FB18 /* TravellerLogo.jpg */,
+			);
+			path = "Traveller Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +200,17 @@
 			files = (
 				FAF01F78156474890018FB18 /* InfoPlist.strings in Resources */,
 				FAF01F84156474890018FB18 /* T5ViewController.xib in Resources */,
+				FAF01F8F1564749F0018FB18 /* Notes in Resources */,
+				FAF01F9B156474B10018FB18 /* BusOrig.png in Resources */,
+				FAF01F9C156474B10018FB18 /* Dispatch.png in Resources */,
+				FAF01F9D156474B10018FB18 /* Dispatch@2x.png in Resources */,
+				FAF01F9E156474B10018FB18 /* elipsis.png in Resources */,
+				FAF01F9F156474B10018FB18 /* elipsis@2x.png in Resources */,
+				FAF01FA0156474B10018FB18 /* icon_warning.png in Resources */,
+				FAF01FA1156474B10018FB18 /* LargeMap.pdf in Resources */,
+				FAF01FA2156474B10018FB18 /* locationOrig.png in Resources */,
+				FAF01FA3156474B10018FB18 /* SmallMap.gif in Resources */,
+				FAF01FA4156474B10018FB18 /* TravellerLogo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

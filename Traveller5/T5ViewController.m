@@ -13,6 +13,7 @@
 @end
 
 @implementation T5ViewController
+@synthesize mapView;
 
 - (void)viewDidLoad
 {
@@ -22,6 +23,7 @@
 
 - (void)viewDidUnload
 {
+    [self setMapView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
