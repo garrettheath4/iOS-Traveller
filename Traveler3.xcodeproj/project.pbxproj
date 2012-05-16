@@ -28,6 +28,8 @@
 		FA15E2511564266600A55A08 /* TravellerLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA15E24D1564266600A55A08 /* TravellerLogo.jpg */; };
 		FA15E2541564281200A55A08 /* elipsis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2521564281200A55A08 /* elipsis@2x.png */; };
 		FA15E2551564281200A55A08 /* elipsis.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2531564281200A55A08 /* elipsis.png */; };
+		FA15E25C15642BDD00A55A08 /* Dispatch.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E25A15642BDD00A55A08 /* Dispatch.png */; };
+		FA15E25D15642BDD00A55A08 /* Dispatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E25B15642BDD00A55A08 /* Dispatch@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		FA15E24D1564266600A55A08 /* TravellerLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TravellerLogo.jpg; sourceTree = "<group>"; };
 		FA15E2521564281200A55A08 /* elipsis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "elipsis@2x.png"; sourceTree = "<group>"; };
 		FA15E2531564281200A55A08 /* elipsis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elipsis.png; sourceTree = "<group>"; };
+		FA15E25A15642BDD00A55A08 /* Dispatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dispatch.png; sourceTree = "<group>"; };
+		FA15E25B15642BDD00A55A08 /* Dispatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dispatch@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 		FA15E2491564266600A55A08 /* Traveller Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA15E25A15642BDD00A55A08 /* Dispatch.png */,
+				FA15E25B15642BDD00A55A08 /* Dispatch@2x.png */,
 				FA15E2521564281200A55A08 /* elipsis@2x.png */,
 				FA15E2531564281200A55A08 /* elipsis.png */,
 				FA15E24B1564266600A55A08 /* LargeMap.pdf */,
@@ -213,6 +219,8 @@
 				FA15E2511564266600A55A08 /* TravellerLogo.jpg in Resources */,
 				FA15E2541564281200A55A08 /* elipsis@2x.png in Resources */,
 				FA15E2551564281200A55A08 /* elipsis.png in Resources */,
+				FA15E25C15642BDD00A55A08 /* Dispatch.png in Resources */,
+				FA15E25D15642BDD00A55A08 /* Dispatch@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

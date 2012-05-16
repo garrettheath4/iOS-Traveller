@@ -55,7 +55,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dispatch" id="Bwe-5O-zTA"/>
+                    <tabBarItem key="tabBarItem" title="Dispatch" image="Dispatch.png" id="Bwe-5O-zTA"/>
                     <connections>
                         <outlet property="goButton" destination="cqT-WZ-jVj" id="wk7-6Q-6Hw"/>
                         <outlet property="resultLabel" destination="UNW-Vr-QZr" id="h6Q-ZB-VhX"/>
@@ -163,6 +163,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Dispatch.png" width="30" height="22"/>
         <image name="elipsis.png" width="30" height="24"/>
     </resources>
     <classes>
