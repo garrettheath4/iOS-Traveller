@@ -21,6 +21,8 @@
 		FA15E2361563F83A00A55A08 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2351563F83A00A55A08 /* second.png */; };
 		FA15E2381563F83A00A55A08 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2371563F83A00A55A08 /* second@2x.png */; };
 		FA15E23F1564175C00A55A08 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = FA15E23E1564175C00A55A08 /* Notes */; };
+		FA15E24615641D3C00A55A08 /* T3TransitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15E24515641D3C00A55A08 /* T3TransitViewController.m */; };
+		FA15E24815641EAA00A55A08 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA15E24715641EAA00A55A08 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		FA15E2351563F83A00A55A08 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		FA15E2371563F83A00A55A08 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		FA15E23E1564175C00A55A08 /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
+		FA15E24415641D3C00A55A08 /* T3TransitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3TransitViewController.h; sourceTree = "<group>"; };
+		FA15E24515641D3C00A55A08 /* T3TransitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3TransitViewController.m; sourceTree = "<group>"; };
+		FA15E24715641EAA00A55A08 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA15E24815641EAA00A55A08 /* MessageUI.framework in Frameworks */,
 				FA15E2171563F83A00A55A08 /* UIKit.framework in Frameworks */,
 				FA15E2191563F83A00A55A08 /* Foundation.framework in Frameworks */,
 				FA15E21B1563F83A00A55A08 /* CoreGraphics.framework in Frameworks */,
@@ -63,6 +69,7 @@
 		FA15E2071563F83900A55A08 = {
 			isa = PBXGroup;
 			children = (
+				FA15E24715641EAA00A55A08 /* MessageUI.framework */,
 				FA15E21C1563F83A00A55A08 /* Traveler3 */,
 				FA15E2151563F83A00A55A08 /* Frameworks */,
 				FA15E2131563F83A00A55A08 /* Products */,
@@ -90,6 +97,8 @@
 		FA15E21C1563F83A00A55A08 /* Traveler3 */ = {
 			isa = PBXGroup;
 			children = (
+				FA15E24415641D3C00A55A08 /* T3TransitViewController.h */,
+				FA15E24515641D3C00A55A08 /* T3TransitViewController.m */,
 				FA15E2251563F83A00A55A08 /* T3AppDelegate.h */,
 				FA15E2261563F83A00A55A08 /* T3AppDelegate.m */,
 				FA15E2281563F83A00A55A08 /* MainStoryboard.storyboard */,
@@ -190,6 +199,7 @@
 				FA15E2271563F83A00A55A08 /* T3AppDelegate.m in Sources */,
 				FA15E22D1563F83A00A55A08 /* T3FirstViewController.m in Sources */,
 				FA15E2341563F83A00A55A08 /* T3SecondViewController.m in Sources */,
+				FA15E24615641D3C00A55A08 /* T3TransitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

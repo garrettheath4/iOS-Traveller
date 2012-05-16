@@ -21,6 +21,49 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
+        <!--Transit View Controller - Transit-->
+        <scene sceneID="9nt-eR-W0n">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mx6-9g-M1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Transit" id="Dya-jd-DOZ" customClass="T3TransitViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4h2-XL-xRc">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UNW-Vr-QZr">
+                                <rect key="frame" x="94" y="195" width="133" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cqT-WZ-jVj">
+                                <rect key="frame" x="123" y="141" width="75" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Transit">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushedGo:" destination="Dya-jd-DOZ" eventType="touchUpInside" id="XSC-Cu-e15"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Transit" id="Bwe-5O-zTA"/>
+                    <connections>
+                        <outlet property="goButton" destination="cqT-WZ-jVj" id="wk7-6Q-6Hw"/>
+                        <outlet property="resultLabel" destination="UNW-Vr-QZr" id="h6Q-ZB-VhX"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="653" y="1694"/>
+        </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="13">
             <objects>
@@ -111,6 +154,7 @@
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="yy2-cb-nba" kind="relationship" relationship="viewControllers" id="cZk-8T-8vO"/>
                         <segue destination="5ZH-7N-poB" kind="relationship" relationship="viewControllers" id="cqt-DT-V9J"/>
+                        <segue destination="Dya-jd-DOZ" kind="relationship" relationship="viewControllers" id="r4k-o8-Hqy"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                     </connections>
                 </tabBarController>
@@ -124,6 +168,14 @@
         </class>
         <class className="T3SecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/T3SecondViewController.h"/>
+        </class>
+        <class className="T3TransitViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/T3TransitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pushedGo:"/>
+                <relationship kind="outlet" name="goButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
