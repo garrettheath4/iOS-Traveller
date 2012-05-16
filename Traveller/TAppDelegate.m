@@ -7,6 +7,9 @@
 //
 
 #import "TAppDelegate.h"
+#import "TFirstViewController.h"
+#import "TTransitViewController.h"
+#import "TAboutViewController.h"
 
 @implementation TAppDelegate
 
