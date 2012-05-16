@@ -14,16 +14,18 @@
 
 @implementation TTransitViewController
 @synthesize requestButton;
+@synthesize resultLabel;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
     [self setRequestButton:nil];
+    [self setResultLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -44,7 +46,8 @@
         MFMailComposeViewController *mailView = [[MFMailComposeViewController alloc] init];
         mailView.mailComposeDelegate = self;
         [mailView setSubject:@"Test"];
-        [mailView setMessageBody:@"This is a test message" isHTML:NO]; [self presentModalViewController:mailView animated:YES];
+        [mailView setMessageBody:@"This is a test message" isHTML:NO]; 
+        [self presentModalViewController:mailView animated:YES];
         }
 }
 
@@ -55,7 +58,24 @@
         UIAlertView *errorView = [[UIAlertView alloc] initWithTitle:errorTitle message:errorDescription delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [errorView show];
     } else {
-        // Add code here to handle the MFMailComposeResult }
+        NSString *string;
+        switch (result) {
+            case MFMailComposeResultSent:
+                string = @"Mail sent.";
+                break;
+            case MFMailComposeResultSaved:
+                string = @"Mail saved."; 
+                break;
+            case MFMailComposeResultCancelled:
+                string = @"Mail cancelled.";
+                break;
+            case MFMailComposeResultFailed:
+                string = @"Mail failed.";
+                break;
+            default:
+                string = @"Unknown"; break;
+        }
+        self.resultLabel.text = string;
         [controller dismissModalViewControllerAnimated:YES]; 
     }
 }

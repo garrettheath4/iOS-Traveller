@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class TTransitViewController;
+
 @interface TAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) TTransitViewController *viewController;
 
 @end

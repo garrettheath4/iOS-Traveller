@@ -12,6 +12,7 @@
 @interface TTransitViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *requestButton;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 - (IBAction)pushedRequest:(id)sender;
 
