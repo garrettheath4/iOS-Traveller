@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class T5ViewController;
 
-@interface T5AppDelegate : UIResponder <UIApplicationDelegate>
+@interface T5AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) T5ViewController *viewController;
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end

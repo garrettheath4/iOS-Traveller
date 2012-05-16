@@ -14,11 +14,19 @@
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize locationManager = _locationManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    self.locationManager = [[CLLocationManager alloc] init]; 
+    if ( [CLLocationManager locationServicesEnabled] ) {
+        self.locationManager.delegate = self; 
+        self.locationManager.distanceFilter = 1000; 
+        [self.locationManager startUpdatingLocation];
+    }
+    
     self.viewController = [[T5ViewController alloc] initWithNibName:@"T5ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
@@ -50,6 +58,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    double miles = 12.0; double scalingFactor =
+    ABS( cos(2 * M_PI * newLocation.coordinate.latitude /360.0) );
+    MKCoordinateSpan span;
+    span.latitudeDelta = miles/69.0; span.longitudeDelta = miles/( scalingFactor*69.0 );
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = newLocation.coordinate;
+    [self.viewController.mapView setRegion:region animated:YES];
+    self.viewController.mapView.showsUserLocation = YES; 
 }
 
 @end
