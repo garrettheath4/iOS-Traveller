@@ -134,7 +134,7 @@
                             <outlet property="delegate" destination="5ZH-7N-poB" id="Lgi-wO-NXt"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Alerts" id="rlJ-eW-M8X"/>
+                    <tabBarItem key="tabBarItem" title="Alerts" image="icon_warning.png" id="rlJ-eW-M8X"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="653" y="1085"/>
@@ -165,6 +165,7 @@
     <resources>
         <image name="Dispatch.png" width="30" height="22"/>
         <image name="elipsis.png" width="30" height="24"/>
+        <image name="icon_warning.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="T3DispatchViewController" superclassName="UIViewController">
