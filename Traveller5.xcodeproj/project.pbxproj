@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
+		FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
+		FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F71156474890018FB18 /* CoreGraphics.framework */; };
+		FAF01F78156474890018FB18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F76156474890018FB18 /* InfoPlist.strings */; };
+		FAF01F7A156474890018FB18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F79156474890018FB18 /* main.m */; };
+		FAF01F7E156474890018FB18 /* T5AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F7D156474890018FB18 /* T5AppDelegate.m */; };
+		FAF01F81156474890018FB18 /* T5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F80156474890018FB18 /* T5ViewController.m */; };
+		FAF01F84156474890018FB18 /* T5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F82156474890018FB18 /* T5ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FAF01F71156474890018FB18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FAF01F75156474890018FB18 /* Traveller5-Info.plist */ = {isa = PBXFileReference; path = "Traveller5-Info.plist"; sourceTree = "<group>"; };
+		FAF01F77156474890018FB18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAF01F79156474890018FB18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAF01F7B156474890018FB18 /* Traveller5-Prefix.pch */ = {isa = PBXFileReference; path = "Traveller5-Prefix.pch"; sourceTree = "<group>"; };
+		FAF01F7C156474890018FB18 /* T5AppDelegate.h */ = {isa = PBXFileReference; path = T5AppDelegate.h; sourceTree = "<group>"; };
+		FAF01F7D156474890018FB18 /* T5AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T5AppDelegate.m; sourceTree = "<group>"; };
+		FAF01F7F156474890018FB18 /* T5ViewController.h */ = {isa = PBXFileReference; path = T5ViewController.h; sourceTree = "<group>"; };
+		FAF01F80156474890018FB18 /* T5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T5ViewController.m; sourceTree = "<group>"; };
+		FAF01F83156474890018FB18 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/T5ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAF01F66156474890018FB18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */,
+				FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */,
+				FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAF01F5E156474890018FB18 = {
+			isa = PBXGroup;
+			children = (
+				FAF01F73156474890018FB18 /* Traveller5 */,
+				FAF01F6C156474890018FB18 /* Frameworks */,
+				FAF01F6A156474890018FB18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAF01F6A156474890018FB18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F69156474890018FB18 /* Traveller5.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAF01F6C156474890018FB18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F6D156474890018FB18 /* UIKit.framework */,
+				FAF01F6F156474890018FB18 /* Foundation.framework */,
+				FAF01F71156474890018FB18 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAF01F73156474890018FB18 /* Traveller5 */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
+				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
+				FAF01F7F156474890018FB18 /* T5ViewController.h */,
+				FAF01F80156474890018FB18 /* T5ViewController.m */,
+				FAF01F82156474890018FB18 /* T5ViewController.xib */,
+				FAF01F74156474890018FB18 /* Supporting Files */,
+			);
+			path = Traveller5;
+			sourceTree = "<group>";
+		};
+		FAF01F74156474890018FB18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F75156474890018FB18 /* Traveller5-Info.plist */,
+				FAF01F76156474890018FB18 /* InfoPlist.strings */,
+				FAF01F79156474890018FB18 /* main.m */,
+				FAF01F7B156474890018FB18 /* Traveller5-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAF01F68156474890018FB18 /* Traveller5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF01F87156474890018FB18 /* Build configuration list for PBXNativeTarget "Traveller5" */;
+			buildPhases = (
+				FAF01F65156474890018FB18 /* Sources */,
+				FAF01F66156474890018FB18 /* Frameworks */,
+				FAF01F67156474890018FB18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Traveller5;
+			productName = Traveller5;
+			productReference = FAF01F69156474890018FB18 /* Traveller5.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAF01F60156474890018FB18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = T5;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = FAF01F63156474890018FB18 /* Build configuration list for PBXProject "Traveller5" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FAF01F5E156474890018FB18;
+			productRefGroup = FAF01F6A156474890018FB18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAF01F68156474890018FB18 /* Traveller5 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAF01F67156474890018FB18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF01F78156474890018FB18 /* InfoPlist.strings in Resources */,
+				FAF01F84156474890018FB18 /* T5ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAF01F65156474890018FB18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF01F7A156474890018FB18 /* main.m in Sources */,
+				FAF01F7E156474890018FB18 /* T5AppDelegate.m in Sources */,
+				FAF01F81156474890018FB18 /* T5ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FAF01F76156474890018FB18 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF01F77156474890018FB18 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FAF01F82156474890018FB18 /* T5ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF01F83156474890018FB18 /* en */,
+			);
+			name = T5ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAF01F85156474890018FB18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FAF01F86156474890018FB18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAF01F88156474890018FB18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Traveller5/Traveller5-Prefix.pch";
+				INFOPLIST_FILE = "Traveller5/Traveller5-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FAF01F89156474890018FB18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Traveller5/Traveller5-Prefix.pch";
+				INFOPLIST_FILE = "Traveller5/Traveller5-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAF01F63156474890018FB18 /* Build configuration list for PBXProject "Traveller5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF01F85156474890018FB18 /* Debug */,
+				FAF01F86156474890018FB18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAF01F87156474890018FB18 /* Build configuration list for PBXNativeTarget "Traveller5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF01F88156474890018FB18 /* Debug */,
+				FAF01F89156474890018FB18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAF01F60156474890018FB18 /* Project object */;
+}
