@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Near Me" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Near Me" image="locationOrig.png" id="7"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
@@ -166,6 +166,7 @@
         <image name="Dispatch.png" width="30" height="22"/>
         <image name="elipsis.png" width="30" height="24"/>
         <image name="icon_warning.png" width="30" height="30"/>
+        <image name="locationOrig.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="T3DispatchViewController" superclassName="UIViewController">
