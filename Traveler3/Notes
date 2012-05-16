@@ -1,5 +1,10 @@
-First View - Map/Near me/Bus Details (Buses will be different icons)/ Station Details (Stations will be pins)
-Second View - Station List
-Third View - Alerts
-Fourth View - Transit Request
-Fifth View - More (Traveler Contact, our contact, traveller map?)
+First View - Map/Near me/Bus Details (Buses will be different icons)/ Station Details (Stations will be pins) [Map View]
+
+Second View - Station List [Station View (a Table View)] 
+    First view here will be routs --> Stations --> station details
+    
+Third View - Alerts [Alerts View (a Table View)]
+
+Fourth View - Transit Request [Transit View (a Table View)]
+
+Fifth View - More (Traveler Contact, our contact, traveller map?) [More View]
