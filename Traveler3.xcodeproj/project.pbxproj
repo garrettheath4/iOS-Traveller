@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA15E2171563F83A00A55A08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA15E2161563F83A00A55A08 /* UIKit.framework */; };
+		FA15E2191563F83A00A55A08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA15E2181563F83A00A55A08 /* Foundation.framework */; };
+		FA15E21B1563F83A00A55A08 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA15E21A1563F83A00A55A08 /* CoreGraphics.framework */; };
+		FA15E2211563F83A00A55A08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA15E21F1563F83A00A55A08 /* InfoPlist.strings */; };
+		FA15E2231563F83A00A55A08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15E2221563F83A00A55A08 /* main.m */; };
+		FA15E2271563F83A00A55A08 /* T3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15E2261563F83A00A55A08 /* T3AppDelegate.m */; };
+		FA15E22A1563F83A00A55A08 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2281563F83A00A55A08 /* MainStoryboard.storyboard */; };
+		FA15E22D1563F83A00A55A08 /* T3FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15E22C1563F83A00A55A08 /* T3FirstViewController.m */; };
+		FA15E22F1563F83A00A55A08 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E22E1563F83A00A55A08 /* first.png */; };
+		FA15E2311563F83A00A55A08 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2301563F83A00A55A08 /* first@2x.png */; };
+		FA15E2341563F83A00A55A08 /* T3SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15E2331563F83A00A55A08 /* T3SecondViewController.m */; };
+		FA15E2361563F83A00A55A08 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2351563F83A00A55A08 /* second.png */; };
+		FA15E2381563F83A00A55A08 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA15E2371563F83A00A55A08 /* second@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA15E2121563F83A00A55A08 /* Traveler3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveler3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA15E2161563F83A00A55A08 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA15E2181563F83A00A55A08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA15E21A1563F83A00A55A08 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA15E21E1563F83A00A55A08 /* Traveler3-Info.plist */ = {isa = PBXFileReference; path = "Traveler3-Info.plist"; sourceTree = "<group>"; };
+		FA15E2201563F83A00A55A08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA15E2221563F83A00A55A08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA15E2241563F83A00A55A08 /* Traveler3-Prefix.pch */ = {isa = PBXFileReference; path = "Traveler3-Prefix.pch"; sourceTree = "<group>"; };
+		FA15E2251563F83A00A55A08 /* T3AppDelegate.h */ = {isa = PBXFileReference; path = T3AppDelegate.h; sourceTree = "<group>"; };
+		FA15E2261563F83A00A55A08 /* T3AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T3AppDelegate.m; sourceTree = "<group>"; };
+		FA15E2291563F83A00A55A08 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FA15E22B1563F83A00A55A08 /* T3FirstViewController.h */ = {isa = PBXFileReference; path = T3FirstViewController.h; sourceTree = "<group>"; };
+		FA15E22C1563F83A00A55A08 /* T3FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T3FirstViewController.m; sourceTree = "<group>"; };
+		FA15E22E1563F83A00A55A08 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		FA15E2301563F83A00A55A08 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		FA15E2321563F83A00A55A08 /* T3SecondViewController.h */ = {isa = PBXFileReference; path = T3SecondViewController.h; sourceTree = "<group>"; };
+		FA15E2331563F83A00A55A08 /* T3SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T3SecondViewController.m; sourceTree = "<group>"; };
+		FA15E2351563F83A00A55A08 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		FA15E2371563F83A00A55A08 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA15E20F1563F83A00A55A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA15E2171563F83A00A55A08 /* UIKit.framework in Frameworks */,
+				FA15E2191563F83A00A55A08 /* Foundation.framework in Frameworks */,
+				FA15E21B1563F83A00A55A08 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA15E2071563F83900A55A08 = {
+			isa = PBXGroup;
+			children = (
+				FA15E21C1563F83A00A55A08 /* Traveler3 */,
+				FA15E2151563F83A00A55A08 /* Frameworks */,
+				FA15E2131563F83A00A55A08 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA15E2131563F83A00A55A08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA15E2121563F83A00A55A08 /* Traveler3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA15E2151563F83A00A55A08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA15E2161563F83A00A55A08 /* UIKit.framework */,
+				FA15E2181563F83A00A55A08 /* Foundation.framework */,
+				FA15E21A1563F83A00A55A08 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA15E21C1563F83A00A55A08 /* Traveler3 */ = {
+			isa = PBXGroup;
+			children = (
+				FA15E2251563F83A00A55A08 /* T3AppDelegate.h */,
+				FA15E2261563F83A00A55A08 /* T3AppDelegate.m */,
+				FA15E2281563F83A00A55A08 /* MainStoryboard.storyboard */,
+				FA15E22B1563F83A00A55A08 /* T3FirstViewController.h */,
+				FA15E22C1563F83A00A55A08 /* T3FirstViewController.m */,
+				FA15E22E1563F83A00A55A08 /* first.png */,
+				FA15E2301563F83A00A55A08 /* first@2x.png */,
+				FA15E2321563F83A00A55A08 /* T3SecondViewController.h */,
+				FA15E2331563F83A00A55A08 /* T3SecondViewController.m */,
+				FA15E2351563F83A00A55A08 /* second.png */,
+				FA15E2371563F83A00A55A08 /* second@2x.png */,
+				FA15E21D1563F83A00A55A08 /* Supporting Files */,
+			);
+			path = Traveler3;
+			sourceTree = "<group>";
+		};
+		FA15E21D1563F83A00A55A08 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA15E21E1563F83A00A55A08 /* Traveler3-Info.plist */,
+				FA15E21F1563F83A00A55A08 /* InfoPlist.strings */,
+				FA15E2221563F83A00A55A08 /* main.m */,
+				FA15E2241563F83A00A55A08 /* Traveler3-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA15E2111563F83A00A55A08 /* Traveler3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA15E23B1563F83A00A55A08 /* Build configuration list for PBXNativeTarget "Traveler3" */;
+			buildPhases = (
+				FA15E20E1563F83A00A55A08 /* Sources */,
+				FA15E20F1563F83A00A55A08 /* Frameworks */,
+				FA15E2101563F83A00A55A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Traveler3;
+			productName = Traveler3;
+			productReference = FA15E2121563F83A00A55A08 /* Traveler3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA15E2091563F83900A55A08 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = T3;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = FA15E20C1563F83900A55A08 /* Build configuration list for PBXProject "Traveler3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA15E2071563F83900A55A08;
+			productRefGroup = FA15E2131563F83A00A55A08 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA15E2111563F83A00A55A08 /* Traveler3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA15E2101563F83A00A55A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA15E2211563F83A00A55A08 /* InfoPlist.strings in Resources */,
+				FA15E22A1563F83A00A55A08 /* MainStoryboard.storyboard in Resources */,
+				FA15E22F1563F83A00A55A08 /* first.png in Resources */,
+				FA15E2311563F83A00A55A08 /* first@2x.png in Resources */,
+				FA15E2361563F83A00A55A08 /* second.png in Resources */,
+				FA15E2381563F83A00A55A08 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA15E20E1563F83A00A55A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA15E2231563F83A00A55A08 /* main.m in Sources */,
+				FA15E2271563F83A00A55A08 /* T3AppDelegate.m in Sources */,
+				FA15E22D1563F83A00A55A08 /* T3FirstViewController.m in Sources */,
+				FA15E2341563F83A00A55A08 /* T3SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA15E21F1563F83A00A55A08 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA15E2201563F83A00A55A08 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA15E2281563F83A00A55A08 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA15E2291563F83A00A55A08 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA15E2391563F83A00A55A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA15E23A1563F83A00A55A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA15E23C1563F83A00A55A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Traveler3/Traveler3-Prefix.pch";
+				INFOPLIST_FILE = "Traveler3/Traveler3-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA15E23D1563F83A00A55A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Traveler3/Traveler3-Prefix.pch";
+				INFOPLIST_FILE = "Traveler3/Traveler3-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA15E20C1563F83900A55A08 /* Build configuration list for PBXProject "Traveler3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA15E2391563F83A00A55A08 /* Debug */,
+				FA15E23A1563F83A00A55A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA15E23B1563F83A00A55A08 /* Build configuration list for PBXNativeTarget "Traveler3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA15E23C1563F83A00A55A08 /* Debug */,
+				FA15E23D1563F83A00A55A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA15E2091563F83900A55A08 /* Project object */;
+}
