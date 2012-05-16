@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" id="6"/>
+                    <tabBarItem key="tabBarItem" title="More" image="elipsis.png" id="6"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="2286"/>
@@ -162,6 +162,9 @@
             <point key="canvasLocation" x="116" y="174"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="elipsis.png" width="30" height="24"/>
+    </resources>
     <classes>
         <class className="T3DispatchViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/T3DispatchViewController.h"/>
