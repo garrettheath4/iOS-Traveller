@@ -10,4 +10,8 @@
 
 @interface TTransitViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *requestButton;
+
+- (IBAction)pushedRequest:(id)sender;
+
 @end

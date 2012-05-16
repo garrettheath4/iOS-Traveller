@@ -13,6 +13,7 @@
 @end
 
 @implementation TTransitViewController
+@synthesize requestButton;
 
 - (void)viewDidLoad
 {
@@ -22,6 +23,7 @@
 
 - (void)viewDidUnload
 {
+    [self setRequestButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -31,4 +33,6 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)pushedRequest:(id)sender {
+}
 @end

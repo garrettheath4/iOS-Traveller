@@ -46,7 +46,7 @@
                                     <navigationItem title="Title" id="ZAw-oR-YNz"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dgW-16-fYt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wQL-0s-qpi">
                                 <rect key="frame" x="118" y="187" width="84" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -57,11 +57,17 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushedRequest:" destination="GTB-m9-D04" eventType="touchUpInside" id="PI6-qN-yJa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Transit" id="4Y3-a2-xQz" userLabel="Tab Bar Item - Third"/>
+                    <connections>
+                        <outlet property="requestButton" destination="wQL-0s-qpi" id="ZDq-71-btb"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="180"/>
@@ -128,6 +134,10 @@
         </class>
         <class className="TTransitViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TTransitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pushedRequest:"/>
+                <relationship kind="outlet" name="requestButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
