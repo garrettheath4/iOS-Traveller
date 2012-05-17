@@ -18,17 +18,32 @@
     NSInteger port;
     
     // Data received from server
+    NSInteger bytesRead;
     NSMutableData *responseData;
-    NSInteger *bytesRead;
 }
 
-@property (nonatomic) NSInteger *bytesRead;
+// UI Interface
+@property (strong, nonatomic) T5ViewController *viewController;
 
-// Forecast conditions
+// Connection properties
+@property (weak, nonatomic) NSURL *theURL;
+@property (nonatomic) NSInteger port;
+@property (strong, nonatomic) NSInputStream *inputStream;
+@property (strong, nonatomic) NSOutputStream *outputStream;
+@property (nonatomic) BOOL isConnectedState;
+
+@property (nonatomic) NSInteger bytesRead;
+@property (weak, nonatomic) NSMutableData *responseData;
+@property (nonatomic) BOOL hasDataState;
+
+// Collected point data
 @property (weak, nonatomic) NSMutableArray *names;
 @property (weak, nonatomic) NSMutableArray *descriptions;
 @property (weak, nonatomic) NSMutableArray *points;
 
-- (void)queryService:(NSString *)city withParent:(UIViewController *)controller;
+- (T5GPSquery *)initWithViewController:(UIViewController *)controller;
+- (BOOL)isConnected;
+- (BOOL)hasData;
+- (void)queryService:(NSString *)pointName;
 
 @end

@@ -97,6 +97,8 @@
 				FAF01F7F156474890018FB18 /* T5ViewController.h */,
 				FAF01F80156474890018FB18 /* T5ViewController.m */,
 				FAF01F82156474890018FB18 /* T5ViewController.xib */,
+				FA0A7FFE156557FA00EAB2EC /* T5SimpleAnnotation.h */,
+				FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -126,17 +128,10 @@
 			children = (
 				68EE1A5D1564A2F400CAEAFA /* T5GPSquery.h */,
 				68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */,
-			);
-			name = "GPS Query";
-			sourceTree = "<group>";
-		};
-		68EE1A641564A4AB00CAEAFA /* XPathQuery */ = {
-			isa = PBXGroup;
-			children = (
 				68EE1A611564A4A400CAEAFA /* XPathQuery.h */,
 				68EE1A621564A4A400CAEAFA /* XPathQuery.m */,
 			);
-			name = XPathQuery;
+			name = "GPS Query";
 			sourceTree = "<group>";
 		};
 		FAF01F5E156474890018FB18 = {
@@ -175,13 +170,10 @@
 			children = (
 				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
 				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
-				FA0A7FFE156557FA00EAB2EC /* T5SimpleAnnotation.h */,
-				FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */,
 				68EE1A5915649F6800CAEAFA /* Main View */,
 				68EE1A5B15649F7D00CAEAFA /* Info View */,
 				68EE1A5C15649F8300CAEAFA /* Web View */,
 				68EE1A601564A2F800CAEAFA /* GPS Query */,
-				68EE1A641564A4AB00CAEAFA /* XPathQuery */,
 				68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
 				FA0A801315658E2400EAB2EC /* route.csv */,
