@@ -81,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EE1A661564A55700CAEAFA /* libxml2.dylib in Frameworks */,
 				FAF01FAD15647A020018FB18 /* MessageUI.framework in Frameworks */,
 				FAF01FA81564755B0018FB18 /* MapKit.framework in Frameworks */,
 				FAF01FA6156475550018FB18 /* CoreLocation.framework in Frameworks */,
@@ -93,6 +94,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68EE1A5915649F6800CAEAFA /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F7F156474890018FB18 /* T5ViewController.h */,
+				FAF01F80156474890018FB18 /* T5ViewController.m */,
+				FAF01F82156474890018FB18 /* T5ViewController.xib */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		68EE1A5B15649F7D00CAEAFA /* Info View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01FAE15647EB80018FB18 /* T5InfoViewController.h */,
+				FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */,
+				FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */,
+			);
+			name = "Info View";
+			sourceTree = "<group>";
+		};
+		68EE1A5C15649F8300CAEAFA /* Web View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01FC31564997B0018FB18 /* T5WebViewController.h */,
+				FAF01FC41564997B0018FB18 /* T5WebViewController.m */,
+				FAF01FC51564997C0018FB18 /* T5WebViewController.xib */,
+			);
+			name = "Web View";
+			sourceTree = "<group>";
+		};
+		68EE1A601564A2F800CAEAFA /* GPS Query */ = {
+			isa = PBXGroup;
+			children = (
+				68EE1A5D1564A2F400CAEAFA /* T5GPSquery.h */,
+				68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */,
+			);
+			name = "GPS Query";
+			sourceTree = "<group>";
+		};
+		68EE1A641564A4AB00CAEAFA /* XPathQuery */ = {
+			isa = PBXGroup;
+			children = (
+				68EE1A611564A4A400CAEAFA /* XPathQuery.h */,
+				68EE1A621564A4A400CAEAFA /* XPathQuery.m */,
+			);
+			name = XPathQuery;
+			sourceTree = "<group>";
+		};
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +162,7 @@
 		FAF01F6C156474890018FB18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68EE1A651564A55700CAEAFA /* libxml2.dylib */,
 				FAF01FAC15647A020018FB18 /* MessageUI.framework */,
 				FAF01FA5156475550018FB18 /* CoreLocation.framework */,
 				FAF01FA71564755B0018FB18 /* MapKit.framework */,
@@ -126,7 +176,6 @@
 		FAF01F73156474890018FB18 /* Traveller5 */ = {
 			isa = PBXGroup;
 			children = (
-				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
 				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
 				FAF01F7F156474890018FB18 /* T5ViewController.h */,
@@ -141,6 +190,7 @@
 				FA0A7FEF15653D3200EAB2EC /* T5SimpleAnnotation.h */,
 				FA0A7FF015653D3200EAB2EC /* T5SimpleAnnotation.m */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
+				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
 			);
 			path = Traveller5;
@@ -252,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EE1A78156553F500CAEAFA /* SimpleAnnotation.m in Sources */,
 				FAF01F7A156474890018FB18 /* main.m in Sources */,
 				FAF01F7E156474890018FB18 /* T5AppDelegate.m in Sources */,
 				FAF01F81156474890018FB18 /* T5ViewController.m in Sources */,
@@ -333,7 +384,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Traveller5/Traveller5-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Traveller5/Traveller5-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -344,7 +397,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Traveller5/Traveller5-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Traveller5/Traveller5-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

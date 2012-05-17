@@ -75,5 +75,10 @@
 - (IBAction)stationButton:(id)sender{
     
 }
+
+- (void) updateMap
+{
+    ;
+}
      
 @end
