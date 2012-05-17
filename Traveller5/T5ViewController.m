@@ -17,6 +17,8 @@
 
 @implementation T5ViewController
 @synthesize mapView;
+@synthesize stationAnnotations = _stationAnnotations;
+
 
 - (IBAction)getLocation:(id)sender {
     double miles = 12.0; 
@@ -38,13 +40,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    SimpleAnnotation *annotation = [[SimpleAnnotation alloc] init];
+    SimpleAnnotation *annotation1 = [[SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.782604, -79.440165};
-    annotation.coordinate = coord;
-    annotation.title = @"Test";
-    annotation.subtitle = @"1309 Daviswood Dr.";
-    NSArray *annotations = [[NSArray alloc] initWithObjects:annotation, nil];
-    [self.mapView addAnnotations:annotations];
+    annotation1.coordinate = coord;
+    annotation1.title = @"Test";
+    annotation1.subtitle = @"1309 Daviswood Dr.";
+    self.stationAnnotations = [[NSArray alloc] initWithObjects:annotation1, nil];
+    [self.mapView addAnnotations:self.stationAnnotations];
 }
 
 - (void)viewDidUnload

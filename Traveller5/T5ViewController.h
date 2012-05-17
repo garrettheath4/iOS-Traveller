@@ -12,6 +12,7 @@
 
 @interface T5ViewController : UIViewController 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSArray *stationAnnotations;
 - (IBAction)infoButton:(id)sender;
 - (IBAction)alertButton:(id)sender;
 - (IBAction)setMap:(id)sender;
