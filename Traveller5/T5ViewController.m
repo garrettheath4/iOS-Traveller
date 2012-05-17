@@ -9,6 +9,7 @@
 #import "T5ViewController.h"
 #import "T5InfoViewController.h"
 #import "T5WebViewController.h"
+#import "SimpleAnnotation.h"
 
 @interface T5ViewController ()
 
@@ -20,7 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    SimpleAnnotation *annotation = [[SimpleAnnotation alloc] init];
+    CLLocationCoordinate2D coord = {37.782604, -79.440165};
+    annotation.coordinate = coord;
+    annotation.title = @"Test";
+    annotation.subtitle = @"1309 Daviswood Dr.";
+    NSArray *annotations = [[NSArray alloc] initWithObjects:annotation, nil];
+    [self.mapView addAnnotations:annotations];
 }
 
 - (void)viewDidUnload

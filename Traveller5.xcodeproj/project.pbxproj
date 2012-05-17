@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0A7FF115653D3200EAB2EC /* SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
 		FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
 		FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F71156474890018FB18 /* CoreGraphics.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0A7FEF15653D3200EAB2EC /* SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAnnotation.h; sourceTree = "<group>"; };
+		FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAnnotation.m; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,8 @@
 				FAF01FC51564997C0018FB18 /* T5WebViewController.xib */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
+				FA0A7FEF15653D3200EAB2EC /* SimpleAnnotation.h */,
+				FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */,
 			);
 			path = Traveller5;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				FAF01F81156474890018FB18 /* T5ViewController.m in Sources */,
 				FAF01FB115647EB80018FB18 /* T5InfoViewController.m in Sources */,
 				FAF01FC61564997C0018FB18 /* T5WebViewController.m in Sources */,
+				FA0A7FF115653D3200EAB2EC /* SimpleAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
