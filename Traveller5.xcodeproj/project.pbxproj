@@ -31,6 +31,8 @@
 		FAF01FAD15647A020018FB18 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FAC15647A020018FB18 /* MessageUI.framework */; };
 		FAF01FB115647EB80018FB18 /* T5InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */; };
 		FAF01FB215647EB80018FB18 /* T5InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */; };
+		FAF01FC61564997C0018FB18 /* T5WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01FC41564997B0018FB18 /* T5WebViewController.m */; };
+		FAF01FC71564997C0018FB18 /* T5WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FC51564997C0018FB18 /* T5WebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,9 @@
 		FAF01FAE15647EB80018FB18 /* T5InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5InfoViewController.h; sourceTree = "<group>"; };
 		FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5InfoViewController.m; sourceTree = "<group>"; };
 		FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5InfoViewController.xib; sourceTree = "<group>"; };
+		FAF01FC31564997B0018FB18 /* T5WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5WebViewController.h; sourceTree = "<group>"; };
+		FAF01FC41564997B0018FB18 /* T5WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5WebViewController.m; sourceTree = "<group>"; };
+		FAF01FC51564997C0018FB18 /* T5WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5WebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +130,9 @@
 				FAF01FAE15647EB80018FB18 /* T5InfoViewController.h */,
 				FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */,
 				FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */,
+				FAF01FC31564997B0018FB18 /* T5WebViewController.h */,
+				FAF01FC41564997B0018FB18 /* T5WebViewController.m */,
+				FAF01FC51564997C0018FB18 /* T5WebViewController.xib */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
 			);
@@ -224,6 +232,7 @@
 				FAF01FA3156474B10018FB18 /* SmallMap.gif in Resources */,
 				FAF01FA4156474B10018FB18 /* TravellerLogo.jpg in Resources */,
 				FAF01FB215647EB80018FB18 /* T5InfoViewController.xib in Resources */,
+				FAF01FC71564997C0018FB18 /* T5WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +247,7 @@
 				FAF01F7E156474890018FB18 /* T5AppDelegate.m in Sources */,
 				FAF01F81156474890018FB18 /* T5ViewController.m in Sources */,
 				FAF01FB115647EB80018FB18 /* T5InfoViewController.m in Sources */,
+				FAF01FC61564997C0018FB18 /* T5WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +359,7 @@
 				FAF01F89156474890018FB18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
