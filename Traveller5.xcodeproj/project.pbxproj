@@ -28,6 +28,7 @@
 		FAF01FA4156474B10018FB18 /* TravellerLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F9A156474B10018FB18 /* TravellerLogo.jpg */; };
 		FAF01FA6156475550018FB18 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FA5156475550018FB18 /* CoreLocation.framework */; };
 		FAF01FA81564755B0018FB18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FA71564755B0018FB18 /* MapKit.framework */; };
+		FAF01FAD15647A020018FB18 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FAC15647A020018FB18 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		FAF01F9A156474B10018FB18 /* TravellerLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TravellerLogo.jpg; sourceTree = "<group>"; };
 		FAF01FA5156475550018FB18 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FAF01FA71564755B0018FB18 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FAF01FAC15647A020018FB18 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF01FAD15647A020018FB18 /* MessageUI.framework in Frameworks */,
 				FAF01FA81564755B0018FB18 /* MapKit.framework in Frameworks */,
 				FAF01FA6156475550018FB18 /* CoreLocation.framework in Frameworks */,
 				FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */,
@@ -78,8 +81,6 @@
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
-				FAF01FA71564755B0018FB18 /* MapKit.framework */,
-				FAF01FA5156475550018FB18 /* CoreLocation.framework */,
 				FAF01F73156474890018FB18 /* Traveller5 */,
 				FAF01F6C156474890018FB18 /* Frameworks */,
 				FAF01F6A156474890018FB18 /* Products */,
@@ -97,6 +98,9 @@
 		FAF01F6C156474890018FB18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF01FAC15647A020018FB18 /* MessageUI.framework */,
+				FAF01FA5156475550018FB18 /* CoreLocation.framework */,
+				FAF01FA71564755B0018FB18 /* MapKit.framework */,
 				FAF01F6D156474890018FB18 /* UIKit.framework */,
 				FAF01F6F156474890018FB18 /* Foundation.framework */,
 				FAF01F71156474890018FB18 /* CoreGraphics.framework */,
