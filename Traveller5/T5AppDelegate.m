@@ -65,8 +65,8 @@
     double miles = 12.0; 
     double scalingFactor = ABS( cos(2 * M_PI * newLocation.coordinate.latitude /360.0) );
     MKCoordinateSpan span;
-    span.latitudeDelta = miles/350.0; 
-    span.longitudeDelta = miles/( scalingFactor*350.0 );
+    span.latitudeDelta = miles/1250.0; 
+    span.longitudeDelta = miles/( scalingFactor*1250.0 );
     MKCoordinateRegion region;
     region.span = span;
     region.center = newLocation.coordinate;
