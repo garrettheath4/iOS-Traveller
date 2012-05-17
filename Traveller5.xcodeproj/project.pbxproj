@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA0A7FF115653D3200EAB2EC /* SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */; };
+		FA0A7FF3156548DE00EAB2EC /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A7FF2156548DD00EAB2EC /* target.png */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
 		FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
 		FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F71156474890018FB18 /* CoreGraphics.framework */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		FA0A7FEF15653D3200EAB2EC /* SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAnnotation.h; sourceTree = "<group>"; };
 		FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAnnotation.m; sourceTree = "<group>"; };
+		FA0A7FF2156548DD00EAB2EC /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = target.png; path = ../target.png; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -158,6 +160,7 @@
 		FAF01F90156474B10018FB18 /* Traveller Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA0A7FF2156548DD00EAB2EC /* target.png */,
 				FAF01F91156474B10018FB18 /* BusOrig.png */,
 				FAF01F92156474B10018FB18 /* Dispatch.png */,
 				FAF01F93156474B10018FB18 /* Dispatch@2x.png */,
@@ -238,6 +241,7 @@
 				FAF01FA4156474B10018FB18 /* TravellerLogo.jpg in Resources */,
 				FAF01FB215647EB80018FB18 /* T5InfoViewController.xib in Resources */,
 				FAF01FC71564997C0018FB18 /* T5WebViewController.xib in Resources */,
+				FA0A7FF3156548DE00EAB2EC /* target.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
