@@ -10,8 +10,11 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface T5ViewController : UIViewController 
+@interface T5ViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 - (IBAction)infoButton:(id)sender;
+- (void)updateMap;
 
 @end

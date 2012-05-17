@@ -38,5 +38,10 @@
     T5InfoViewController *infoView = [[T5InfoViewController alloc] init];
     [self presentModalViewController:infoView animated:YES];
 }
+
+- (void) updateMap
+{
+    ;
+}
      
 @end
