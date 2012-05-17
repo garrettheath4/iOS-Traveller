@@ -306,6 +306,10 @@
 	
 }
 
+- (IBAction)pageCurl:(id)sender {
+    
+}
+
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
 	MKOverlayView* overlayView = nil;
@@ -345,6 +349,7 @@
 
 - (IBAction)infoButton:(id)sender {
     T5InfoViewController *infoView = [[T5InfoViewController alloc] init];
+    infoView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:infoView animated:YES];
 }
 

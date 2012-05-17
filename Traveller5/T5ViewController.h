@@ -42,6 +42,7 @@
 - (void)updateMap;
 - (IBAction)getStations:(id)sender;
 -(void) loadRoute;
+- (IBAction)pageCurl:(id)sender;
 
 
 @end
