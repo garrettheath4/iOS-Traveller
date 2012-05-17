@@ -88,6 +88,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68EE1A5915649F6800CAEAFA /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F7F156474890018FB18 /* T5ViewController.h */,
+				FAF01F80156474890018FB18 /* T5ViewController.m */,
+				FAF01F82156474890018FB18 /* T5ViewController.xib */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		68EE1A5B15649F7D00CAEAFA /* Info View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01FAE15647EB80018FB18 /* T5InfoViewController.h */,
+				FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */,
+				FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */,
+			);
+			name = "Info View";
+			sourceTree = "<group>";
+		};
+		68EE1A5C15649F8300CAEAFA /* Web View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01FC31564997B0018FB18 /* T5WebViewController.h */,
+				FAF01FC41564997B0018FB18 /* T5WebViewController.m */,
+				FAF01FC51564997C0018FB18 /* T5WebViewController.xib */,
+			);
+			name = "Web View";
+			sourceTree = "<group>";
+		};
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
@@ -121,19 +151,13 @@
 		FAF01F73156474890018FB18 /* Traveller5 */ = {
 			isa = PBXGroup;
 			children = (
-				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
 				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
-				FAF01F7F156474890018FB18 /* T5ViewController.h */,
-				FAF01F80156474890018FB18 /* T5ViewController.m */,
-				FAF01F82156474890018FB18 /* T5ViewController.xib */,
-				FAF01FAE15647EB80018FB18 /* T5InfoViewController.h */,
-				FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */,
-				FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */,
-				FAF01FC31564997B0018FB18 /* T5WebViewController.h */,
-				FAF01FC41564997B0018FB18 /* T5WebViewController.m */,
-				FAF01FC51564997C0018FB18 /* T5WebViewController.xib */,
+				68EE1A5915649F6800CAEAFA /* Main View */,
+				68EE1A5B15649F7D00CAEAFA /* Info View */,
+				68EE1A5C15649F8300CAEAFA /* Web View */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
+				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
 			);
 			path = Traveller5;
