@@ -19,5 +19,6 @@
 - (IBAction)setMap:(id)sender;
 - (IBAction)getLocation:(id)sender;
 - (void)updateMap;
+- (IBAction)getStations:(id)sender;
 
 @end
