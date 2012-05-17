@@ -24,8 +24,8 @@
     double miles = 12.0; 
     double scalingFactor = ABS( cos(2 * M_PI * mapView.userLocation.coordinate.latitude /360.0) );
     MKCoordinateSpan span;
-    span.latitudeDelta = miles/69.0; 
-    span.longitudeDelta = miles/( scalingFactor*69.0 );
+    span.latitudeDelta = miles/350.0; 
+    span.longitudeDelta = miles/( scalingFactor*350.0 );
     MKCoordinateRegion region;
     region.span = span;
     region.center = mapView.userLocation.coordinate;
@@ -42,21 +42,21 @@
     [super viewDidLoad];
     
     T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
-    CLLocationCoordinate2D coord = {37.782604, -79.440165};
+    CLLocationCoordinate2D coord = {37.786947, -79.444657};
     annotation1.coordinate = coord;
     annotation1.title = @"Freshman Quad";
     annotation1.subtitle = @"";
     
     T5SimpleAnnotation *annotation2 = [[T5SimpleAnnotation alloc] init];
-    coord.latitude = 37.782604;
-    coord.longitude = -79.440165;
+    coord.latitude = 37.789894;
+    coord.longitude = -79.444601;
     annotation2.coordinate = coord;
     annotation2.title = @"Woods Creek";
     annotation2.subtitle = @"";
     
     T5SimpleAnnotation *annotation3 = [[T5SimpleAnnotation alloc] init];
-    coord.latitude = 37.782604;
-    coord.longitude = -79.440165;
+    coord.latitude = 37.7913974;
+    coord.longitude = -79.443952;
     annotation3.coordinate = coord;
     annotation3.title = @"Law School";
     annotation3.subtitle = @"";
