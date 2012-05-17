@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA0A7FF115653D3200EAB2EC /* T5SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FF015653D3200EAB2EC /* T5SimpleAnnotation.m */; };
+		68EE1A5F1564A2F400CAEAFA /* T5GPSquery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */; };
+		68EE1A631564A4A400CAEAFA /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A621564A4A400CAEAFA /* XPathQuery.m */; };
+		68EE1A661564A55700CAEAFA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EE1A651564A55700CAEAFA /* libxml2.dylib */; };
 		FA0A7FF3156548DE00EAB2EC /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A7FF2156548DD00EAB2EC /* target.png */; };
+		FA0A8000156557FA00EAB2EC /* T5SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
 		FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
 		FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F71156474890018FB18 /* CoreGraphics.framework */; };
@@ -38,9 +41,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA0A7FEF15653D3200EAB2EC /* T5SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5SimpleAnnotation.h; sourceTree = "<group>"; };
-		FA0A7FF015653D3200EAB2EC /* T5SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SimpleAnnotation.m; sourceTree = "<group>"; };
+		68EE1A5D1564A2F400CAEAFA /* T5GPSquery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5GPSquery.h; sourceTree = "<group>"; };
+		68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5GPSquery.m; sourceTree = "<group>"; };
+		68EE1A611564A4A400CAEAFA /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		68EE1A621564A4A400CAEAFA /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		68EE1A651564A55700CAEAFA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = StationGPSLocations.txt; sourceTree = "<group>"; };
 		FA0A7FF2156548DD00EAB2EC /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = target.png; path = ../target.png; sourceTree = "<group>"; };
+		FA0A7FFE156557FA00EAB2EC /* T5SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5SimpleAnnotation.h; sourceTree = "<group>"; };
+		FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SimpleAnnotation.m; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -178,17 +187,14 @@
 			children = (
 				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
 				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
-				FAF01F7F156474890018FB18 /* T5ViewController.h */,
-				FAF01F80156474890018FB18 /* T5ViewController.m */,
-				FAF01F82156474890018FB18 /* T5ViewController.xib */,
-				FAF01FAE15647EB80018FB18 /* T5InfoViewController.h */,
-				FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */,
-				FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */,
-				FAF01FC31564997B0018FB18 /* T5WebViewController.h */,
-				FAF01FC41564997B0018FB18 /* T5WebViewController.m */,
-				FAF01FC51564997C0018FB18 /* T5WebViewController.xib */,
-				FA0A7FEF15653D3200EAB2EC /* T5SimpleAnnotation.h */,
-				FA0A7FF015653D3200EAB2EC /* T5SimpleAnnotation.m */,
+				68EE1A5915649F6800CAEAFA /* Main View */,
+				68EE1A5B15649F7D00CAEAFA /* Info View */,
+				68EE1A5C15649F8300CAEAFA /* Web View */,
+				68EE1A601564A2F800CAEAFA /* GPS Query */,
+				68EE1A641564A4AB00CAEAFA /* XPathQuery */,
+				FA0A7FFE156557FA00EAB2EC /* T5SimpleAnnotation.h */,
+				FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */,
+				68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
@@ -302,13 +308,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68EE1A78156553F500CAEAFA /* SimpleAnnotation.m in Sources */,
 				FAF01F7A156474890018FB18 /* main.m in Sources */,
 				FAF01F7E156474890018FB18 /* T5AppDelegate.m in Sources */,
 				FAF01F81156474890018FB18 /* T5ViewController.m in Sources */,
 				FAF01FB115647EB80018FB18 /* T5InfoViewController.m in Sources */,
 				FAF01FC61564997C0018FB18 /* T5WebViewController.m in Sources */,
-				FA0A7FF115653D3200EAB2EC /* T5SimpleAnnotation.m in Sources */,
+				68EE1A5F1564A2F400CAEAFA /* T5GPSquery.m in Sources */,
+				68EE1A631564A4A400CAEAFA /* XPathQuery.m in Sources */,
+				FA0A8000156557FA00EAB2EC /* T5SimpleAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
