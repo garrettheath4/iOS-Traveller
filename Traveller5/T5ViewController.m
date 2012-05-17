@@ -8,6 +8,7 @@
 
 #import "T5ViewController.h"
 #import "T5InfoViewController.h"
+#import "T5WebViewController.h"
 
 @interface T5ViewController ()
 
@@ -37,6 +38,12 @@
 - (IBAction)infoButton:(id)sender {
     T5InfoViewController *infoView = [[T5InfoViewController alloc] init];
     [self presentModalViewController:infoView animated:YES];
+}
+
+- (IBAction)alertButton:(id)sender {
+        NSURL *url = [NSURL URLWithString:@"http://twitter.com/#!/WLUtraveller"]; 
+        T5WebViewController *webViewController = [[T5WebViewController alloc] initWithURL:url andTitle:@"Traveller Notifications"]; 
+        [self presentModalViewController:webViewController animated:YES];
 }
      
 @end
