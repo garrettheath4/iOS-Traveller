@@ -70,6 +70,10 @@
         [self presentModalViewController:webViewController animated:YES];
 }
 
+- (IBAction)stationButton:(id)sender{
+    
+}
+
 - (void) updateMap
 {
     ;

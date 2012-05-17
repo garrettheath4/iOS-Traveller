@@ -16,6 +16,8 @@
 
 - (IBAction)infoButton:(id)sender;
 - (IBAction)alertButton:(id)sender;
+- (IBAction)setMap:(id)sender;
+- (IBAction)getLocation:(id)sender;
 - (void)updateMap;
 
 @end
