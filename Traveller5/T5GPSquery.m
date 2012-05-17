@@ -13,7 +13,17 @@
 
 @implementation T5GPSquery
 
+@synthesize viewController=_viewController;
+
+@synthesize theURL=_theURL;
+@synthesize port=_port;
+@synthesize inputStream=_inputStream;
+@synthesize outputStream=_outputStream;
+@synthesize isConnectedState=_isConnectedState;
+
 @synthesize bytesRead=_bytesRead;
+@synthesize responseData=_responseData;
+@synthesize hasDataState=_hasDataState;
 
 @synthesize names=_names;
 @synthesize descriptions=_descriptions;
@@ -21,20 +31,46 @@
 
 #pragma mark Instance Methods
 
-- (void)queryService:(NSString *)pointName withParent:(UIViewController *)controller {
-    viewController = (T5ViewController *)controller;
-    responseData = [NSMutableData data];
-    
-    NSString *urlStr = [NSString stringWithString:@"http://travellerapp.dnsdynamic.com"];
-    theURL = [NSURL URLWithString:urlStr];
-    if (!theURL) {
-        NSLog(@"%@ is not a valid URL", theURL);
-        return;
+- (T5GPSquery *)initWithViewController:(UIViewController *)controller {
+    self = [self init];
+    if (self) {
+        // Custom initialization
+        ////////////////////////
+        
+        // UI Interface
+        [self setViewController:(T5ViewController *)controller];
+        
+        // Connection properties
+        [self setTheURL:[NSURL URLWithString:[NSString stringWithString:@"http://travellerapp.dnsdynamic.com"]]];
+        if (![self theURL]) {
+            NSLog(@"%@ is not a valid URL", theURL);
+        }
+        [self setPort:58974];
+        [self setIsConnectedState:NO];
+        
+        [self setBytesRead:0];
+        [self setResponseData:[NSMutableData data]];
+        [self setHasDataState:NO];
+        
+        [self setNames:[NSMutableData data]];
+        [self setDescriptions:[NSMutableData data]];
+        [self setPoints:[NSMutableData data]];
+    }
+    return self;
+}
+
+- (BOOL)isConnected {
+    return [self isConnectedState];
+}
+
+- (void)connect {
+    if ([self isConnected]) {
+        NSLog(@"Warning: connect: method called on object that is already connected.");
     }
     
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
-
+    
     CFStreamCreatePairWithSocketToHost(nil, (__bridge CFStringRef)[theURL host], port, &readStream, &writeStream);
     
     NSInputStream *inputStream = (__bridge_transfer NSInputStream *)readStream;
@@ -45,9 +81,42 @@
     [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [inputStream open];
     [outputStream open];
+    
+    [self setIsConnectedState:YES];
+}
+
+- (void)disconnect {
+    if (![self isConnected] || ![self inputStream] || ![self outputStream]) {
+        NSLog(@"Warning: disconnect: method called on object that is already disconnected.");
+    }
+    [[self inputStream] close];
+    [[self outputStream] close];
+    [self setIsConnectedState:NO];
+}
+
+- (BOOL)hasData {
+    return [self hasDataState];
+}
+
+- (void)fetchData {
+    
+}
+
+- (void)queryService:(NSString *)pointName {    
+    assert([self hasData]);
 }
 
 -(void)dealloc {
+    [self setViewController:nil];
+    
+    [self setTheURL:nil];
+    [self setPort:nil];
+    [self setInputStream:nil];
+    [self setOutputStream:nil];
+    
+    [self setBytesRead:nil];
+    [self setResponseData:nil];
+    
     [self setNames:nil];
     [self setDescriptions:nil];
     [self setPoints:nil];
@@ -58,20 +127,32 @@
     switch(eventCode) {
         case NSStreamEventHasBytesAvailable:
         {
-            if(!responseData) {
-                responseData = [NSMutableData data];
-            }
-            uint8_t buf[1024];
-            unsigned int len = 0;
-            len = [(NSInputStream *)stream read:buf maxLength:1024];
-            if(len) {
-                [responseData appendBytes:(const void *)buf length:len];
-                // bytesRead is an instance variable of type NSNumber.
-                bytesRead += len;
+            if (stream == [self inputStream])
+            {
+                if(!responseData) {
+                    responseData = [NSMutableData data];
+                }
+                uint8_t buf[1024];
+                unsigned int len = 0;
+                len = [(NSInputStream *)stream read:buf maxLength:1024];
+                if(len) {
+                    [responseData appendBytes:(const void *)buf length:len];
+                    // bytesRead is an instance variable of type NSNumber.
+                    bytesRead += len;
+                } else {
+                    NSLog(@"no buffer!");
+                }
             } else {
-                NSLog(@"no buffer!");
+                // The event happened in the output stream
+                assert(stream == [self outputStream]);
+                
+                NSString * str = [NSString stringWithFormat:
+                                  @"GET *ALL\r\n\r\n"];
+                const uint8_t * rawstring = (const uint8_t *)[str UTF8String];
+                [[self outputStream] write:rawstring maxLength:strlen(rawstring)];
+                [[self outputStream] close];
             }
-            break;
+                break;
         }
         case NSStreamEventEndEncountered:
         {
@@ -118,22 +199,6 @@
     }
 }
 
-
-// Retrieves the content of an XML node, such as the temperature, wind,
-// or humidity in the weather report.
-//
-- (NSString *)fetchContent:(NSArray *)nodes {
-    NSString *result = @"";
-    for ( NSDictionary *node in nodes ) {
-        for ( id key in node ) {
-            if( [key isEqualToString:@"nodeContent"] ) {
-                result = [node objectForKey:key];
-            }
-        }
-    }
-    return result;
-}
-
 // For nodes that contain more than one value we are interested in,
 // this method fills an NSMutableArray with the values it finds.
 // For example, the forecast returns four days, so there will be
@@ -151,3 +216,5 @@
 }
 
 @end
+
+
