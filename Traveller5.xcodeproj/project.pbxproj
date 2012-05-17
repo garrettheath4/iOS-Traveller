@@ -15,6 +15,8 @@
 		FA0A8003156559CE00EAB2EC /* BusOrig.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A8002156559CE00EAB2EC /* BusOrig.png */; };
 		FA0A800715655FB100EAB2EC /* horse_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A800615655FB100EAB2EC /* horse_icon.png */; };
 		FA0A801415658E2500EAB2EC /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = FA0A801315658E2400EAB2EC /* route.csv */; };
+		FA0A80231565B38000EAB2EC /* T5SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */; };
+		FA0A80241565B38000EAB2EC /* T5SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
 		FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
 		FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F71156474890018FB18 /* CoreGraphics.framework */; };
@@ -47,6 +49,9 @@
 		FA0A8002156559CE00EAB2EC /* BusOrig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BusOrig.png; sourceTree = "<group>"; };
 		FA0A800615655FB100EAB2EC /* horse_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horse_icon.png; sourceTree = "<group>"; };
 		FA0A801315658E2400EAB2EC /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.csv; sourceTree = "<group>"; };
+		FA0A80201565B37F00EAB2EC /* T5SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5SettingsViewController.h; sourceTree = "<group>"; };
+		FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SettingsViewController.m; sourceTree = "<group>"; };
+		FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5SettingsViewController.xib; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -187,6 +192,9 @@
 				FA0A80191565933A00EAB2EC /* Resources */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
+				FA0A80201565B37F00EAB2EC /* T5SettingsViewController.h */,
+				FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */,
+				FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */,
 			);
 			path = Traveller5;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 				FA0A8003156559CE00EAB2EC /* BusOrig.png in Resources */,
 				FA0A800715655FB100EAB2EC /* horse_icon.png in Resources */,
 				FA0A801415658E2500EAB2EC /* route.csv in Resources */,
+				FA0A80241565B38000EAB2EC /* T5SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +301,7 @@
 				68EE1A5F1564A2F400CAEAFA /* T5GPSquery.m in Sources */,
 				68EE1A631564A4A400CAEAFA /* XPathQuery.m in Sources */,
 				FA0A8000156557FA00EAB2EC /* T5SimpleAnnotation.m in Sources */,
+				FA0A80231565B38000EAB2EC /* T5SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
