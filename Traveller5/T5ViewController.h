@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *stationAnnotations;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapController;
+@property (nonatomic) BOOL stationBool;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *stationButton;
+
 
 - (IBAction)infoButton:(id)sender;
 - (IBAction)alertButton:(id)sender;

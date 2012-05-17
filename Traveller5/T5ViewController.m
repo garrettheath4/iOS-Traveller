@@ -19,14 +19,16 @@
 @synthesize mapView;
 @synthesize stationAnnotations = _stationAnnotations;
 @synthesize mapController;
+@synthesize stationBool = _stationBool;
+@synthesize stationButton;
 
 
 - (IBAction)getLocation:(id)sender {
     double miles = 12.0; 
     double scalingFactor = ABS( cos(2 * M_PI * mapView.userLocation.coordinate.latitude /360.0) );
     MKCoordinateSpan span;
-    span.latitudeDelta = miles/1250.0; 
-    span.longitudeDelta = miles/( scalingFactor*1250.0 );
+    span.latitudeDelta = miles/3000.0; 
+    span.longitudeDelta = miles/( scalingFactor*3000.0 );
     MKCoordinateRegion region;
     region.span = span;
     region.center = mapView.userLocation.coordinate;
@@ -54,6 +56,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.stationBool = YES;
     
     T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.786947, -79.444657};
@@ -230,6 +234,7 @@
 {
     [self setMapView:nil];
     [self setMapController:nil];
+    [self setStationButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -250,16 +255,20 @@
         [self presentModalViewController:webViewController animated:YES];
 }
 
-- (IBAction)stationButton:(id)sender{
+- (void) updateMap
+{
     
 }
 
-- (void) updateMap
-{
-    ;
-}
-
 - (IBAction)getStations:(id)sender {
+    if (self.stationBool){
+        [self.mapView removeAnnotations:self.stationAnnotations];
+        self.stationBool = NO;
+    }
+    else{
+        [self.mapView addAnnotations:self.stationAnnotations];
+        self.stationBool = YES;
+    }
 }
      
 @end

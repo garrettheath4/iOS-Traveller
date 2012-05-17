@@ -14,6 +14,8 @@
 @end
 
 @implementation T5InfoViewController
+@synthesize dispatchButton;
+@synthesize resultLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +26,53 @@
     return self;
 }
 
+- (IBAction)pushedDispatch:(id)sender {
+    if (![MFMailComposeViewController canSendMail]) {
+        NSString *errorTitle = @"Error";
+        NSString *errorString = @"This device is not configured to send email.";
+        UIAlertView *errorView = [[UIAlertView alloc] initWithTitle:errorTitle message:errorString delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [errorView show]; 
+    } 
+    else {
+        MFMailComposeViewController *mailView = [[MFMailComposeViewController alloc] init];
+        mailView.mailComposeDelegate = self;
+        NSArray *recipients = [[NSArray alloc] initWithObjects:@"Traveller@wlu.edu", nil];
+        [mailView setToRecipients:recipients];
+        [mailView setSubject:@"Traveller Dispatch Request"];
+        [mailView setMessageBody:@"Request Details (Location, Phone Number, Time Requested):" isHTML:NO]; 
+        [self presentModalViewController:mailView animated:YES];
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    if (error) {
+        NSString *errorTitle = @"Mail Error";
+        NSString *errorDescription = [error localizedDescription];
+        UIAlertView *errorView = [[UIAlertView alloc] initWithTitle:errorTitle message:errorDescription delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [errorView show];
+    } else {
+        NSString *string;
+        switch (result) {
+            case MFMailComposeResultSent:
+                string = @"Mail sent.";
+                break;
+            case MFMailComposeResultSaved:
+                string = @"Mail saved."; 
+                break;
+            case MFMailComposeResultCancelled:
+                string = @"Mail cancelled.";
+                break;
+            case MFMailComposeResultFailed:
+                string = @"Mail failed.";
+                break;
+            default:
+                string = @"Unknown"; break;
+        }
+        self.resultLabel.text = string;
+        [controller dismissModalViewControllerAnimated:YES]; 
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +81,8 @@
 
 - (void)viewDidUnload
 {
+    [self setDispatchButton:nil];
+    [self setResultLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
