@@ -14,6 +14,7 @@
 		FA0A8000156557FA00EAB2EC /* T5SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */; };
 		FA0A8003156559CE00EAB2EC /* BusOrig.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A8002156559CE00EAB2EC /* BusOrig.png */; };
 		FA0A800715655FB100EAB2EC /* horse_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A800615655FB100EAB2EC /* horse_icon.png */; };
+		FA0A801415658E2500EAB2EC /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = FA0A801315658E2400EAB2EC /* route.csv */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
 		FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
 		FAF01F72156474890018FB18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F71156474890018FB18 /* CoreGraphics.framework */; };
@@ -45,6 +46,7 @@
 		FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SimpleAnnotation.m; sourceTree = "<group>"; };
 		FA0A8002156559CE00EAB2EC /* BusOrig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BusOrig.png; sourceTree = "<group>"; };
 		FA0A800615655FB100EAB2EC /* horse_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horse_icon.png; sourceTree = "<group>"; };
+		FA0A801315658E2400EAB2EC /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.csv; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -182,6 +184,7 @@
 				68EE1A641564A4AB00CAEAFA /* XPathQuery */,
 				68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
+				FA0A801315658E2400EAB2EC /* route.csv */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
 			);
@@ -270,6 +273,7 @@
 				FA0A7FF3156548DE00EAB2EC /* target.png in Resources */,
 				FA0A8003156559CE00EAB2EC /* BusOrig.png in Resources */,
 				FA0A800715655FB100EAB2EC /* horse_icon.png in Resources */,
+				FA0A801415658E2500EAB2EC /* route.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

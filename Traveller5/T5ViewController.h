@@ -10,13 +10,29 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface T5ViewController : UIViewController
+@interface T5ViewController : UIViewController <MKMapViewDelegate>{
+    
+	// the map view
+	MKMapView* _mapView;
+	
+	// the data representing the route points. 
+	MKPolyline* _routeLine;
+	
+    
+	// the view we create for the line on the map
+	MKPolylineView* _routeLineView;
+	
+	// the rect that bounds the loaded points
+	MKMapRect _routeRect;
+}
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *stationAnnotations;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapController;
 @property (nonatomic) BOOL stationBool;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *stationButton;
+@property (nonatomic, retain) MKPolyline* routeLine;
+@property (nonatomic, retain) MKPolylineView* routeLineView;
 
 
 - (IBAction)infoButton:(id)sender;
@@ -25,5 +41,7 @@
 - (IBAction)getLocation:(id)sender;
 - (void)updateMap;
 - (IBAction)getStations:(id)sender;
+-(void) loadRoute;
+
 
 @end
