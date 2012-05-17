@@ -16,6 +16,7 @@
 - (IBAction)passengerGuidelines:(id)sender;
 - (IBAction)driverGuidelines:(id)sender;
 - (IBAction)mapButton:(id)sender;
+- (IBAction)doneButton:(id)sender;
 
 
 @end

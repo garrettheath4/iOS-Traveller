@@ -61,4 +61,8 @@
 
 - (IBAction)mapButton:(id)sender {
 }
+
+- (IBAction)doneButton:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end

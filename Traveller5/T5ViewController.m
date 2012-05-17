@@ -7,6 +7,7 @@
 //
 
 #import "T5ViewController.h"
+#import "T5InfoViewController.h"
 
 @interface T5ViewController ()
 
@@ -34,6 +35,8 @@
 }
 
 - (IBAction)infoButton:(id)sender {
-    
+    T5InfoViewController *infoView = [[T5InfoViewController alloc] init];
+    [self presentModalViewController:infoView animated:YES];
 }
+     
 @end
