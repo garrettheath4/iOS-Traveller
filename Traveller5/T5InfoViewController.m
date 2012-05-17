@@ -41,4 +41,24 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)travelerInfoButton:(id)sender {
+}
+
+- (IBAction)transitInfoButton:(id)sender {
+}
+
+- (IBAction)dispatchInfoButton:(id)sender {
+}
+
+- (IBAction)conductPolicy:(id)sender {
+}
+
+- (IBAction)passengerGuidelines:(id)sender {
+}
+
+- (IBAction)driverGuidelines:(id)sender {
+}
+
+- (IBAction)mapButton:(id)sender {
+}
 @end

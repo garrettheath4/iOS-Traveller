@@ -33,4 +33,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)infoButton:(id)sender {
+    
+}
 @end
