@@ -18,6 +18,7 @@
 @implementation T5ViewController
 @synthesize mapView;
 @synthesize stationAnnotations = _stationAnnotations;
+@synthesize mapController;
 
 
 - (IBAction)getLocation:(id)sender {
@@ -34,7 +35,20 @@
 }
 
 - (IBAction)setMap:(id)sender {
-    
+    switch (((UISegmentedControl *) sender).selectedSegmentIndex) {
+        case 0:
+            mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            mapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            mapView.mapType = MKMapTypeHybrid;
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)viewDidLoad
@@ -215,6 +229,7 @@
 - (void)viewDidUnload
 {
     [self setMapView:nil];
+    [self setMapController:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
