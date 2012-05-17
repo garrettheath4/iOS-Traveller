@@ -191,6 +191,8 @@
 				FAF01F8E1564749F0018FB18 /* Notes */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
+				FA0A7FEF15653D3200EAB2EC /* SimpleAnnotation.h */,
+				FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */,
 			);
 			path = Traveller5;
 			sourceTree = "<group>";
