@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 - (IBAction)infoButton:(id)sender;
+- (IBAction)alertButton:(id)sender;
 - (void)updateMap;
 
 @end
