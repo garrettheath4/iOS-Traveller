@@ -110,11 +110,9 @@
     [self setViewController:nil];
     
     [self setTheURL:nil];
-    [self setPort:nil];
     [self setInputStream:nil];
     [self setOutputStream:nil];
     
-    [self setBytesRead:nil];
     [self setResponseData:nil];
     
     [self setNames:nil];
