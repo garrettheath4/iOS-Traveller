@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA0A7FF115653D3200EAB2EC /* SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */; };
+		FA0A7FF115653D3200EAB2EC /* T5SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FF015653D3200EAB2EC /* T5SimpleAnnotation.m */; };
 		FA0A7FF3156548DE00EAB2EC /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A7FF2156548DD00EAB2EC /* target.png */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
 		FAF01F70156474890018FB18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
@@ -38,8 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA0A7FEF15653D3200EAB2EC /* SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAnnotation.h; sourceTree = "<group>"; };
-		FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAnnotation.m; sourceTree = "<group>"; };
+		FA0A7FEF15653D3200EAB2EC /* T5SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5SimpleAnnotation.h; sourceTree = "<group>"; };
+		FA0A7FF015653D3200EAB2EC /* T5SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SimpleAnnotation.m; sourceTree = "<group>"; };
 		FA0A7FF2156548DD00EAB2EC /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = target.png; path = ../target.png; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -138,10 +138,10 @@
 				FAF01FC31564997B0018FB18 /* T5WebViewController.h */,
 				FAF01FC41564997B0018FB18 /* T5WebViewController.m */,
 				FAF01FC51564997C0018FB18 /* T5WebViewController.xib */,
+				FA0A7FEF15653D3200EAB2EC /* T5SimpleAnnotation.h */,
+				FA0A7FF015653D3200EAB2EC /* T5SimpleAnnotation.m */,
 				FAF01F8E1564749F0018FB18 /* Notes */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
-				FA0A7FEF15653D3200EAB2EC /* SimpleAnnotation.h */,
-				FA0A7FF015653D3200EAB2EC /* SimpleAnnotation.m */,
 			);
 			path = Traveller5;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 				FAF01F81156474890018FB18 /* T5ViewController.m in Sources */,
 				FAF01FB115647EB80018FB18 /* T5InfoViewController.m in Sources */,
 				FAF01FC61564997C0018FB18 /* T5WebViewController.m in Sources */,
-				FA0A7FF115653D3200EAB2EC /* SimpleAnnotation.m in Sources */,
+				FA0A7FF115653D3200EAB2EC /* T5SimpleAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

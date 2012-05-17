@@ -9,7 +9,7 @@
 #import "T5ViewController.h"
 #import "T5InfoViewController.h"
 #import "T5WebViewController.h"
-#import "SimpleAnnotation.h"
+#import "T5SimpleAnnotation.h"
 
 @interface T5ViewController ()
 
@@ -40,7 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    SimpleAnnotation *annotation1 = [[SimpleAnnotation alloc] init];
+    T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.782604, -79.440165};
     annotation1.coordinate = coord;
     annotation1.title = @"Test";
