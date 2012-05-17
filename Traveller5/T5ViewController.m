@@ -16,7 +16,7 @@
 @end
 
 @implementation T5ViewController
-@synthesize mapView;
+@synthesize mapView = _mapView;
 @synthesize stationAnnotations = _stationAnnotations;
 @synthesize mapController;
 @synthesize stationBool = _stationBool;
@@ -27,13 +27,13 @@
 
 - (IBAction)getLocation:(id)sender {
     double miles = 12.0; 
-    double scalingFactor = ABS( cos(2 * M_PI * mapView.userLocation.coordinate.latitude /360.0) );
+    double scalingFactor = ABS( cos(2 * M_PI * self.mapView.userLocation.coordinate.latitude /360.0) );
     MKCoordinateSpan span;
     span.latitudeDelta = miles/3000.0; 
     span.longitudeDelta = miles/( scalingFactor*3000.0 );
     MKCoordinateRegion region;
     region.span = span;
-    region.center = mapView.userLocation.coordinate;
+    region.center = self.mapView.userLocation.coordinate;
     [self.mapView setRegion:region animated:YES];
 
 }
@@ -41,13 +41,13 @@
 - (IBAction)setMap:(id)sender {
     switch (((UISegmentedControl *) sender).selectedSegmentIndex) {
         case 0:
-            mapView.mapType = MKMapTypeStandard;
+            self.mapView.mapType = MKMapTypeStandard;
             break;
         case 1:
-            mapView.mapType = MKMapTypeSatellite;
+            self.mapView.mapType = MKMapTypeSatellite;
             break;
         case 2:
-            mapView.mapType = MKMapTypeHybrid;
+            self.mapView.mapType = MKMapTypeHybrid;
             break;
             
         default:

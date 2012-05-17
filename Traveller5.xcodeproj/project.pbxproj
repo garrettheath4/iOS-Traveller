@@ -134,6 +134,16 @@
 			name = "GPS Query";
 			sourceTree = "<group>";
 		};
+		FA0A80191565933A00EAB2EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAF01F8E1564749F0018FB18 /* Notes */,
+				68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */,
+				FA0A801315658E2400EAB2EC /* route.csv */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +184,7 @@
 				68EE1A5B15649F7D00CAEAFA /* Info View */,
 				68EE1A5C15649F8300CAEAFA /* Web View */,
 				68EE1A601564A2F800CAEAFA /* GPS Query */,
-				68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */,
-				FAF01F8E1564749F0018FB18 /* Notes */,
-				FA0A801315658E2400EAB2EC /* route.csv */,
+				FA0A80191565933A00EAB2EC /* Resources */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
 			);

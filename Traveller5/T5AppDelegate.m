@@ -29,6 +29,7 @@
     
     self.viewController = [[T5ViewController alloc] initWithNibName:@"T5ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
+    [window addSubview:viewController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

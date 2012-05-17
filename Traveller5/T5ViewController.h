@@ -26,7 +26,7 @@
 	MKMapRect _routeRect;
 }
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *stationAnnotations;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapController;
 @property (nonatomic) BOOL stationBool;

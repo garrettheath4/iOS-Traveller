@@ -11,7 +11,10 @@
 
 @class T5ViewController;
 
-@interface T5AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface T5AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>{
+    UIWindow *window;
+    T5ViewController *viewController;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
