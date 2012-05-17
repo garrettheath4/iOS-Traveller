@@ -7,9 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68CC86201565BA8C009C9142 /* T5GPSquery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */; };
+		68CC86221565BAA1009C9142 /* T5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F80156474890018FB18 /* T5ViewController.m */; };
+		68CC86231565BAD4009C9142 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A621564A4A400CAEAFA /* XPathQuery.m */; };
+		68CC86241565BB1E009C9142 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EE1A651564A55700CAEAFA /* libxml2.dylib */; };
+		68CC86291565BD2D009C9142 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FAC15647A020018FB18 /* MessageUI.framework */; };
+		68CC862A1565BD45009C9142 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FA71564755B0018FB18 /* MapKit.framework */; };
+		68CC862B1565BD61009C9142 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01FA5156475550018FB18 /* CoreLocation.framework */; };
+		68CC862C1565BD75009C9142 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F71156474890018FB18 /* CoreGraphics.framework */; };
+		68CC862D1565BE05009C9142 /* T5SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */; };
+		68CC862E1565BE05009C9142 /* T5InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01FAF15647EB80018FB18 /* T5InfoViewController.m */; };
+		68CC862F1565BE05009C9142 /* T5WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01FC41564997B0018FB18 /* T5WebViewController.m */; };
+		68CC86301565BF1F009C9142 /* T5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F82156474890018FB18 /* T5ViewController.xib */; };
+		68CC86311565BF1F009C9142 /* T5InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */; };
+		68CC86321565BF1F009C9142 /* T5WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FC51564997C0018FB18 /* T5WebViewController.xib */; };
+		68CC86331565BF1F009C9142 /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = FA0A801315658E2400EAB2EC /* route.csv */; };
+		68CC86341565BF1F009C9142 /* horse_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A800615655FB100EAB2EC /* horse_icon.png */; };
+		68CC86351565BF1F009C9142 /* BusOrig.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A8002156559CE00EAB2EC /* BusOrig.png */; };
+		68CC86361565BF1F009C9142 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A7FF2156548DD00EAB2EC /* target.png */; };
+		68CC86371565BF1F009C9142 /* TravellerLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F9A156474B10018FB18 /* TravellerLogo.jpg */; };
+		68CC86391565BF1F009C9142 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF01F76156474890018FB18 /* InfoPlist.strings */; };
 		68EE1A5F1564A2F400CAEAFA /* T5GPSquery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */; };
 		68EE1A631564A4A400CAEAFA /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A621564A4A400CAEAFA /* XPathQuery.m */; };
 		68EE1A661564A55700CAEAFA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EE1A651564A55700CAEAFA /* libxml2.dylib */; };
+		68EE1AA31565B6FF00CAEAFA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EE1AA21565B6FF00CAEAFA /* SenTestingKit.framework */; };
+		68EE1AA41565B6FF00CAEAFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
+		68EE1AA51565B6FF00CAEAFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6F156474890018FB18 /* Foundation.framework */; };
+		68EE1AAE1565B6FF00CAEAFA /* TestTraveller5.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1AAD1565B6FF00CAEAFA /* TestTraveller5.m */; };
 		FA0A7FF3156548DE00EAB2EC /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A7FF2156548DD00EAB2EC /* target.png */; };
 		FA0A8000156557FA00EAB2EC /* T5SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */; };
 		FA0A8003156559CE00EAB2EC /* BusOrig.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A8002156559CE00EAB2EC /* BusOrig.png */; };
@@ -41,6 +65,13 @@
 		68EE1A621564A4A400CAEAFA /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		68EE1A651564A55700CAEAFA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = StationGPSLocations.txt; sourceTree = "<group>"; };
+		68EE1AA11565B6FF00CAEAFA /* TestTraveller5.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTraveller5.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68EE1AA21565B6FF00CAEAFA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		68EE1AA81565B6FF00CAEAFA /* TestTraveller5-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestTraveller5-Info.plist"; sourceTree = "<group>"; };
+		68EE1AAA1565B6FF00CAEAFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68EE1AAC1565B6FF00CAEAFA /* TestTraveller5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTraveller5.h; sourceTree = "<group>"; };
+		68EE1AAD1565B6FF00CAEAFA /* TestTraveller5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTraveller5.m; sourceTree = "<group>"; };
+		68EE1AAF1565B6FF00CAEAFA /* TestTraveller5-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestTraveller5-Prefix.pch"; sourceTree = "<group>"; };
 		FA0A7FF2156548DD00EAB2EC /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = target.png; path = ../target.png; sourceTree = "<group>"; };
 		FA0A7FFE156557FA00EAB2EC /* T5SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5SimpleAnnotation.h; sourceTree = "<group>"; };
 		FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SimpleAnnotation.m; sourceTree = "<group>"; };
@@ -74,6 +105,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		68EE1A9D1565B6FF00CAEAFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68CC86241565BB1E009C9142 /* libxml2.dylib in Frameworks */,
+				68CC86291565BD2D009C9142 /* MessageUI.framework in Frameworks */,
+				68CC862A1565BD45009C9142 /* MapKit.framework in Frameworks */,
+				68CC862B1565BD61009C9142 /* CoreLocation.framework in Frameworks */,
+				68EE1AA41565B6FF00CAEAFA /* UIKit.framework in Frameworks */,
+				68EE1AA51565B6FF00CAEAFA /* Foundation.framework in Frameworks */,
+				68CC862C1565BD75009C9142 /* CoreGraphics.framework in Frameworks */,
+				68EE1AA31565B6FF00CAEAFA /* SenTestingKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAF01F66156474890018FB18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +180,26 @@
 			name = "GPS Query";
 			sourceTree = "<group>";
 		};
+		68EE1AA61565B6FF00CAEAFA /* TestTraveller5 */ = {
+			isa = PBXGroup;
+			children = (
+				68EE1AAC1565B6FF00CAEAFA /* TestTraveller5.h */,
+				68EE1AAD1565B6FF00CAEAFA /* TestTraveller5.m */,
+				68EE1AA71565B6FF00CAEAFA /* Supporting Files */,
+			);
+			path = TestTraveller5;
+			sourceTree = "<group>";
+		};
+		68EE1AA71565B6FF00CAEAFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68EE1AA81565B6FF00CAEAFA /* TestTraveller5-Info.plist */,
+				68EE1AA91565B6FF00CAEAFA /* InfoPlist.strings */,
+				68EE1AAF1565B6FF00CAEAFA /* TestTraveller5-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FA0A80191565933A00EAB2EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF01F73156474890018FB18 /* Traveller5 */,
+				68EE1AA61565B6FF00CAEAFA /* TestTraveller5 */,
 				FAF01F6C156474890018FB18 /* Frameworks */,
 				FAF01F6A156474890018FB18 /* Products */,
 			);
@@ -157,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF01F69156474890018FB18 /* Traveller5.app */,
+				68EE1AA11565B6FF00CAEAFA /* TestTraveller5.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +239,7 @@
 				FAF01F6D156474890018FB18 /* UIKit.framework */,
 				FAF01F6F156474890018FB18 /* Foundation.framework */,
 				FAF01F71156474890018FB18 /* CoreGraphics.framework */,
+				68EE1AA21565B6FF00CAEAFA /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,6 +285,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		68EE1AA01565B6FF00CAEAFA /* TestTraveller5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68EE1AB01565B6FF00CAEAFA /* Build configuration list for PBXNativeTarget "TestTraveller5" */;
+			buildPhases = (
+				68EE1A9C1565B6FF00CAEAFA /* Sources */,
+				68EE1A9D1565B6FF00CAEAFA /* Frameworks */,
+				68EE1A9E1565B6FF00CAEAFA /* Resources */,
+				68EE1A9F1565B6FF00CAEAFA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestTraveller5;
+			productName = TestTraveller5;
+			productReference = 68EE1AA11565B6FF00CAEAFA /* TestTraveller5.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		FAF01F68156474890018FB18 /* Traveller5 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAF01F87156474890018FB18 /* Build configuration list for PBXNativeTarget "Traveller5" */;
@@ -255,11 +342,28 @@
 			projectRoot = "";
 			targets = (
 				FAF01F68156474890018FB18 /* Traveller5 */,
+				68EE1AA01565B6FF00CAEAFA /* TestTraveller5 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		68EE1A9E1565B6FF00CAEAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68CC86301565BF1F009C9142 /* T5ViewController.xib in Resources */,
+				68CC86311565BF1F009C9142 /* T5InfoViewController.xib in Resources */,
+				68CC86321565BF1F009C9142 /* T5WebViewController.xib in Resources */,
+				68CC86331565BF1F009C9142 /* route.csv in Resources */,
+				68CC86341565BF1F009C9142 /* horse_icon.png in Resources */,
+				68CC86351565BF1F009C9142 /* BusOrig.png in Resources */,
+				68CC86361565BF1F009C9142 /* target.png in Resources */,
+				68CC86371565BF1F009C9142 /* TravellerLogo.jpg in Resources */,
+				68CC86391565BF1F009C9142 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAF01F67156474890018FB18 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,7 +383,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		68EE1A9F1565B6FF00CAEAFA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		68EE1A9C1565B6FF00CAEAFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68CC862D1565BE05009C9142 /* T5SimpleAnnotation.m in Sources */,
+				68CC862E1565BE05009C9142 /* T5InfoViewController.m in Sources */,
+				68CC862F1565BE05009C9142 /* T5WebViewController.m in Sources */,
+				68CC86231565BAD4009C9142 /* XPathQuery.m in Sources */,
+				68CC86221565BAA1009C9142 /* T5ViewController.m in Sources */,
+				68CC86201565BA8C009C9142 /* T5GPSquery.m in Sources */,
+				68EE1AAE1565B6FF00CAEAFA /* TestTraveller5.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAF01F65156474890018FB18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +432,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		68EE1AA91565B6FF00CAEAFA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68EE1AAA1565B6FF00CAEAFA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		FAF01F76156474890018FB18 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -317,6 +459,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		68EE1AB11565B6FF00CAEAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestTraveller5/TestTraveller5-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
+				INFOPLIST_FILE = "TestTraveller5/TestTraveller5-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		68EE1AB21565B6FF00CAEAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestTraveller5/TestTraveller5-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2/**";
+				INFOPLIST_FILE = "TestTraveller5/TestTraveller5-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		FAF01F85156474890018FB18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -391,6 +567,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		68EE1AB01565B6FF00CAEAFA /* Build configuration list for PBXNativeTarget "TestTraveller5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68EE1AB11565B6FF00CAEAFA /* Debug */,
+				68EE1AB21565B6FF00CAEAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FAF01F63156474890018FB18 /* Build configuration list for PBXProject "Traveller5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
