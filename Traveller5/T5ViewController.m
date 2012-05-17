@@ -18,6 +18,23 @@
 @implementation T5ViewController
 @synthesize mapView;
 
+- (IBAction)getLocation:(id)sender {
+    double miles = 12.0; 
+    double scalingFactor = ABS( cos(2 * M_PI * mapView.userLocation.coordinate.latitude /360.0) );
+    MKCoordinateSpan span;
+    span.latitudeDelta = miles/69.0; 
+    span.longitudeDelta = miles/( scalingFactor*69.0 );
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = mapView.userLocation.coordinate;
+    [self.mapView setRegion:region animated:YES];
+
+}
+
+- (IBAction)setMap:(id)sender {
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

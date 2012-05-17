@@ -62,7 +62,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
-    double miles = 12.0; double scalingFactor = ABS( cos(2 * M_PI * newLocation.coordinate.latitude /360.0) );
+    double miles = 12.0; 
+    double scalingFactor = ABS( cos(2 * M_PI * newLocation.coordinate.latitude /360.0) );
     MKCoordinateSpan span;
     span.latitudeDelta = miles/69.0; 
     span.longitudeDelta = miles/( scalingFactor*69.0 );
