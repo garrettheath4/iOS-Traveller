@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		682138951565CCCF004172E8 /* T5SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */; };
+		689A26061566020300846DBC /* BlueRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = 689A26021566020300846DBC /* BlueRoute.csv */; };
+		689A26071566020300846DBC /* BlueRoute.kml in Resources */ = {isa = PBXBuildFile; fileRef = 689A26031566020300846DBC /* BlueRoute.kml */; };
+		689A26081566020300846DBC /* RedRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = 689A26041566020300846DBC /* RedRoute.csv */; };
+		689A26091566020300846DBC /* RedRoute.kml in Resources */ = {isa = PBXBuildFile; fileRef = 689A26051566020300846DBC /* RedRoute.kml */; };
 		68CC86201565BA8C009C9142 /* T5GPSquery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */; };
 		68CC86221565BAA1009C9142 /* T5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F80156474890018FB18 /* T5ViewController.m */; };
 		68CC86231565BAD4009C9142 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A621564A4A400CAEAFA /* XPathQuery.m */; };
@@ -63,6 +67,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		689A26021566020300846DBC /* BlueRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlueRoute.csv; sourceTree = "<group>"; };
+		689A26031566020300846DBC /* BlueRoute.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BlueRoute.kml; sourceTree = "<group>"; };
+		689A26041566020300846DBC /* RedRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RedRoute.csv; sourceTree = "<group>"; };
+		689A26051566020300846DBC /* RedRoute.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RedRoute.kml; sourceTree = "<group>"; };
 		68EE1A5D1564A2F400CAEAFA /* T5GPSquery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5GPSquery.h; sourceTree = "<group>"; };
 		68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5GPSquery.m; sourceTree = "<group>"; };
 		68EE1A611564A4A400CAEAFA /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
@@ -158,6 +166,10 @@
 		682138981565E579004172E8 /* RouteData */ = {
 			isa = PBXGroup;
 			children = (
+				689A26021566020300846DBC /* BlueRoute.csv */,
+				689A26031566020300846DBC /* BlueRoute.kml */,
+				689A26041566020300846DBC /* RedRoute.csv */,
+				689A26051566020300846DBC /* RedRoute.kml */,
 				FA0A801315658E2400EAB2EC /* route.csv */,
 			);
 			name = RouteData;
@@ -409,6 +421,10 @@
 				FA0A801415658E2500EAB2EC /* route.csv in Resources */,
 				FA0A80241565B38000EAB2EC /* T5SettingsViewController.xib in Resources */,
 				FA0A80341565CB0800EAB2EC /* Refresh.png in Resources */,
+				689A26061566020300846DBC /* BlueRoute.csv in Resources */,
+				689A26071566020300846DBC /* BlueRoute.kml in Resources */,
+				689A26081566020300846DBC /* RedRoute.csv in Resources */,
+				689A26091566020300846DBC /* RedRoute.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
