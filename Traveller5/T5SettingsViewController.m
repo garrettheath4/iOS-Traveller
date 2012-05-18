@@ -37,10 +37,6 @@
 
 - (void)viewDidUnload
 {
-    T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
-    appDelegate.monitorBuss = self.bussSwitch.on;
-    appDelegate.monitorStation = self.stationSwitch.on;
-    appDelegate.monitorRoute = self.routeSwitch.on;
     [self setBussSwitch:nil];
     [self setStationSwitch:nil];
     [self setRouteSwitch:nil];
@@ -52,5 +48,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+- (IBAction)saved:(id)sender {
+    T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
+    appDelegate.monitorBuss = self.bussSwitch.on;
+    appDelegate.monitorStation = self.stationSwitch.on;
+    appDelegate.monitorRoute = self.routeSwitch.on;
+    [appDelegate refresh];
 }
 @end

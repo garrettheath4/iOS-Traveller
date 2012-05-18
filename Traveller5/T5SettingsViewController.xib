@@ -39,7 +39,7 @@
 					<object class="IBUISwitch" id="356988102">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{193, 281}, {94, 27}}</string>
+						<string key="NSFrame">{{186, 313}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="352639485"/>
@@ -53,7 +53,7 @@
 					<object class="IBUISwitch" id="735877099">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{193, 328}, {94, 27}}</string>
+						<string key="NSFrame">{{186, 363}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="89390417"/>
@@ -67,7 +67,7 @@
 					<object class="IBUISwitch" id="572134523">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{193, 375}, {94, 27}}</string>
+						<string key="NSFrame">{{186, 413}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -80,7 +80,7 @@
 					<object class="IBUILabel" id="111513671">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{48, 284}, {152, 21}}</string>
+						<string key="NSFrame">{{41, 316}, {152, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="356988102"/>
@@ -111,7 +111,7 @@
 					<object class="IBUILabel" id="352639485">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{48, 331}, {152, 21}}</string>
+						<string key="NSFrame">{{41, 366}, {152, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="735877099"/>
@@ -135,7 +135,7 @@
 					<object class="IBUILabel" id="89390417">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{48, 378}, {152, 21}}</string>
+						<string key="NSFrame">{{41, 416}, {152, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="572134523"/>
@@ -203,6 +203,33 @@
 					</object>
 					<int key="connectionID">16</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">saved:</string>
+						<reference key="source" ref="356988102"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">saved:</string>
+						<reference key="source" ref="735877099"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">24</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">saved:</string>
+						<reference key="source" ref="572134523"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">25</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -217,11 +244,11 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="572134523"/>
+							<reference ref="89390417"/>
 							<reference ref="735877099"/>
+							<reference ref="352639485"/>
 							<reference ref="356988102"/>
 							<reference ref="111513671"/>
-							<reference ref="89390417"/>
-							<reference ref="352639485"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -285,13 +312,37 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">16</int>
+			<int key="maxID">25</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">T5SettingsViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="busChanged:">id</string>
+						<string key="routeChanged:">id</string>
+						<string key="saved:">id</string>
+						<string key="stationChanged:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="busChanged:">
+							<string key="name">busChanged:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="routeChanged:">
+							<string key="name">routeChanged:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saved:">
+							<string key="name">saved:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="stationChanged:">
+							<string key="name">stationChanged:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="bussSwitch">UISwitch</string>
 						<string key="routeSwitch">UISwitch</string>

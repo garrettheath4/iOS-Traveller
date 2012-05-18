@@ -60,13 +60,7 @@
     [super viewDidLoad];
     
     [self loadRoute];
-    
-    if (nil != self.routeLine) {
-		[self.mapView addOverlay:self.routeLine];
-	}
-    
-    [self.mapView setVisibleMapRect:_routeRect];
-            
+                
     T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.786947, -79.444657};
     annotation1.coordinate = coord;
@@ -235,6 +229,28 @@
     annotation24.subtitle = @"";
     
     self.stationAnnotations = [[NSArray alloc] initWithObjects:annotation1, annotation2, annotation3, annotation4, annotation5, annotation6, annotation7, annotation8, annotation9, annotation10, annotation11, annotation12, annotation13, annotation14, annotation15, annotation16, annotation17, annotation18, annotation19, annotation20, annotation21, annotation22, annotation23, annotation24, nil];
+    
+    T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
+    if (appDelegate.monitorBuss){
+        
+    }
+    else{
+        
+    }
+    if (appDelegate.monitorStation) {
+        [self.mapView addAnnotations:self.stationAnnotations];
+    }
+    else{
+        [self.mapView removeAnnotations:self.stationAnnotations];
+    }
+    if (appDelegate.monitorRoute){
+        [self.mapView addOverlay:self.routeLine];
+    }
+    else{
+        [self.mapView removeOverlay:self.routeLine];
+    }
+    
+    [self.mapView setVisibleMapRect:_routeRect];
 }
 
 -(void) loadRoute
@@ -307,6 +323,29 @@
     T5SettingsViewController *settingsView = [[T5SettingsViewController alloc] init];
     settingsView.modalTransitionStyle = UIModalTransitionStylePartialCurl;
     [self presentModalViewController:settingsView animated:YES];
+    
+}
+
+- (void)refresh {
+    T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
+    if (appDelegate.monitorBuss){
+        
+    }
+    else{
+        
+    }
+    if (appDelegate.monitorStation) {
+        [self.mapView addAnnotations:self.stationAnnotations];
+    }
+    else{
+        [self.mapView removeAnnotations:self.stationAnnotations];
+    }
+    if (appDelegate.monitorRoute){
+        [self.mapView addOverlay:self.routeLine];
+    }
+    else{
+        [self.mapView removeOverlay:self.routeLine];
+    }
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
@@ -352,27 +391,5 @@
         [self presentModalViewController:webViewController animated:YES];
 }
 
-- (void)viewWillAppear:(BOOL)animated { 
-    [super viewWillAppear:animated];
-    T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
-    if (appDelegate.monitorBuss){
-        
-    }
-    else{
-        
-    }
-    if (appDelegate.monitorStation) {
-        [self.mapView addAnnotations:self.stationAnnotations];
-    }
-    else{
-        [self.mapView removeAnnotations:self.stationAnnotations];
-    }
-    if (appDelegate.monitorRoute){
-        
-    }
-    else{
-        
-    }
-    [super viewWillAppear:animated];
-}     
+
 @end

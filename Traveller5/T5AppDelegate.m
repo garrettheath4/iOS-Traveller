@@ -84,4 +84,8 @@
     self.viewController.mapView.showsUserLocation = YES; 
 }
 
+- (void) refresh{
+    [self.viewController refresh];
+}
+
 @end
