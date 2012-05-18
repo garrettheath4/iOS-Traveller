@@ -44,6 +44,7 @@
 - (T5GPSquery *)initWithViewController:(UIViewController *)controller;
 - (BOOL)isConnected;
 - (BOOL)hasData;
+- (void)fetchData;
 - (void)queryService:(NSString *)pointName;
 
 @end
