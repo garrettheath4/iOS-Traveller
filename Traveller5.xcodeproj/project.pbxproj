@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		682138951565CCCF004172E8 /* T5SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */; };
 		68CC86201565BA8C009C9142 /* T5GPSquery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */; };
 		68CC86221565BAA1009C9142 /* T5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01F80156474890018FB18 /* T5ViewController.m */; };
 		68CC86231565BAD4009C9142 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE1A621564A4A400CAEAFA /* XPathQuery.m */; };
@@ -61,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		682138961565E570004172E8 /* RedRoute.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = RedRoute.csv; sourceTree = "<group>"; };
+		682138971565E570004172E8 /* RedRoute.kml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RedRoute.kml; sourceTree = "<group>"; };
 		68EE1A5D1564A2F400CAEAFA /* T5GPSquery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5GPSquery.h; sourceTree = "<group>"; };
 		68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5GPSquery.m; sourceTree = "<group>"; };
 		68EE1A611564A4A400CAEAFA /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
@@ -79,7 +82,7 @@
 		FA0A7FFF156557FA00EAB2EC /* T5SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SimpleAnnotation.m; sourceTree = "<group>"; };
 		FA0A8002156559CE00EAB2EC /* BusOrig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BusOrig.png; sourceTree = "<group>"; };
 		FA0A800615655FB100EAB2EC /* horse_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horse_icon.png; sourceTree = "<group>"; };
-		FA0A801315658E2400EAB2EC /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.csv; sourceTree = "<group>"; };
+		FA0A801315658E2400EAB2EC /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = route.csv; path = Traveller5/route.csv; sourceTree = "<group>"; };
 		FA0A80201565B37F00EAB2EC /* T5SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5SettingsViewController.h; sourceTree = "<group>"; };
 		FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SettingsViewController.m; sourceTree = "<group>"; };
 		FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5SettingsViewController.xib; sourceTree = "<group>"; };
@@ -142,6 +145,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		682138931565CC97004172E8 /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A80201565B37F00EAB2EC /* T5SettingsViewController.h */,
+				FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */,
+				FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */,
+			);
+			name = "Settings View";
+			sourceTree = "<group>";
+		};
+		682138981565E579004172E8 /* RouteData */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A801315658E2400EAB2EC /* route.csv */,
+				682138961565E570004172E8 /* RedRoute.csv */,
+				682138971565E570004172E8 /* RedRoute.kml */,
+			);
+			name = RouteData;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		68EE1A5915649F6800CAEAFA /* Main View */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +234,7 @@
 			children = (
 				FAF01F8E1564749F0018FB18 /* Notes */,
 				68EE1A6B15654F6E00CAEAFA /* StationGPSLocations.txt */,
-				FA0A801315658E2400EAB2EC /* route.csv */,
+				682138981565E579004172E8 /* RouteData */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -255,15 +279,13 @@
 				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
 				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
 				68EE1A5915649F6800CAEAFA /* Main View */,
+				682138931565CC97004172E8 /* Settings View */,
 				68EE1A5B15649F7D00CAEAFA /* Info View */,
 				68EE1A5C15649F8300CAEAFA /* Web View */,
 				68EE1A601564A2F800CAEAFA /* GPS Query */,
 				FA0A80191565933A00EAB2EC /* Resources */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
-				FA0A80201565B37F00EAB2EC /* T5SettingsViewController.h */,
-				FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */,
-				FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */,
 			);
 			path = Traveller5;
 			sourceTree = "<group>";
@@ -413,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682138951565CCCF004172E8 /* T5SettingsViewController.m in Sources */,
 				68CC862D1565BE05009C9142 /* T5SimpleAnnotation.m in Sources */,
 				68CC862E1565BE05009C9142 /* T5InfoViewController.m in Sources */,
 				68CC862F1565BE05009C9142 /* T5WebViewController.m in Sources */,

@@ -41,7 +41,7 @@
         [self setViewController:(T5ViewController *)controller];
         
         // Connection properties
-        [self setTheURL:[NSURL URLWithString:[NSString stringWithString:@"http://travellerapp.dnsdynamic.com"]]];
+        [self setTheURL:[NSURL URLWithString:[NSString stringWithString:@"travellerapp.dnsdynamic.com"]]];
         if (![self theURL]) {
             NSLog(@"%@ is not a valid URL", theURL);
         }
@@ -96,11 +96,28 @@
 }
 
 - (BOOL)hasData {
+    if ([[self inputStream] hasBytesAvailable]) {
+        NSLog(@"inputStream has bytes available, but did it notify the delegate?");
+    }
     return [self hasDataState];
 }
 
 - (void)fetchData {
-    ;
+    NSLog(@"Sending \"GET *ALL\" request.");
+    
+    NSString *str = [NSString stringWithFormat:
+                      @"GET *ALL\r\n\r\n"];
+    const uint8_t * rawstring = (const uint8_t *)[str UTF8String];
+    [[self outputStream] write:rawstring maxLength:strlen(rawstring)];
+    [[self outputStream] close];
+    
+    const NSInteger maxNumTries = 10;
+    NSInteger numTries = 0;
+
+    while (![self hasData] && numTries < maxNumTries) {
+        sleep(1);
+        numTries += 1;
+    }
 }
 
 - (void)queryService:(NSString *)pointName {    
@@ -122,6 +139,8 @@
 }
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode {
+    
+    NSLog(@"stream:handleEvent: activated");
     
     switch(eventCode) {
         case NSStreamEventHasBytesAvailable:
@@ -145,13 +164,6 @@
             } else {
                 // The event happened in the output stream
                 assert(stream == [self outputStream]);
-                
-                NSLog(@"Sending \"GET *ALL\" request.");
-                NSString * str = [NSString stringWithFormat:
-                                  @"GET *ALL\r\n\r\n"];
-                const uint8_t * rawstring = (const uint8_t *)[str UTF8String];
-                [[self outputStream] write:rawstring maxLength:strlen(rawstring)];
-                [[self outputStream] close];
             }
                 break;
         }
