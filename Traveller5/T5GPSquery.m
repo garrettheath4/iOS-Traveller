@@ -15,12 +15,13 @@
 
 @synthesize viewController=_viewController;
 
-@synthesize theURL=_theURL;
+@synthesize serverAddress=_serverAddress;
 @synthesize port=_port;
 @synthesize inputStream=_inputStream;
 @synthesize outputStream=_outputStream;
 @synthesize isConnectedState=_isConnectedState;
 
+@synthesize requestWasSent=_requestWasSent;
 @synthesize bytesRead=_bytesRead;
 @synthesize responseData=_responseData;
 @synthesize hasDataState=_hasDataState;
@@ -41,13 +42,11 @@
         [self setViewController:(T5ViewController *)controller];
         
         // Connection properties
-        [self setTheURL:[NSURL URLWithString:[NSString stringWithString:@"travellerapp.dnsdynamic.com"]]];
-        if (![self theURL]) {
-            NSLog(@"%@ is not a valid URL", theURL);
-        }
-        [self setPort:58974];
+        [self setServerAddress:[NSString stringWithString:@"localhost"]];
+        [self setPort:(UInt32)58974];
         [self setIsConnectedState:NO];
         
+        [self setRequestWasSent:NO];
         [self setBytesRead:0];
         [self setResponseData:[NSMutableData data]];
         [self setHasDataState:NO];
@@ -55,6 +54,8 @@
         [self setNames:[NSMutableData data]];
         [self setDescriptions:[NSMutableData data]];
         [self setPoints:[NSMutableData data]];
+    } else {
+        assert(NO);
     }
     [self connect];
     return self;
@@ -69,55 +70,83 @@
         NSLog(@"Warning: connect: method called on object that is already connected.");
     }
     
+    CFStringRef serverAddressRef = (__bridge CFStringRef)[self serverAddress];
+    
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     
-    CFStreamCreatePairWithSocketToHost(nil, (__bridge CFStringRef)[theURL host], port, &readStream, &writeStream);
+    NSLog(@"Attempting to connect to %@ on port %lu.", [self serverAddress], [self port]);
     
-    NSInputStream *inputStream = (__bridge_transfer NSInputStream *)readStream;
-    NSOutputStream *outputStream = (__bridge_transfer NSOutputStream *)writeStream;
-    [inputStream setDelegate:self];
-    [outputStream setDelegate:self];
-    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [inputStream open];
-    [outputStream open];
+    CFStreamCreatePairWithSocketToHost(NULL, serverAddressRef, [self port], &readStream, &writeStream);
     
+    [self setInputStream:(__bridge_transfer NSInputStream *)readStream];
+    [self setOutputStream:(__bridge_transfer NSOutputStream *)writeStream];
+    [[self inputStream] setDelegate:self];
+    [[self outputStream] setDelegate:self];
+    [[self inputStream] scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [[self outputStream] scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [[self inputStream] open];
+    [[self outputStream] open];
+
     [self setIsConnectedState:YES];
+}
+
+- (void)sendMessage:(NSString *)message {
+    NSString *response = [[NSString stringWithFormat:message] stringByAppendingString:@"\n"];
+    NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
+    [[self outputStream] write:[data bytes] maxLength:[data length]];
+}
+
+- (void)receiveMessage {
+    if(!responseData) {
+        responseData = [NSMutableData data];
+    }
+    uint8_t buf[1024];
+    unsigned int len = 0;
+    while ([[self inputStream] hasBytesAvailable]) {
+        len = [[self inputStream] read:buf maxLength:1024];
+        if(len) {
+            [responseData appendBytes:(const void *)buf length:len];
+            // bytesRead is an instance variable of type NSNumber.
+            [self setBytesRead:([self bytesRead] + len)];
+            [self setHasDataState:YES];
+        } else {
+            NSLog(@"no buffer!");
+        }
+    }
 }
 
 - (void)disconnect {
     if (![self isConnected] || ![self inputStream] || ![self outputStream]) {
         NSLog(@"Warning: disconnect: method called on object that is already disconnected.");
     }
+    [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
+                      forMode:NSDefaultRunLoopMode];
+    [[self outputStream] removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [[self inputStream] close];
     [[self outputStream] close];
     [self setIsConnectedState:NO];
 }
 
 - (BOOL)hasData {
-    if ([[self inputStream] hasBytesAvailable]) {
-        NSLog(@"inputStream has bytes available, but did it notify the delegate?");
-    }
+    //if ([[self inputStream] hasBytesAvailable]) {
+    //    NSLog(@"inputStream has bytes available, but did it notify the delegate?");
+    //}
     return [self hasDataState];
 }
 
 - (void)fetchData {
     NSLog(@"Sending \"GET *ALL\" request.");
     
-    NSString *str = [NSString stringWithFormat:
-                      @"GET *ALL\r\n\r\n"];
-    const uint8_t * rawstring = (const uint8_t *)[str UTF8String];
-    [[self outputStream] write:rawstring maxLength:strlen(rawstring)];
-    [[self outputStream] close];
+    NSString *message = [NSString stringWithFormat:
+                      @"GET *ALL\n"];
+    /*
+    const uint8_t * rawstring = (const uint8_t *)[message UTF8String];
+    [[self outputStream] write:rawstring maxLength:[message length]];
+    */
+    [self sendMessage:message];
     
-    const NSInteger maxNumTries = 10;
-    NSInteger numTries = 0;
-
-    while (![self hasData] && numTries < maxNumTries) {
-        sleep(1);
-        numTries += 1;
-    }
+    //[[self outputStream] close];
 }
 
 - (void)queryService:(NSString *)pointName {    
@@ -127,7 +156,7 @@
 -(void)dealloc {
     [self setViewController:nil];
     
-    [self setTheURL:nil];
+    [self setServerAddress:nil];
     [self setInputStream:nil];
     [self setOutputStream:nil];
     
@@ -140,33 +169,43 @@
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode {
     
-    NSLog(@"stream:handleEvent: activated");
+    NSLog(@"stream:handleEvent: (Event %d) activated", eventCode);
     
     switch(eventCode) {
+        case NSStreamEventOpenCompleted:
+        {
+            if (stream == [self inputStream])
+            {
+                NSLog(@"inputStream opened");
+            } else {
+                // The event happened in the output stream
+                assert(stream == [self outputStream]);
+                NSLog(@"outputStream opened");
+            }
+
+            break;
+        }
+            
         case NSStreamEventHasBytesAvailable:
         {
             if (stream == [self inputStream])
             {
-                if(!responseData) {
-                    responseData = [NSMutableData data];
-                }
-                uint8_t buf[1024];
-                unsigned int len = 0;
-                len = [(NSInputStream *)stream read:buf maxLength:1024];
-                if(len) {
-                    [responseData appendBytes:(const void *)buf length:len];
-                    // bytesRead is an instance variable of type NSNumber.
-                    bytesRead += len;
-                    [self setHasDataState:YES];
-                } else {
-                    NSLog(@"no buffer!");
-                }
+                NSLog(@"inputStream has bytes available");
+                [self receiveMessage];
             } else {
                 // The event happened in the output stream
                 assert(stream == [self outputStream]);
+                NSLog(@"outputStream has bytes available");
             }
-                break;
+            break;
         }
+            
+        case NSStreamEventErrorOccurred:
+        {
+            NSLog(@"Can not connect to the host!");
+            break;
+        }
+
         case NSStreamEventEndEncountered:
         {
             NSString *xpathQueryString;
@@ -205,10 +244,42 @@
             [stream removeFromRunLoop:[NSRunLoop currentRunLoop]
                               forMode:NSDefaultRunLoopMode];
             stream = nil; // stream is ivar, so reinit it
-            break;
-            
+
             [viewController updateMap];
+            
+            break;
         }
+            
+        case NSStreamEventHasSpaceAvailable:
+        {
+            if (stream == [self inputStream])
+            {
+                NSLog(@"The input stream reports that it has space available");
+            } else {
+                assert(stream == [self outputStream]);
+                NSLog(@"The output stream reports that it has space available");
+                if (![self requestWasSent])
+                {
+                    [self fetchData];
+                }
+            }
+            break;
+        }
+            
+        case NSStreamEventNone:
+        {
+            if (stream == [self inputStream])
+            {
+                NSLog(@"The input stream reports no event");
+            } else {
+                assert(stream == [self outputStream]);
+                NSLog(@"The output stream reports no event");
+            }
+            break;
+        }
+        
+        default:
+            NSLog(@"Unknown event");
     }
 }
 

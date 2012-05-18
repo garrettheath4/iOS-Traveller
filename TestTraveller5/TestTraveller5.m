@@ -32,6 +32,7 @@ T5GPSquery *query;
     //STFail(@"Unit tests are not implemented yet in TestTraveller5");
     [self testGPSquery_init];
     [self testGPSquery_connect];
+    [self testGPSquery_sendMessage];
 }
 
 ////////////////////////////////////////////////////////////
@@ -51,8 +52,13 @@ T5GPSquery *query;
 - (void)testGPSquery_fetchData
 {
     T5GPSquery *query2 = [[T5GPSquery alloc] initWithViewController:nil];
-    [query2 fetchData];
+    //[query2 fetchData];
     STAssertTrue([query2 hasData], @"GPSquery did not fetch any data");
+}
+
+- (void)testGPSquery_sendMessage
+{
+    [query sendMessage:@"aaa"];
 }
 
 @end
