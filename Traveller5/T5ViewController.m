@@ -20,6 +20,7 @@
 @implementation T5ViewController
 @synthesize mapView;
 @synthesize stationAnnotations = _stationAnnotations;
+@synthesize busAnnotations = _busAnnotations;
 @synthesize mapController;
 @synthesize routeRedLine = _routeRedLine;
 @synthesize routeRedLineView = _routeRedLineView;
@@ -235,15 +236,46 @@
     annotation24.title = @"Henry and Randolph St.";
     annotation24.subtitle = @"";
     
+    T5SimpleAnnotation *busAnnotation1 = [[T5SimpleAnnotation alloc] init];
+    coord.latitude = 37.792104;
+    coord.longitude = -79.450362;
+    busAnnotation1.coordinate = coord;
+    busAnnotation1.title = @"Traveller Bus #1";
+    busAnnotation1.subtitle = @"";
+    
+    T5SimpleAnnotation *busAnnotation2 = [[T5SimpleAnnotation alloc] init];
+    coord.latitude = 37.791757;
+    coord.longitude = -79.449998;
+    busAnnotation2.coordinate = coord;
+    busAnnotation2.title = @"Traveller Bus #2";
+    busAnnotation2.subtitle = @"";
+    
+    T5SimpleAnnotation *busAnnotation3 = [[T5SimpleAnnotation alloc] init];
+    coord.latitude = 37.791583;
+    coord.longitude = -79.448922;
+    busAnnotation3.coordinate = coord;
+    busAnnotation3.title = @"Traveller Bus #3";
+    busAnnotation3.subtitle = @"";
+    
+    T5SimpleAnnotation *busAnnotation4 = [[T5SimpleAnnotation alloc] init];
+    coord.latitude = 37.792037;
+    coord.longitude = -79.450014;
+    busAnnotation4.coordinate = coord;
+    busAnnotation4.title = @"Traveller Bus #4";
+    busAnnotation4.subtitle = @"";
+    
     
     self.stationAnnotations = [[NSArray alloc] initWithObjects:annotation1, annotation2, annotation3, annotation4, annotation5, annotation6, annotation7, annotation8, annotation9, annotation10, annotation11, annotation12, annotation13, annotation14, annotation15, annotation16, annotation17, annotation18, annotation19, annotation20, annotation21, annotation22, annotation23, annotation24, nil];
     
+    self.busAnnotations = [[NSArray alloc] initWithObjects:busAnnotation1, busAnnotation2, busAnnotation3, busAnnotation4, nil];
+    
     T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
     if (appDelegate.monitorBuss){
-        
+        [self.mapView addAnnotations:self.busAnnotations];
+
     }
     else{
-        
+        [self.mapView removeAnnotations:self.busAnnotations];
     }
     if (appDelegate.monitorStation) {
         [self.mapView addAnnotations:self.stationAnnotations];
@@ -398,10 +430,11 @@
 - (void)refresh {
     T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
     if (appDelegate.monitorBuss){
+        [self.mapView addAnnotations:self.busAnnotations];
         
     }
     else{
-        
+        [self.mapView removeAnnotations:self.busAnnotations];
     }
     if (appDelegate.monitorStation) {
         [self.mapView addAnnotations:self.stationAnnotations];
@@ -475,6 +508,38 @@
         NSURL *url = [NSURL URLWithString:@"http://twitter.com/#!/WLUtraveller"]; 
         T5WebViewController *webViewController = [[T5WebViewController alloc] initWithURL:url andTitle:@"Traveller Notifications"]; 
         [self presentModalViewController:webViewController animated:YES];
+}
+
+-(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if (annotation != self.mapView.userLocation && !([annotation.title isEqualToString:@"Traveller Bus #1"] || [annotation.title isEqualToString:@"Traveller Bus #2"] || [annotation.title isEqualToString:@"Traveller Bus #3"] || [annotation.title isEqualToString:@"Traveller Bus #4"])){
+        MKPinAnnotationView *MyPin=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
+        
+        MyPin.pinColor = MKPinAnnotationColorPurple;
+    
+        UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [advertButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
+    
+        MyPin.rightCalloutAccessoryView = advertButton;
+        MyPin.draggable = NO;
+        MyPin.highlighted = YES;
+        MyPin.animatesDrop=TRUE;
+        MyPin.canShowCallout = YES;
+        return MyPin;
+    }
+    else if (([annotation.title isEqualToString:@"Traveller Bus #1"] || [annotation.title isEqualToString:@"Traveller Bus #2"] || [annotation.title isEqualToString:@"Traveller Bus #3"] || [annotation.title isEqualToString:@"Traveller Bus #4"])){
+        MKAnnotationView *MyAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
+        MyAnnotation.enabled = YES;
+        UIImage *Image = [UIImage imageNamed:@"BusOrig.png"];
+        MyAnnotation.image = Image;
+        return MyAnnotation;
+    }
+    else{ 
+        return nil;
+    }
+}
+
+-(void)button:(id)sender {
+    
 }
 
 
