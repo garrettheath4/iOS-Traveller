@@ -98,7 +98,7 @@
 		FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SettingsViewController.m; sourceTree = "<group>"; };
 		FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5SettingsViewController.xib; sourceTree = "<group>"; };
 		FA0A80331565CB0800EAB2EC /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
-		FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = T5StationViewController.h; sourceTree = "<group>"; };
+		FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5StationViewController.h; sourceTree = "<group>"; };
 		FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5StationViewController.m; sourceTree = "<group>"; };
 		FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5StationViewController.xib; sourceTree = "<group>"; };
 		FAD87C3815668D9C002F59A3 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../../AppIcon.png; sourceTree = "<group>"; };
@@ -258,6 +258,16 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		FA12D70A1566F1DA00DAE2C5 /* Station View */ = {
+			isa = PBXGroup;
+			children = (
+				FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */,
+				FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */,
+				FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */,
+			);
+			name = "Station View";
+			sourceTree = "<group>";
+		};
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
@@ -301,13 +311,11 @@
 				682138931565CC97004172E8 /* Settings View */,
 				68EE1A5B15649F7D00CAEAFA /* Info View */,
 				68EE1A5C15649F8300CAEAFA /* Web View */,
+				FA12D70A1566F1DA00DAE2C5 /* Station View */,
 				68EE1A601564A2F800CAEAFA /* GPS Query */,
 				FA0A80191565933A00EAB2EC /* Resources */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
-				FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */,
-				FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */,
-				FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */,
 			);
 			path = Traveller5;
 			sourceTree = "<group>";
