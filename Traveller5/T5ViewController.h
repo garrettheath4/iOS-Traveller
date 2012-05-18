@@ -17,21 +17,33 @@
 	MKMapView* _mapView;
 	
 	// the data representing the route points. 
-	MKPolyline* _routeLine;
+	MKPolyline* _routeRedLine;
 	
     
 	// the view we create for the line on the map
-	MKPolylineView* _routeLineView;
+	MKPolylineView* _routeRedLineView;
 	
 	// the rect that bounds the loaded points
-	MKMapRect _routeRect;
+	MKMapRect _routeRedRect;
+    
+    // the data representing the route points. 
+	MKPolyline* _routeBlueLine;
+	
+    
+	// the view we create for the line on the map
+	MKPolylineView* _routeBlueLineView;
+	
+	// the rect that bounds the loaded points
+	MKMapRect _routeBlueRect;
 }
 
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *stationAnnotations;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapController;
-@property (nonatomic, retain) MKPolyline *routeLine;
-@property (nonatomic, retain) MKPolylineView *routeLineView;
+@property (nonatomic, retain) MKPolyline *routeRedLine;
+@property (nonatomic, retain) MKPolylineView *routeRedLineView;
+@property (nonatomic, retain) MKPolyline *routeBlueLine;
+@property (nonatomic, retain) MKPolylineView *routeBlueLineView;
 
 
 - (IBAction)infoButton:(id)sender;
