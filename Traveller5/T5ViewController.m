@@ -60,13 +60,7 @@
     [super viewDidLoad];
     
     [self loadRoute];
-    
-    if (nil != self.routeLine) {
-		[self.mapView addOverlay:self.routeLine];
-	}
-    
-    [self.mapView setVisibleMapRect:_routeRect];
-            
+                
     T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.786947, -79.444657};
     annotation1.coordinate = coord;
@@ -250,11 +244,13 @@
         [self.mapView removeAnnotations:self.stationAnnotations];
     }
     if (appDelegate.monitorRoute){
-        
+        [self.mapView addOverlay:self.routeLine];
     }
     else{
-        
+        [self.mapView removeOverlay:self.routeLine];
     }
+    
+    [self.mapView setVisibleMapRect:_routeRect];
 }
 
 -(void) loadRoute
@@ -345,10 +341,10 @@
         [self.mapView removeAnnotations:self.stationAnnotations];
     }
     if (appDelegate.monitorRoute){
-        
+        [self.mapView addOverlay:self.routeLine];
     }
     else{
-        
+        [self.mapView removeOverlay:self.routeLine];
     }
 }
 
