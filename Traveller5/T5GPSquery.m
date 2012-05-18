@@ -56,6 +56,7 @@
         [self setDescriptions:[NSMutableData data]];
         [self setPoints:[NSMutableData data]];
     }
+    [self connect];
     return self;
 }
 
@@ -99,7 +100,7 @@
 }
 
 - (void)fetchData {
-    
+    ;
 }
 
 - (void)queryService:(NSString *)pointName {    
@@ -137,6 +138,7 @@
                     [responseData appendBytes:(const void *)buf length:len];
                     // bytesRead is an instance variable of type NSNumber.
                     bytesRead += len;
+                    [self setHasDataState:YES];
                 } else {
                     NSLog(@"no buffer!");
                 }
@@ -144,6 +146,7 @@
                 // The event happened in the output stream
                 assert(stream == [self outputStream]);
                 
+                NSLog(@"Sending \"GET *ALL\" request.");
                 NSString * str = [NSString stringWithFormat:
                                   @"GET *ALL\r\n\r\n"];
                 const uint8_t * rawstring = (const uint8_t *)[str UTF8String];
