@@ -529,9 +529,9 @@
 }
 
 - (IBAction)alertButton:(id)sender {
-        NSURL *url = [NSURL URLWithString:@"http://twitter.com/#!/WLUtraveller"]; 
-        T5WebViewController *webViewController = [[T5WebViewController alloc] initWithURL:url andTitle:@"Traveller Notifications"]; 
-        [self presentModalViewController:webViewController animated:YES];
+    NSURL *url = [NSURL URLWithString:@"http://twitter.com/#!/WLUtraveller"];
+    T5WebViewController *webViewController = [[T5WebViewController alloc] initWithURL:url andTitle:@"Traveller Notifications"]; 
+    [self presentModalViewController:webViewController animated:YES];
 }
 
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
