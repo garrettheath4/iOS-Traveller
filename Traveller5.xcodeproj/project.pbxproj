@@ -62,6 +62,8 @@
 		FAF01FB215647EB80018FB18 /* T5InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */; };
 		FAF01FC61564997C0018FB18 /* T5WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01FC41564997B0018FB18 /* T5WebViewController.m */; };
 		FAF01FC71564997C0018FB18 /* T5WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FC51564997C0018FB18 /* T5WebViewController.xib */; };
+		FAF21FE61565EAE700649C5C /* RedRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = FAF21FE51565EAE700649C5C /* RedRoute.csv */; };
+		FAF220131565EB4200649C5C /* RedRoute.kml in Resources */ = {isa = PBXBuildFile; fileRef = FAF220121565EB4200649C5C /* RedRoute.kml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +118,8 @@
 		FAF01FC31564997B0018FB18 /* T5WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5WebViewController.h; sourceTree = "<group>"; };
 		FAF01FC41564997B0018FB18 /* T5WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5WebViewController.m; sourceTree = "<group>"; };
 		FAF01FC51564997C0018FB18 /* T5WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5WebViewController.xib; sourceTree = "<group>"; };
+		FAF21FE51565EAE700649C5C /* RedRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RedRoute.csv; path = Traveller5/RedRoute.csv; sourceTree = "<group>"; };
+		FAF220121565EB4200649C5C /* RedRoute.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = RedRoute.kml; path = Traveller5/RedRoute.kml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

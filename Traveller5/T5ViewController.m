@@ -21,8 +21,10 @@
 @synthesize mapView;
 @synthesize stationAnnotations = _stationAnnotations;
 @synthesize mapController;
-@synthesize routeLine = _routeLine;
-@synthesize routeLineView = _routeLineView;
+@synthesize routeRedLine = _routeRedLine;
+@synthesize routeRedLineView = _routeRedLineView;
+@synthesize routeBlueLine = _routeBlueLine;
+@synthesize routeBlueLineView = _routeBlueLineView;
 
 
 - (IBAction)getLocation:(id)sender {
@@ -59,7 +61,8 @@
 {
     [super viewDidLoad];
     
-    [self loadRoute];
+    [self loadRedRoute];
+    [self loadBlueRoute];
                 
     T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.786947, -79.444657};
@@ -117,8 +120,8 @@
     annotation8.subtitle = @"";
     
     T5SimpleAnnotation *annotation9 = [[T5SimpleAnnotation alloc] init];
-    coord.latitude = 37.781539;
-    coord.longitude = -79.440165;
+    coord.latitude = 37.781502;
+    coord.longitude = -79.447353;
     annotation9.coordinate = coord;
     annotation9.title = @"White St.";
     annotation9.subtitle = @"";
@@ -228,6 +231,7 @@
     annotation24.title = @"Henry and Randolph St.";
     annotation24.subtitle = @"";
     
+    
     self.stationAnnotations = [[NSArray alloc] initWithObjects:annotation1, annotation2, annotation3, annotation4, annotation5, annotation6, annotation7, annotation8, annotation9, annotation10, annotation11, annotation12, annotation13, annotation14, annotation15, annotation16, annotation17, annotation18, annotation19, annotation20, annotation21, annotation22, annotation23, annotation24, nil];
     
     T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
@@ -244,22 +248,24 @@
         [self.mapView removeAnnotations:self.stationAnnotations];
     }
     if (appDelegate.monitorRoute){
-        [self.mapView addOverlay:self.routeLine];
+        [self.mapView addOverlay:self.routeRedLine];
+        [self.mapView addOverlay:self.routeBlueLine];
     }
     else{
-        [self.mapView removeOverlay:self.routeLine];
+        [self.mapView removeOverlay:self.routeRedLine];
+        [self.mapView removeOverlay:self.routeBlueLine];
     }
     
-    [self.mapView setVisibleMapRect:_routeRect];
+    [self.mapView setVisibleMapRect:_routeRedRect];
+    [self.mapView setVisibleMapRect:_routeBlueRect];
 }
 
--(void) loadRoute
+-(void) loadRedRoute
 {
-	NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+	NSString* filePath = [[NSBundle mainBundle] pathForResource:@"RedRoute" ofType:@"csv"];
 	NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
 	NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	
-	
+	    
 	// while we create the route points, we will also be calculating the bounding box of our route
 	// so we can easily zoom in on it. 
 	MKMapPoint northEastPoint; 
@@ -267,9 +273,9 @@
 	
 	// create a c array of points. 
 	MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * pointStrings.count);
-	
+    
 	for(int idx = 0; idx < pointStrings.count; idx++)
-	{
+	{        
 		// break the string down even further to latitude and longitude fields. 
 		NSString* currentPointString = [pointStrings objectAtIndex:idx];
 		NSArray* latLonArr = [currentPointString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
@@ -277,10 +283,9 @@
 		CLLocationDegrees latitude  = [[latLonArr objectAtIndex:0] doubleValue];
 		CLLocationDegrees longitude = [[latLonArr objectAtIndex:1] doubleValue];
         
-        
 		// create our coordinate and add it to the correct spot in the array 
 		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
-        
+                
 		MKMapPoint point = MKMapPointForCoordinate(coordinate);
         
 		
@@ -289,7 +294,7 @@
 		//
 		
 		// if it is the first point, just use them, since we have nothing to compare to yet. 
-		if (idx == 0) {
+        if (idx == 0) {
 			northEastPoint = point;
 			southWestPoint = point;
 		}
@@ -303,16 +308,76 @@
 				southWestPoint.x = point.x;
 			if (point.y < southWestPoint.y) 
 				southWestPoint.y = point.y;
-		}
-        
+		}        
 		pointArr[idx] = point;
-        
-	}
+    }
 	
 	// create the polyline based on the array of points. 
-	self.routeLine = [MKPolyline polylineWithPoints:pointArr count:pointStrings.count];
+	self.routeRedLine = [MKPolyline polylineWithPoints:pointArr count:pointStrings.count];
     
-	_routeRect = MKMapRectMake(southWestPoint.x, southWestPoint.y, northEastPoint.x - southWestPoint.x, northEastPoint.y - southWestPoint.y);
+	_routeRedRect = MKMapRectMake(southWestPoint.x, southWestPoint.y, northEastPoint.x - southWestPoint.x, northEastPoint.y - southWestPoint.y);
+    
+	// clear the memory allocated earlier for the points
+	free(pointArr);
+	
+}
+
+-(void) loadBlueRoute
+{
+	NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+	NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+	NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+	// while we create the route points, we will also be calculating the bounding box of our route
+	// so we can easily zoom in on it. 
+	MKMapPoint northEastPoint; 
+	MKMapPoint southWestPoint; 
+	
+	// create a c array of points. 
+	MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * pointStrings.count);
+    
+	for(int idx = 0; idx < pointStrings.count; idx++)
+	{        
+		// break the string down even further to latitude and longitude fields. 
+		NSString* currentPointString = [pointStrings objectAtIndex:idx];
+		NSArray* latLonArr = [currentPointString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+        
+		CLLocationDegrees latitude  = [[latLonArr objectAtIndex:0] doubleValue];
+		CLLocationDegrees longitude = [[latLonArr objectAtIndex:1] doubleValue];
+        
+		// create our coordinate and add it to the correct spot in the array 
+		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+        
+		MKMapPoint point = MKMapPointForCoordinate(coordinate);
+        
+		
+		//
+		// adjust the bounding box
+		//
+		
+		// if it is the first point, just use them, since we have nothing to compare to yet. 
+        if (idx == 0) {
+			northEastPoint = point;
+			southWestPoint = point;
+		}
+		else 
+		{
+			if (point.x > northEastPoint.x) 
+				northEastPoint.x = point.x;
+			if(point.y > northEastPoint.y)
+				northEastPoint.y = point.y;
+			if (point.x < southWestPoint.x) 
+				southWestPoint.x = point.x;
+			if (point.y < southWestPoint.y) 
+				southWestPoint.y = point.y;
+		}        
+		pointArr[idx] = point;
+    }
+	
+	// create the polyline based on the array of points. 
+	self.routeBlueLine = [MKPolyline polylineWithPoints:pointArr count:pointStrings.count];
+    
+	_routeBlueRect = MKMapRectMake(southWestPoint.x, southWestPoint.y, northEastPoint.x - southWestPoint.x, northEastPoint.y - southWestPoint.y);
     
 	// clear the memory allocated earlier for the points
 	free(pointArr);
@@ -341,10 +406,12 @@
         [self.mapView removeAnnotations:self.stationAnnotations];
     }
     if (appDelegate.monitorRoute){
-        [self.mapView addOverlay:self.routeLine];
+        [self.mapView addOverlay:self.routeRedLine];
+        [self.mapView addOverlay:self.routeBlueLine];
     }
     else{
-        [self.mapView removeOverlay:self.routeLine];
+        [self.mapView removeOverlay:self.routeRedLine];
+        [self.mapView removeOverlay:self.routeBlueLine];
     }
 }
 
@@ -352,18 +419,33 @@
 {
 	MKOverlayView* overlayView = nil;
 	
-	if(overlay == self.routeLine)
+	if(overlay == self.routeRedLine)
 	{
 		//if we have not yet created an overlay view for this overlay, create it now. 
-		if(nil == self.routeLineView)
+		if(nil == self.routeRedLineView)
 		{
-			self.routeLineView = [[MKPolylineView alloc] initWithPolyline:self.routeLine];
-			self.routeLineView.fillColor = [UIColor redColor];
-			self.routeLineView.strokeColor = [UIColor redColor];
-			self.routeLineView.lineWidth = 3;
+			self.routeRedLineView = [[MKPolylineView alloc] initWithPolyline:self.routeRedLine];
+			self.routeRedLineView.fillColor = [UIColor redColor];
+			self.routeRedLineView.strokeColor = [UIColor redColor];
+			self.routeRedLineView.lineWidth = 4;
 		}
 		
-		overlayView = self.routeLineView;
+		overlayView = self.routeRedLineView;
+		
+	}
+    
+    if(overlay == self.routeBlueLine)
+	{
+		//if we have not yet created an overlay view for this overlay, create it now. 
+		if(nil == self.routeBlueLineView)
+		{
+			self.routeBlueLineView = [[MKPolylineView alloc] initWithPolyline:self.routeBlueLine];
+			self.routeBlueLineView.fillColor = [UIColor blueColor];
+			self.routeBlueLineView.strokeColor = [UIColor blueColor];
+			self.routeBlueLineView.lineWidth = 4;
+		}
+		
+		overlayView = self.routeBlueLineView;
 		
 	}
 	

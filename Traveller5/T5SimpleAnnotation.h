@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface T5SimpleAnnotation : NSObject <MKAnnotation>
+@interface T5SimpleAnnotation : NSObject <MKAnnotation>{
+    CLLocationCoordinate2D coordinate;
+    NSString *title;
+    NSString *subtitle;
+    MKPinAnnotationColor color;
+}
 
 @property (nonatomic) CLLocationCoordinate2D coordinate; 
 @property (copy, nonatomic) NSString *title;
