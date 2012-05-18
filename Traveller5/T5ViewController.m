@@ -563,6 +563,9 @@
     else if (([annotation.title isEqualToString:@"Traveller Bus #1"] || [annotation.title isEqualToString:@"Traveller Bus #2"] || [annotation.title isEqualToString:@"Traveller Bus #3"] || [annotation.title isEqualToString:@"Traveller Bus #4"])){
         MKAnnotationView *MyAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
         MyAnnotation.enabled = YES;
+        MyAnnotation.draggable = NO;
+        MyAnnotation.highlighted = YES;
+        MyAnnotation.canShowCallout = YES;
         UIImage *Image = [UIImage imageNamed:@"BusOrig.png"];
         MyAnnotation.image = Image;
         return MyAnnotation;
@@ -573,7 +576,9 @@
 }
 
 -(void)button:(id)sender {
-    
+    T5StationViewController *annotationView = [[T5StationViewController alloc] init];
+    annotationView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController:annotationView animated:YES];
 }
 
 

@@ -47,6 +47,8 @@
 		FA0A80231565B38000EAB2EC /* T5SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */; };
 		FA0A80241565B38000EAB2EC /* T5SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */; };
 		FA0A80341565CB0800EAB2EC /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A80331565CB0800EAB2EC /* Refresh.png */; };
+		FA12D6FF1566CE0D00DAE2C5 /* T5StationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */; };
+		FA12D7001566CE0D00DAE2C5 /* T5StationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */; };
 		FAD87C3915668D9C002F59A3 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD87C3815668D9C002F59A3 /* AppIcon.png */; };
 		FAD87C3B15668E69002F59A3 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
@@ -96,6 +98,9 @@
 		FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SettingsViewController.m; sourceTree = "<group>"; };
 		FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5SettingsViewController.xib; sourceTree = "<group>"; };
 		FA0A80331565CB0800EAB2EC /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = T5StationViewController.h; sourceTree = "<group>"; };
+		FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5StationViewController.m; sourceTree = "<group>"; };
+		FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5StationViewController.xib; sourceTree = "<group>"; };
 		FAD87C3815668D9C002F59A3 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../../AppIcon.png; sourceTree = "<group>"; };
 		FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon@2x.png"; path = "../../AppIcon@2x.png"; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +305,9 @@
 				FA0A80191565933A00EAB2EC /* Resources */,
 				FAF01F90156474B10018FB18 /* Traveller Files */,
 				FAF01F74156474890018FB18 /* Supporting Files */,
+				FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */,
+				FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */,
+				FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */,
 			);
 			path = Traveller5;
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 				689A26091566020300846DBC /* RedRoute.kml in Resources */,
 				FAD87C3915668D9C002F59A3 /* AppIcon.png in Resources */,
 				FAD87C3B15668E69002F59A3 /* AppIcon@2x.png in Resources */,
+				FA12D7001566CE0D00DAE2C5 /* T5StationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +492,7 @@
 				68EE1A631564A4A400CAEAFA /* XPathQuery.m in Sources */,
 				FA0A8000156557FA00EAB2EC /* T5SimpleAnnotation.m in Sources */,
 				FA0A80231565B38000EAB2EC /* T5SettingsViewController.m in Sources */,
+				FA12D6FF1566CE0D00DAE2C5 /* T5StationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
