@@ -117,8 +117,8 @@
     annotation8.subtitle = @"";
     
     T5SimpleAnnotation *annotation9 = [[T5SimpleAnnotation alloc] init];
-    coord.latitude = 37.781539;
-    coord.longitude = -79.440165;
+    coord.latitude = 37.781502;
+    coord.longitude = -79.447353;
     annotation9.coordinate = coord;
     annotation9.title = @"White St.";
     annotation9.subtitle = @"";
@@ -227,6 +227,7 @@
     annotation24.coordinate = coord;
     annotation24.title = @"Henry and Randolph St.";
     annotation24.subtitle = @"";
+    
     
     self.stationAnnotations = [[NSArray alloc] initWithObjects:annotation1, annotation2, annotation3, annotation4, annotation5, annotation6, annotation7, annotation8, annotation9, annotation10, annotation11, annotation12, annotation13, annotation14, annotation15, annotation16, annotation17, annotation18, annotation19, annotation20, annotation21, annotation22, annotation23, annotation24, nil];
     

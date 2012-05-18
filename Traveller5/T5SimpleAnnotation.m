@@ -13,8 +13,7 @@
 @synthesize coordinate=_cooordinare;
 @synthesize title=_title; 
 @synthesize subtitle=_subtitle;
-@synthesize color;
-
+@synthesize color=_color;
 
 + (id)annotationWithCoordinate:(CLLocationCoordinate2D)coord {
     return [[[self class] alloc] initWithCoordinate:coord]; 
