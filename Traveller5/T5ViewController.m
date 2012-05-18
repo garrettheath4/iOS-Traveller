@@ -57,6 +57,10 @@
     }
 }
 
+- (void)updateMap{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
