@@ -10,17 +10,17 @@
 #import "T5InfoViewController.h"
 #import "T5WebViewController.h"
 #import "T5SimpleAnnotation.h"
+#import "T5SettingsViewController.h"
+#import "T5AppDelegate.h"
 
 @interface T5ViewController ()
 
 @end
 
 @implementation T5ViewController
-@synthesize mapView = _mapView;
+@synthesize mapView;
 @synthesize stationAnnotations = _stationAnnotations;
 @synthesize mapController;
-@synthesize stationBool = _stationBool;
-@synthesize stationButton;
 @synthesize routeLine = _routeLine;
 @synthesize routeLineView = _routeLineView;
 
@@ -66,9 +66,7 @@
 	}
     
     [self.mapView setVisibleMapRect:_routeRect];
-    
-    self.stationBool = YES;
-        
+            
     T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.786947, -79.444657};
     annotation1.coordinate = coord;
@@ -237,7 +235,6 @@
     annotation24.subtitle = @"";
     
     self.stationAnnotations = [[NSArray alloc] initWithObjects:annotation1, annotation2, annotation3, annotation4, annotation5, annotation6, annotation7, annotation8, annotation9, annotation10, annotation11, annotation12, annotation13, annotation14, annotation15, annotation16, annotation17, annotation18, annotation19, annotation20, annotation21, annotation22, annotation23, annotation24, nil];
-    [self.mapView addAnnotations:self.stationAnnotations];
 }
 
 -(void) loadRoute
@@ -307,7 +304,9 @@
 }
 
 - (IBAction)pageCurl:(id)sender {
-    
+    T5SettingsViewController *settingsView = [[T5SettingsViewController alloc] init];
+    settingsView.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    [self presentModalViewController:settingsView animated:YES];
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
@@ -337,14 +336,8 @@
 {
     [self setMapView:nil];
     [self setMapController:nil];
-    [self setStationButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 - (IBAction)infoButton:(id)sender {
@@ -359,20 +352,27 @@
         [self presentModalViewController:webViewController animated:YES];
 }
 
-- (void) updateMap
-{
-    
-}
-
-- (IBAction)getStations:(id)sender {
-    if (self.stationBool){
-        [self.mapView removeAnnotations:self.stationAnnotations];
-        self.stationBool = NO;
+- (void)viewWillAppear:(BOOL)animated { 
+    [super viewWillAppear:animated];
+    T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
+    if (appDelegate.monitorBuss){
+        
     }
     else{
-        [self.mapView addAnnotations:self.stationAnnotations];
-        self.stationBool = YES;
+        
     }
-}
-     
+    if (appDelegate.monitorStation) {
+        [self.mapView addAnnotations:self.stationAnnotations];
+    }
+    else{
+        [self.mapView removeAnnotations:self.stationAnnotations];
+    }
+    if (appDelegate.monitorRoute){
+        
+    }
+    else{
+        
+    }
+    [super viewWillAppear:animated];
+}     
 @end

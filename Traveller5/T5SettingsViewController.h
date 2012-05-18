@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class T5SettingsViewController;
+
+@protocol T5SettingsViewControllerDelegate
+- (void)SettingsViewControllerDidFinish:(T5SettingsViewController *)controller;
+@end
+
 @interface T5SettingsViewController : UIViewController
+@property (weak, nonatomic) id <T5SettingsViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UISwitch *bussSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *stationSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *routeSwitch;
 
 @end
