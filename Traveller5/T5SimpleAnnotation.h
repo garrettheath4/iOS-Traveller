@@ -18,7 +18,7 @@
 @property (nonatomic) CLLocationCoordinate2D coordinate; 
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *subtitle;
-@property (nonatomic) MKPinAnnotationColor color;
+@property (nonatomic) NSInteger route;
 
 + (id)annotationWithCoordinate:(CLLocationCoordinate2D)coord;
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord;

@@ -39,6 +39,7 @@
 
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *stationAnnotations;
+@property (strong, nonatomic) NSArray *busAnnotations;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapController;
 @property (nonatomic, retain) MKPolyline *routeRedLine;
 @property (nonatomic, retain) MKPolylineView *routeRedLineView;

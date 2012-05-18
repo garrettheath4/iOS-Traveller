@@ -47,7 +47,6 @@
 		FA0A80231565B38000EAB2EC /* T5SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */; };
 		FA0A80241565B38000EAB2EC /* T5SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */; };
 		FA0A80341565CB0800EAB2EC /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A80331565CB0800EAB2EC /* Refresh.png */; };
-		FAD87C3115668C3A002F59A3 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD87C3015668C3A002F59A3 /* AppIcon.png */; };
 		FAD87C3915668D9C002F59A3 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD87C3815668D9C002F59A3 /* AppIcon.png */; };
 		FAD87C3B15668E69002F59A3 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */; };
 		FAF01F6E156474890018FB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF01F6D156474890018FB18 /* UIKit.framework */; };
@@ -97,9 +96,8 @@
 		FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SettingsViewController.m; sourceTree = "<group>"; };
 		FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5SettingsViewController.xib; sourceTree = "<group>"; };
 		FA0A80331565CB0800EAB2EC /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
-		FAD87C3015668C3A002F59A3 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../AppIcon.png; sourceTree = "<group>"; };
-		FAD87C3815668D9C002F59A3 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
-		FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
+		FAD87C3815668D9C002F59A3 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../../AppIcon.png; sourceTree = "<group>"; };
+		FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon@2x.png"; path = "../../AppIcon@2x.png"; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF01F6D156474890018FB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF01F6F156474890018FB18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -258,8 +256,6 @@
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
-				FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */,
-				FAD87C3815668D9C002F59A3 /* AppIcon.png */,
 				FAF01F73156474890018FB18 /* Traveller5 */,
 				68EE1AA61565B6FF00CAEAFA /* TestTraveller5 */,
 				FAF01F6C156474890018FB18 /* Frameworks */,
@@ -322,7 +318,8 @@
 		FAF01F90156474B10018FB18 /* Traveller Files */ = {
 			isa = PBXGroup;
 			children = (
-				FAD87C3015668C3A002F59A3 /* AppIcon.png */,
+				FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */,
+				FAD87C3815668D9C002F59A3 /* AppIcon.png */,
 				FA0A80331565CB0800EAB2EC /* Refresh.png */,
 				FA0A800615655FB100EAB2EC /* horse_icon.png */,
 				FA0A8002156559CE00EAB2EC /* BusOrig.png */,
@@ -434,7 +431,6 @@
 				689A26071566020300846DBC /* BlueRoute.kml in Resources */,
 				689A26081566020300846DBC /* RedRoute.csv in Resources */,
 				689A26091566020300846DBC /* RedRoute.kml in Resources */,
-				FAD87C3115668C3A002F59A3 /* AppIcon.png in Resources */,
 				FAD87C3915668D9C002F59A3 /* AppIcon.png in Resources */,
 				FAD87C3B15668E69002F59A3 /* AppIcon@2x.png in Resources */,
 			);
