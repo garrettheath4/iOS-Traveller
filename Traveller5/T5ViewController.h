@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "T5SettingsViewController.h"
 
-@interface T5ViewController : UIViewController <MKMapViewDelegate, T5SettingsViewControllerDelegate>{
+@interface T5ViewController : UIViewController <MKMapViewDelegate>{
     
 	// the map view
 	MKMapView* _mapView;
@@ -51,7 +51,8 @@
 - (IBAction)setMap:(id)sender;
 - (IBAction)getLocation:(id)sender;
 - (void)updateMap;
-- (void) loadRoute;
+- (void)loadRedRoute;
+- (void)loadBlueRoute;
 - (IBAction)pageCurl:(id)sender;
 - (void)refresh;
 
