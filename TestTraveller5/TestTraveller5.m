@@ -27,14 +27,32 @@
 - (void)testExample
 {
     //STFail(@"Unit tests are not implemented yet in TestTraveller5");
-    [self testGPSquery];
+    [self testGPSquery_init];
 }
 
-- (void)testGPSquery
+////////////////////////////////////////////////////////////
+// Test T5GPSquery
+////////////////////////////////////////////////////////////
+
+- (void)testGPSquery_init
+{
+    STAssertNotNil([[T5GPSquery alloc] initWithViewController:nil], @"Not successful in initializing T5GPSquery");
+}
+
+- (void)testGPSquery_connect
 {
     T5GPSquery *query = [[T5GPSquery alloc] initWithViewController:nil];
-    STAssertFalse([query isConnected], @"GPS query should be disconnected.");
-    
+    STAssertTrue([query isConnected], @"GPSquery should be connected after initialization");
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
