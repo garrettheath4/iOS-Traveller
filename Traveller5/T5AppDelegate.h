@@ -28,4 +28,6 @@
 
 @property (nonatomic) BOOL monitorRoute;
 
+- (void)refresh;
+
 @end

@@ -41,6 +41,7 @@
 - (void)updateMap;
 - (void) loadRoute;
 - (IBAction)pageCurl:(id)sender;
+- (void)refresh;
 
 
 @end

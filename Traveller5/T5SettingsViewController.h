@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *bussSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *stationSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *routeSwitch;
+- (IBAction)saved:(id)sender;
 
 @end
