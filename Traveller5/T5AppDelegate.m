@@ -15,10 +15,19 @@
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 @synthesize locationManager = _locationManager;
+@synthesize monitorBuss = _monitorBuss;
+@synthesize monitorStation = _monitorStation;
+@synthesize monitorRoute = _monitorRoute;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.monitorBuss = YES;
+    self.monitorStation = YES;
+    self.monitorRoute = YES;
+    
+    
 
     self.locationManager = [[CLLocationManager alloc] init]; 
     if ( [CLLocationManager locationServicesEnabled] ) {

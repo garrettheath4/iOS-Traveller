@@ -22,4 +22,10 @@
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
+@property (nonatomic) BOOL monitorBuss;
+
+@property (nonatomic) BOOL monitorStation;
+
+@property (nonatomic) BOOL monitorRoute;
+
 @end

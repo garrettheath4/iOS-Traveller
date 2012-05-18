@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "T5SettingsViewController.h"
 
-@interface T5ViewController : UIViewController <MKMapViewDelegate>{
+@interface T5ViewController : UIViewController <MKMapViewDelegate, T5SettingsViewControllerDelegate>{
     
 	// the map view
 	MKMapView* _mapView;
@@ -29,10 +30,8 @@
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *stationAnnotations;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapController;
-@property (nonatomic) BOOL stationBool;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *stationButton;
-@property (nonatomic, retain) MKPolyline* routeLine;
-@property (nonatomic, retain) MKPolylineView* routeLineView;
+@property (nonatomic, retain) MKPolyline *routeLine;
+@property (nonatomic, retain) MKPolylineView *routeLineView;
 
 
 - (IBAction)infoButton:(id)sender;
@@ -40,8 +39,8 @@
 - (IBAction)setMap:(id)sender;
 - (IBAction)getLocation:(id)sender;
 - (void)updateMap;
-- (IBAction)getStations:(id)sender;
--(void) loadRoute;
+- (void) loadRoute;
+- (IBAction)pageCurl:(id)sender;
 
 
 @end
