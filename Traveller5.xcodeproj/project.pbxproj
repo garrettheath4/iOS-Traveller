@@ -60,11 +60,11 @@
 		FAF01FB215647EB80018FB18 /* T5InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FB015647EB80018FB18 /* T5InfoViewController.xib */; };
 		FAF01FC61564997C0018FB18 /* T5WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF01FC41564997B0018FB18 /* T5WebViewController.m */; };
 		FAF01FC71564997C0018FB18 /* T5WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF01FC51564997C0018FB18 /* T5WebViewController.xib */; };
+		FAF21FE61565EAE700649C5C /* RedRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = FAF21FE51565EAE700649C5C /* RedRoute.csv */; };
+		FAF220131565EB4200649C5C /* RedRoute.kml in Resources */ = {isa = PBXBuildFile; fileRef = FAF220121565EB4200649C5C /* RedRoute.kml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		682138961565E570004172E8 /* RedRoute.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = RedRoute.csv; sourceTree = "<group>"; };
-		682138971565E570004172E8 /* RedRoute.kml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RedRoute.kml; sourceTree = "<group>"; };
 		68EE1A5D1564A2F400CAEAFA /* T5GPSquery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5GPSquery.h; sourceTree = "<group>"; };
 		68EE1A5E1564A2F400CAEAFA /* T5GPSquery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5GPSquery.m; sourceTree = "<group>"; };
 		68EE1A611564A4A400CAEAFA /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
@@ -112,6 +112,8 @@
 		FAF01FC31564997B0018FB18 /* T5WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5WebViewController.h; sourceTree = "<group>"; };
 		FAF01FC41564997B0018FB18 /* T5WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5WebViewController.m; sourceTree = "<group>"; };
 		FAF01FC51564997C0018FB18 /* T5WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5WebViewController.xib; sourceTree = "<group>"; };
+		FAF21FE51565EAE700649C5C /* RedRoute.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RedRoute.csv; path = Traveller5/RedRoute.csv; sourceTree = "<group>"; };
+		FAF220121565EB4200649C5C /* RedRoute.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = RedRoute.kml; path = Traveller5/RedRoute.kml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				FA0A801315658E2400EAB2EC /* route.csv */,
-				682138961565E570004172E8 /* RedRoute.csv */,
-				682138971565E570004172E8 /* RedRoute.kml */,
+				FAF21FE51565EAE700649C5C /* RedRoute.csv */,
+				FAF220121565EB4200649C5C /* RedRoute.kml */,
 			);
 			name = RouteData;
 			path = ..;
@@ -239,16 +241,6 @@
 				682138981565E579004172E8 /* RouteData */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		FA0A80361565DE9200EAB2EC /* Setting View */ = {
-			isa = PBXGroup;
-			children = (
-				FA0A80201565B37F00EAB2EC /* T5SettingsViewController.h */,
-				FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */,
-				FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */,
-			);
-			name = "Setting View";
 			sourceTree = "<group>";
 		};
 		FAF01F5E156474890018FB18 = {
@@ -423,6 +415,8 @@
 				FA0A801415658E2500EAB2EC /* route.csv in Resources */,
 				FA0A80241565B38000EAB2EC /* T5SettingsViewController.xib in Resources */,
 				FA0A80341565CB0800EAB2EC /* Refresh.png in Resources */,
+				FAF21FE61565EAE700649C5C /* RedRoute.csv in Resources */,
+				FAF220131565EB4200649C5C /* RedRoute.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

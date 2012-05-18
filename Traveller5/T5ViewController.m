@@ -256,11 +256,12 @@
 
 -(void) loadRoute
 {
-	NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+	NSString* filePath = [[NSBundle mainBundle] pathForResource:@"RedRoute" ofType:@"csv"];
 	NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
 	NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	
-	
+	NSLog(@"%d", (NSInteger)pointStrings.count);
+    
 	// while we create the route points, we will also be calculating the bounding box of our route
 	// so we can easily zoom in on it. 
 	MKMapPoint northEastPoint; 
@@ -268,19 +269,36 @@
 	
 	// create a c array of points. 
 	MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * pointStrings.count);
-	
+    
 	for(int idx = 0; idx < pointStrings.count; idx++)
 	{
+        NSLog(@"Index: %d", idx);
+        
+        NSLog(@"Size: %d", pointStrings.count);
 		// break the string down even further to latitude and longitude fields. 
 		NSString* currentPointString = [pointStrings objectAtIndex:idx];
+        
+        NSLog(@"Test11");
+        
 		NSArray* latLonArr = [currentPointString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+
+        NSLog(@"SizeLLA: %d", latLonArr.count);
+
+        NSLog(@"This is the string: %@", currentPointString);
+//        NSLog([latLonArr objectAtIndex:0]);
         
 		CLLocationDegrees latitude  = [[latLonArr objectAtIndex:0] doubleValue];
+        
+        NSLog(@"Test7");
+        
 		CLLocationDegrees longitude = [[latLonArr objectAtIndex:1] doubleValue];
         
+        NSLog(@"Test3.??");
         
 		// create our coordinate and add it to the correct spot in the array 
 		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+        
+        NSLog(@"Test3.125");
         
 		MKMapPoint point = MKMapPointForCoordinate(coordinate);
         
@@ -290,7 +308,10 @@
 		//
 		
 		// if it is the first point, just use them, since we have nothing to compare to yet. 
-		if (idx == 0) {
+		
+        NSLog(@"Test3.25");
+        
+        if (idx == 0) {
 			northEastPoint = point;
 			southWestPoint = point;
 		}
@@ -305,9 +326,11 @@
 			if (point.y < southWestPoint.y) 
 				southWestPoint.y = point.y;
 		}
+        NSLog(@"Test3.5");
         
 		pointArr[idx] = point;
         
+        NSLog(@"Test4");
 	}
 	
 	// create the polyline based on the array of points. 
