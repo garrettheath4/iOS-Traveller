@@ -324,7 +324,7 @@
 
 -(void) loadBlueRoute
 {
-	NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+	NSString* filePath = [[NSBundle mainBundle] pathForResource:@"BlueRoute" ofType:@"csv"];
 	NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
 	NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
