@@ -12,6 +12,7 @@
 #import "T5SimpleAnnotation.h"
 #import "T5SettingsViewController.h"
 #import "T5AppDelegate.h"
+#import "T5StationViewController.h"
 #import "T5GPSquery.h"
 
 @interface T5ViewController ()
