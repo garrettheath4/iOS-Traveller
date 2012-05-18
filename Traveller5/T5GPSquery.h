@@ -48,6 +48,7 @@
 - (void)sendMessage:(NSString *)message;
 - (void)fetchData;
 - (void)queryService:(NSString *)pointName;
+- (void) populateArray:(NSMutableArray *)array fromNodes:(NSArray*)nodes;
 
 
 @end
