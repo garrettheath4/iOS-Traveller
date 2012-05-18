@@ -331,7 +331,6 @@
 }
 
 - (void)refresh {
-    NSLog(@"test");
     T5AppDelegate *appDelegate = (T5AppDelegate *) [[UIApplication sharedApplication] delegate]; 
     if (appDelegate.monitorBuss){
         

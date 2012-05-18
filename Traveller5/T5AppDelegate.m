@@ -85,7 +85,6 @@
 }
 
 - (void) refresh{
-    NSLog(@"Test+1");
     [self.viewController refresh];
 }
 
