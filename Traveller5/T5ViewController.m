@@ -71,7 +71,7 @@
     [self loadRedRoute];
     [self loadBlueRoute];
     
-    T5GPSquery *query = [[T5GPSquery alloc] initWithViewController:self];
+    //T5GPSquery *query = [[T5GPSquery alloc] initWithViewController:self];
                 
     T5SimpleAnnotation *annotation1 = [[T5SimpleAnnotation alloc] init];
     CLLocationCoordinate2D coord = {37.786947, -79.444657};

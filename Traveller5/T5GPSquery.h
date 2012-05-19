@@ -44,13 +44,27 @@
 
 @property (strong, nonatomic) NSMutableDictionary *pointNameToCoords;
 
++ (void)runThread:(id)controller;
+
+- (void)poll;
 - (T5GPSquery *)initWithViewController:(UIViewController *)controller;
 - (BOOL)isConnected;
 - (BOOL)hasData;
 - (void)sendMessage:(NSString *)message;
-- (void)fetchData;
-- (void)queryService:(NSString *)pointName;
+- (CLLocation *)queryService:(NSString *)pointName;
+
+// For testing only
 - (void) populateArray:(NSMutableArray *)array fromNodes:(NSArray*)nodes;
 
 
 @end
+
+
+
+
+
+
+
+
+
+
