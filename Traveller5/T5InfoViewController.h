@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface T5InfoViewController : UIViewController
+@interface T5InfoViewController : UIViewController <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *dispatchButton;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
