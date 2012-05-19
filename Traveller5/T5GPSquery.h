@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "T5ViewController.h"
 
+@class T5ViewController;
+
 @interface T5GPSquery : NSObject <NSStreamDelegate> {
     // Parent View Controller
     T5ViewController *viewController;
@@ -38,17 +40,33 @@
 @property (nonatomic) BOOL hasDataState;
 
 // Collected point data
-@property (weak, nonatomic) NSMutableArray *names;
-@property (weak, nonatomic) NSMutableArray *descriptions;
-@property (weak, nonatomic) NSMutableArray *points;
+@property (strong, nonatomic) NSMutableArray *names;
+@property (strong, nonatomic) NSMutableArray *descriptions;
+@property (strong, nonatomic) NSMutableArray *coords;
 
+@property (strong, atomic) NSMutableDictionary *pointNameToCoords;
+
++ (void)runThread:(id)controller;
+
+- (void)poll;
 - (T5GPSquery *)initWithViewController:(UIViewController *)controller;
 - (BOOL)isConnected;
 - (BOOL)hasData;
 - (void)sendMessage:(NSString *)message;
-- (void)fetchData;
-- (void)queryService:(NSString *)pointName;
+- (CLLocation *)queryService:(NSString *)pointName;
+
+// For testing only
 - (void) populateArray:(NSMutableArray *)array fromNodes:(NSArray*)nodes;
 
 
 @end
+
+
+
+
+
+
+
+
+
+

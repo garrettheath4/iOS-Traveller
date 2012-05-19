@@ -20,6 +20,11 @@
                BlueprintName = "TestTraveller5"
                ReferencedContainer = "container:Traveller5.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "TestTraveller5_Threads">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

@@ -28,11 +28,17 @@
 
 @synthesize names=_names;
 @synthesize descriptions=_descriptions;
-@synthesize points=_points;
+@synthesize coords=_coords;
 
+@synthesize pointNameToCoords=_pointNameToCoords;
+
+const UInt32 BUF_SIZE = 10240;
+
+const BOOL DEBUG_SOCKETS = NO;
 const BOOL DEBUG_XML = NO;
+const BOOL DEBUG_DICT = NO;
 
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (T5GPSquery *)initWithViewController:(UIViewController *)controller {
     self = [self init];
@@ -53,18 +59,34 @@ const BOOL DEBUG_XML = NO;
         [self setResponseData:[NSMutableData data]];
         [self setHasDataState:NO];
         
-        [self setNames:[NSMutableData data]];
-        [self setDescriptions:[NSMutableData data]];
-        [self setPoints:[NSMutableData data]];
+        [self setNames:[[NSMutableArray alloc] init]];
+        [self setDescriptions:[[NSMutableArray alloc] init]];
+        [self setCoords:[[NSMutableArray alloc] init]];
+        
+        [self setPointNameToCoords:[[NSMutableDictionary alloc] init]];
     } else {
         assert(NO);
     }
-    [self connect];
     return self;
 }
 
--(void) incrementBytesRead:(NSInteger)increment {
-    [self setBytesRead:([self bytesRead] + increment)];
++ (void)runThread:(id)controller {
+    T5GPSquery *query = [[T5GPSquery alloc] initWithViewController:(T5ViewController *)controller];
+    while (TRUE) {
+        [query poll];
+        sleep(1);
+    }
+}
+
+- (void)poll {
+    //if (![self isConnected] || ![self outputStream] || ![self inputStream]) {
+        [self connect];
+    //}
+    [self fetchData];
+    [self parseToXML];
+    [self fillPointDictionary];
+    [[self viewController] updateMap:self];
+    [self disconnect];
 }
 
 - (BOOL)isConnected {
@@ -81,33 +103,35 @@ const BOOL DEBUG_XML = NO;
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     
-    NSLog(@"Attempting to connect to %@ on port %lu.", [self serverAddress], [self port]);
+    NSLog(@"Connecting to %@ on port %lu to query GPS data of buses", [self serverAddress], [self port]);
     
     CFStreamCreatePairWithSocketToHost(NULL, serverAddressRef, [self port], &readStream, &writeStream);
     
-    [self setInputStream:(__bridge_transfer NSInputStream *)readStream];
-    [self setOutputStream:(__bridge_transfer NSOutputStream *)writeStream];
+    [self setInputStream:(__bridge NSInputStream *)readStream];
+    [self setOutputStream:(__bridge NSOutputStream *)writeStream];
     [[self inputStream] setDelegate:self];
     [[self outputStream] setDelegate:self];
     [[self inputStream] scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [[self outputStream] scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    //[[self inputStream] open];
+    [[self inputStream] open];
     [[self outputStream] open];
-
+    
     [self setIsConnectedState:YES];
 }
 
-//- (void)sendMessage:(NSString *)message {
-//    NSString *response = [[NSString stringWithFormat:message] stringByAppendingString:@"\n"];
-//    NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
-//    [[self outputStream] write:[data bytes] maxLength:[data length]];
-//}
+- (BOOL)hasData {
+    return [self hasDataState];
+}
 
 - (void)sendMessage:(NSString *)message {
-    NSLog(@"Sending message: %@", message);
+    if (DEBUG_SOCKETS) NSLog(@"Sending message: %@", message);
     NSString *stringToSend = [NSString stringWithFormat:@"%@\n", message];
     NSData *dataToSend = [stringToSend dataUsingEncoding:NSUTF8StringEncoding];
     if ([self outputStream]) {
+        while(![[self outputStream] hasSpaceAvailable]) {
+            if (DEBUG_SOCKETS) NSLog(@"Waiting for outputStream to have space available to write message");
+            sleep(1);
+        }
         int remainingToWrite = [dataToSend length];
         void * marker = (void *)[dataToSend bytes];
         while (0 < remainingToWrite) {
@@ -116,92 +140,78 @@ const BOOL DEBUG_XML = NO;
             remainingToWrite -= actuallyWritten;
             marker += actuallyWritten;
         }
+        if (DEBUG_SOCKETS) NSLog(@"Message sent");
+    } else {
+        NSLog(@"WARNING: outputStream is not initialized");
     }
-}
-
-//- (void)receiveMessage {
-//    if(!responseData) {
-//        responseData = [NSMutableData data];
-//    }
-//    NSLog(@"Reading inputStream");
-//    uint8_t buf[1024];
-//    unsigned int len = 0;
-//    while ([[self inputStream] hasBytesAvailable]) {
-//        len = [[self inputStream] read:buf maxLength:1024];
-//        if(len) {
-//            [responseData appendBytes:(const void *)buf length:len];
-//            // bytesRead is an instance variable of type NSNumber.
-//            [self setBytesRead:([self bytesRead] + len)];
-//            [self setHasDataState:YES];
-//        } else {
-//            NSLog(@"no buffer!");
-//        }
-//    }
-//    NSLog(@"responseData read %d bytes", [responseData length]);
-//}
-
-- (void)receiveMessage {
-    NSLog(@"Receiving message");
-    uint8_t buf[2048];
-    int actuallyRead = 0;
-    BOOL done = NO;
-    if (![self responseData]) {
-        responseData = [[NSMutableData alloc] initWithCapacity:2048];
-    }
-    while (!done) {
-        actuallyRead = [[self inputStream] read:buf maxLength:2048];
-        [self incrementBytesRead:actuallyRead];
-        if (actuallyRead >= 1) {
-            [[self responseData] appendBytes:buf length:actuallyRead];
-        } else {
-            done = YES;
-        }
-        if (buf[[self bytesRead] - 1] == '\n') {
-            // We've got the carriage return at the end of the echo. Let's set the string.
-            NSLog(@"Reached the end of a line while reading from input");
-        }
-    }
-    [self setHasDataState:YES];
-    NSLog(@"Received data: %@", [[NSString alloc] initWithData:[self responseData] encoding:NSUTF8StringEncoding]);
-    
-    [self parseToXML];
-}
-
-- (void)disconnect {
-    if (![self isConnected] || ![self inputStream] || ![self outputStream]) {
-        NSLog(@"Warning: disconnect: method called on object that is already disconnected.");
-    }
-    [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
-                      forMode:NSDefaultRunLoopMode];
-    [[self outputStream] removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [[self inputStream] close];
-    [[self outputStream] close];
-    [self setIsConnectedState:NO];
-}
-
-- (BOOL)hasData {
-    //if ([[self inputStream] hasBytesAvailable]) {
-    //    NSLog(@"inputStream has bytes available, but did it notify the delegate?");
-    //}
-    return [self hasDataState];
 }
 
 - (void)fetchData {
-    NSLog(@"Sending \"GET *ALL\" request.");
+    if ([self requestWasSent]) {
+        NSLog(@"Warning: re-fetching data after request was already sent");
+    }
+    if (DEBUG_SOCKETS) NSLog(@"Sending \"GET *ALL\" request.");
     
-    NSString *message = [NSString stringWithFormat:
-                      @"GET *ALL"];
-    /*
-    const uint8_t * rawstring = (const uint8_t *)[message UTF8String];
-    [[self outputStream] write:rawstring maxLength:[message length]];
-    */
+    NSString *message = [NSString stringWithFormat:@"GET *ALL"];
     [self sendMessage:message];
     [self setRequestWasSent:YES];
     
-    //[[self outputStream] close];
-    [[self inputStream] open];
-    
     [self receiveMessage];
+}
+
+- (void)receiveMessage {
+    if (DEBUG_SOCKETS) NSLog(@"Receiving message");
+    unsigned char *buf = malloc(BUF_SIZE);
+    [self setBytesRead:0];
+    int actuallyRead = 0;
+    BOOL done = NO;
+    if (![self responseData]) {
+//        [self setResponseData:[[NSMutableData alloc] initWithCapacity:BUF_SIZE]];
+        [self setResponseData:[NSMutableData data]];
+    }
+    while (![[self inputStream] hasBytesAvailable]) {
+        if (DEBUG_SOCKETS) NSLog(@"Waiting for inputStream to have bytes available to read");
+        sleep(1);
+    }
+    while (!done) {
+        actuallyRead = [[self inputStream] read:buf maxLength:BUF_SIZE];
+        [self incrementBytesRead:actuallyRead];
+        if (DEBUG_SOCKETS) [self printBufferData:buf length:actuallyRead+1];
+        if (actuallyRead >= 1) {
+            if (DEBUG_SOCKETS) {
+                NSLog(@"Appending %d bytes to responseData", actuallyRead);
+                NSString *receivedStr = [[NSString alloc] initWithData:[self responseData] encoding:NSUTF8StringEncoding];
+                NSLog(@"responseData before append (length %d): %@", [receivedStr length], receivedStr);
+            }
+            [[self responseData] appendBytes:buf length:actuallyRead];
+            if (DEBUG_SOCKETS) {
+                NSString *receivedStr = [[NSString alloc] initWithData:[self responseData] encoding:NSUTF8StringEncoding];
+                NSLog(@"responseData after append (length %d): %@", [receivedStr length], receivedStr);
+            }
+        } else {
+            if ([self bytesRead] > 0) {
+                done = YES;
+            }
+        }
+        if ([self bytesRead] > 0 && buf[[self bytesRead] - 1] == '\n') {
+            // We've got the carriage return at the end of the echo. Let's set the string.
+            if (DEBUG_SOCKETS) NSLog(@"Reached the end of a line while reading from input");
+        }
+    }
+    NSString *receivedStr = [[NSString alloc] initWithData:[self responseData] encoding:NSUTF8StringEncoding];
+    if (DEBUG_SOCKETS) NSLog(@"Received data (length %d): %@", [receivedStr length], receivedStr);
+}
+
+- (void)printBufferData:(uint8_t *)buf length:(int)size {
+//    uint8_t buf[BUF_SIZE];
+    NSMutableString *bytesStr = [[NSMutableString alloc] initWithCapacity:size*4+1];
+    NSMutableString *charsStr = [[NSMutableString alloc] initWithCapacity:size+1];
+    for (int i=0; i<size; i++) {
+        [bytesStr appendFormat:@"%d ", buf[i]];
+        [charsStr appendFormat:@"%@", [[NSString alloc] initWithBytes:&buf[i] length:1 encoding:NSUTF8StringEncoding]];
+    }
+    NSLog(@"Buffer Data: %@", bytesStr);
+    NSLog(@"Buffer String: %@", charsStr);
 }
 
 - (void)parseToXML {
@@ -219,8 +229,8 @@ const BOOL DEBUG_XML = NO;
         NSLog(@"Nodes found for names: %d", [nodes count]);
     }
     [self populateArray:tmp_names fromNodes:nodes];
-    NSLog(@"names = %@", tmp_names);
-    self.names = tmp_names;
+    if (DEBUG_XML) NSLog(@"names = %@", tmp_names);
+    [self setNames:tmp_names];
     
     // Fill the array (an NSMutableArray) of placemark descriptions
     //
@@ -231,31 +241,40 @@ const BOOL DEBUG_XML = NO;
         NSLog(@"Nodes found for descriptions: %d", [nodes count]);
     }
     [self populateArray:tmp_descriptions fromNodes:nodes];
-    NSLog(@"descriptions = %@", tmp_descriptions);
-    self.descriptions = tmp_descriptions;
+    if (DEBUG_XML) NSLog(@"descriptions = %@", tmp_descriptions);
+    [self setDescriptions:tmp_descriptions];
     
     // Fill the array (an NSMutableArray) of point coordinates
     //
-    NSMutableArray * tmp_points = [[NSMutableArray alloc] init];
+    NSMutableArray * tmp_coords = [[NSMutableArray alloc] init];
     xpathQueryString = @"/kml/Document/Placemark/Point/coordinates";
     nodes = PerformXMLXPathQuery([self responseData], xpathQueryString);
     if (DEBUG_XML || [nodes count] < 1) {
-        NSLog(@"Nodes found for points: %d", [nodes count]);
+        NSLog(@"Nodes found for coords: %d", [nodes count]);
     }
-    [self populateArray:tmp_points fromNodes:nodes];
-    NSLog(@"points = %@", tmp_points);
-    self.points = tmp_points;
+    [self populateArray:tmp_coords fromNodes:nodes];
+    if (DEBUG_XML) NSLog(@"coords = %@", tmp_coords);
+    [self setCoords:tmp_coords];
     
-    [[self inputStream] close];
-    [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
-                      forMode:NSDefaultRunLoopMode];
-    [self setInputStream:nil];
+//    [[self inputStream] close];
+//    [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
+//                                  forMode:NSDefaultRunLoopMode];
+//    [self setInputStream:nil];
     
-    [viewController updateMap];
+    [self setResponseData:nil];
 }
 
-- (void)queryService:(NSString *)pointName {
-    assert([self hasData]);
+- (void)disconnect {
+    if (![self isConnected] || ![self inputStream] || ![self outputStream]) {
+        NSLog(@"Warning: disconnect: method called on object that is already disconnected.");
+    }
+    [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
+                                  forMode:NSDefaultRunLoopMode];
+    [[self outputStream] removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    //[[self inputStream] close];
+    [[self outputStream] close];
+    [self setIsConnectedState:NO];
+    [self setRequestWasSent:NO];
 }
 
 -(void)dealloc {
@@ -269,7 +288,13 @@ const BOOL DEBUG_XML = NO;
     
     [self setNames:nil];
     [self setDescriptions:nil];
-    [self setPoints:nil];
+    [self setCoords:nil];
+    
+    [self setPointNameToCoords:nil];
+}
+
+-(void)incrementBytesRead:(NSInteger)increment {
+    [self setBytesRead:([self bytesRead] + increment)];
 }
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode {
@@ -293,8 +318,10 @@ const BOOL DEBUG_XML = NO;
                 // The event happened in the output stream
                 assert(stream == [self outputStream]);
                 NSLog(@"outputStream opened");
+                //[self setOutputStream:(NSOutputStream *)stream];
+                //[self fetchData];
             }
-
+            
             break;
         }
             
@@ -303,7 +330,7 @@ const BOOL DEBUG_XML = NO;
             if (stream == [self inputStream])
             {
                 NSLog(@"inputStream has bytes available");
-                [self receiveMessage];
+                //[self receiveMessage];
             } else {
                 // The event happened in the output stream
                 assert(stream == [self outputStream]);
@@ -317,12 +344,12 @@ const BOOL DEBUG_XML = NO;
             NSLog(@"Can not connect to the host!");
             break;
         }
-
+            
         case NSStreamEventEndEncountered:
         {
             NSLog(@"Reached the end of a stream");
             
-            [self parseToXML];
+            //[self parseToXML];
             
             break;
         }
@@ -339,7 +366,7 @@ const BOOL DEBUG_XML = NO;
                 {
                     //[self fetchData];
                 } else {
-                    [stream close];
+                    //[stream close];
                 }
             }
             break;
@@ -356,10 +383,41 @@ const BOOL DEBUG_XML = NO;
             }
             break;
         }
-        
+            
         default:
             NSLog(@"Unknown event");
     }
+}
+
+- (void)fillPointDictionary {
+    if (DEBUG_DICT) NSLog(@"Gathering data for %d buses", [[self names] count]);
+    for (int i=0; i<[[self names] count]; i++) {
+        NSString *busName = [[self names] objectAtIndex:i];
+        NSArray *coordParts = [[[self coords] objectAtIndex:i] componentsSeparatedByString:@","];
+        CLLocationDegrees longitude = [[coordParts objectAtIndex:1] doubleValue];
+        CLLocationDegrees latitude = [[coordParts objectAtIndex:0] doubleValue];
+        [[self pointNameToCoords] setValue:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude] forKey:busName];
+        assert([[self pointNameToCoords] objectForKey:busName] != nil);
+    }
+    [self setHasDataState:YES];
+}
+
+- (CLLocation *)queryService:(NSString *)pointName {
+    assert([self hasData]);
+    CLLocation *loc = [[self pointNameToCoords] objectForKey:pointName];
+    if (loc != nil) {
+        if (DEBUG_DICT) NSLog(@"Found: %@ -> (%f,%f)", pointName, loc.coordinate.latitude, loc.coordinate.longitude);
+        return loc;
+    } else {
+        NSLog(@"Warning: %@ not found in dictionary", pointName);
+        NSMutableString *busList = [NSMutableString stringWithCapacity:200];
+        for (NSString *bus in [[self pointNameToCoords] keyEnumerator]) {
+            [busList appendFormat:@"%@, ", bus];
+        }
+        NSLog(@"All %d buses: %@", [[self pointNameToCoords] count], [NSString stringWithString:busList]);
+        return [[CLLocation alloc] initWithLatitude:37.78676 longitude:-79.4444];
+    }
+    
 }
 
 // For nodes that contain more than one value we are interested in,
@@ -374,7 +432,11 @@ const BOOL DEBUG_XML = NO;
         for ( id key in node ) {
             if (DEBUG_XML) NSLog(@"Key in dictionary: %@", key);
             if( [key isEqualToString:@"nodeContent"] ) {
-                [array addObject:[node objectForKey:key]];
+                //NSString *datum = [[NSString alloc] initWithData:[node objectForKey:key] encoding:NSUTF8StringEncoding];
+                NSString *datum = [node objectForKey:key];
+                [array addObject:datum];
+//                [array addObject:[node objectForKey:key]];
+                if (DEBUG_DICT) NSLog(@"Added %@ to array", datum);
             }
         }
     }

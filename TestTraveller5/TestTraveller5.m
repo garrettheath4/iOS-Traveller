@@ -19,13 +19,12 @@ T5GPSquery *query;
     [super setUp];
     
     // Set-up code here.
-    query = [[T5GPSquery alloc] initWithViewController:nil];
 }
 
 - (void)tearDown
 {
     // Tear-down code here.
-    
+    query = nil;
     [super tearDown];
 }
 
@@ -43,25 +42,35 @@ T5GPSquery *query;
 
 - (void)testGPSquery_init
 {
+    query = [[T5GPSquery alloc] initWithViewController:nil];
     STAssertNotNil(query, @"Not successful in initializing T5GPSquery");
 }
 
-- (void)testGPSquery_connect
-{
-    STAssertTrue([query isConnected], @"GPSquery should be connected after initialization");
-}
+//- (void)testGPSquery_connect
+//{
+//    query = [[T5GPSquery alloc] initWithViewController:nil];
+//    [query connect];
+//    STAssertTrue([query isConnected], @"GPSquery should be connected after initialization");
+//}
 
-- (void)testGPSquery_fetchData
+- (void)testGPSquery_poll
 {
     T5GPSquery *query2 = [[T5GPSquery alloc] initWithViewController:nil];
-    [query2 fetchData];
+    [query2 poll];
     STAssertTrue([query2 hasData], @"GPSquery did not fetch any data");
 }
 
 - (void)testGPSquery_sendMessage
 {
+    query = [[T5GPSquery alloc] initWithViewController:nil];
     [query sendMessage:@"GET *ALL"];
 }
+
+//- (void)testGPSquery_runThread
+//{
+//    [NSThread detachNewThreadSelector:@selector(runThread:) toTarget:[T5GPSquery class] withObject:nil];
+//    sleep(10);
+//}
 
 - (void)testXPathQuery_parseKML
 {

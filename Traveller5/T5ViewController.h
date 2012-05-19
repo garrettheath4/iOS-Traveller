@@ -10,6 +10,9 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "T5SettingsViewController.h"
+#import "T5GPSquery.h"
+
+@class T5GPSquery;
 
 @interface T5ViewController : UIViewController <MKMapViewDelegate>{
     
@@ -51,7 +54,7 @@
 - (IBAction)alertButton:(id)sender;
 - (IBAction)setMap:(id)sender;
 - (IBAction)getLocation:(id)sender;
-- (void)updateMap;
+- (void)updateMap:(T5GPSquery *)query;
 - (void)loadRedRoute;
 - (void)loadBlueRoute;
 - (IBAction)pageCurl:(id)sender;
