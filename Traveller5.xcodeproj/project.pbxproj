@@ -103,9 +103,9 @@
 		FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5StationViewController.h; sourceTree = "<group>"; };
 		FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5StationViewController.m; sourceTree = "<group>"; };
 		FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5StationViewController.xib; sourceTree = "<group>"; };
-		FA12D70B1566FDEA00DAE2C5 /* T5BusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5BusViewController.h; sourceTree = "<group>"; };
-		FA12D70C1566FDEA00DAE2C5 /* T5BusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5BusViewController.m; sourceTree = "<group>"; };
-		FA12D70D1566FDEA00DAE2C5 /* T5BusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5BusViewController.xib; sourceTree = "<group>"; };
+		FA12D70B1566FDEA00DAE2C5 /* T5BusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T5BusViewController.h; path = ../T5BusViewController.h; sourceTree = "<group>"; };
+		FA12D70C1566FDEA00DAE2C5 /* T5BusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T5BusViewController.m; path = ../T5BusViewController.m; sourceTree = "<group>"; };
+		FA12D70D1566FDEA00DAE2C5 /* T5BusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = T5BusViewController.xib; path = ../T5BusViewController.xib; sourceTree = "<group>"; };
 		FAD87C3815668D9C002F59A3 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../../AppIcon.png; sourceTree = "<group>"; };
 		FAD87C3A15668E69002F59A3 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon@2x.png"; path = "../../AppIcon@2x.png"; sourceTree = "<group>"; };
 		FAF01F69156474890018FB18 /* Traveller5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traveller5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,9 +276,6 @@
 		FAF01F5E156474890018FB18 = {
 			isa = PBXGroup;
 			children = (
-				FA12D70B1566FDEA00DAE2C5 /* T5BusViewController.h */,
-				FA12D70C1566FDEA00DAE2C5 /* T5BusViewController.m */,
-				FA12D70D1566FDEA00DAE2C5 /* T5BusViewController.xib */,
 				FAF01F73156474890018FB18 /* Traveller5 */,
 				68EE1AA61565B6FF00CAEAFA /* TestTraveller5 */,
 				FAF01F6C156474890018FB18 /* Frameworks */,
@@ -313,6 +310,9 @@
 		FAF01F73156474890018FB18 /* Traveller5 */ = {
 			isa = PBXGroup;
 			children = (
+				FA12D70B1566FDEA00DAE2C5 /* T5BusViewController.h */,
+				FA12D70C1566FDEA00DAE2C5 /* T5BusViewController.m */,
+				FA12D70D1566FDEA00DAE2C5 /* T5BusViewController.xib */,
 				FAF01F7C156474890018FB18 /* T5AppDelegate.h */,
 				FAF01F7D156474890018FB18 /* T5AppDelegate.m */,
 				68EE1A5915649F6800CAEAFA /* Main View */,
