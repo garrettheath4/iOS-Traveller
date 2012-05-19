@@ -28,11 +28,13 @@
 
 @synthesize names=_names;
 @synthesize descriptions=_descriptions;
-@synthesize points=_points;
+@synthesize coords=_coords;
+
+@synthesize pointNameToCoords=_pointNameToCoords;
 
 const BOOL DEBUG_XML = NO;
 
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (T5GPSquery *)initWithViewController:(UIViewController *)controller {
     self = [self init];
@@ -55,16 +57,14 @@ const BOOL DEBUG_XML = NO;
         
         [self setNames:[NSMutableData data]];
         [self setDescriptions:[NSMutableData data]];
-        [self setPoints:[NSMutableData data]];
+        [self setCoords:[NSMutableData data]];
+        
+        [self setPointNameToCoords:[[NSMutableDictionary alloc] init]];
     } else {
         assert(NO);
     }
     [self connect];
     return self;
-}
-
--(void) incrementBytesRead:(NSInteger)increment {
-    [self setBytesRead:([self bytesRead] + increment)];
 }
 
 - (BOOL)isConnected {
@@ -93,15 +93,16 @@ const BOOL DEBUG_XML = NO;
     [[self outputStream] scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     //[[self inputStream] open];
     [[self outputStream] open];
-
+    
     [self setIsConnectedState:YES];
 }
 
-//- (void)sendMessage:(NSString *)message {
-//    NSString *response = [[NSString stringWithFormat:message] stringByAppendingString:@"\n"];
-//    NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
-//    [[self outputStream] write:[data bytes] maxLength:[data length]];
-//}
+- (BOOL)hasData {
+    //if ([[self inputStream] hasBytesAvailable]) {
+    //    NSLog(@"inputStream has bytes available, but did it notify the delegate?");
+    //}
+    return [self hasDataState];
+}
 
 - (void)sendMessage:(NSString *)message {
     NSLog(@"Sending message: %@", message);
@@ -119,82 +120,15 @@ const BOOL DEBUG_XML = NO;
     }
 }
 
-//- (void)receiveMessage {
-//    if(!responseData) {
-//        responseData = [NSMutableData data];
-//    }
-//    NSLog(@"Reading inputStream");
-//    uint8_t buf[1024];
-//    unsigned int len = 0;
-//    while ([[self inputStream] hasBytesAvailable]) {
-//        len = [[self inputStream] read:buf maxLength:1024];
-//        if(len) {
-//            [responseData appendBytes:(const void *)buf length:len];
-//            // bytesRead is an instance variable of type NSNumber.
-//            [self setBytesRead:([self bytesRead] + len)];
-//            [self setHasDataState:YES];
-//        } else {
-//            NSLog(@"no buffer!");
-//        }
-//    }
-//    NSLog(@"responseData read %d bytes", [responseData length]);
-//}
-
-- (void)receiveMessage {
-    NSLog(@"Receiving message");
-    uint8_t buf[2048];
-    int actuallyRead = 0;
-    BOOL done = NO;
-    if (![self responseData]) {
-        responseData = [[NSMutableData alloc] initWithCapacity:2048];
-    }
-    while (!done) {
-        actuallyRead = [[self inputStream] read:buf maxLength:2048];
-        [self incrementBytesRead:actuallyRead];
-        if (actuallyRead >= 1) {
-            [[self responseData] appendBytes:buf length:actuallyRead];
-        } else {
-            done = YES;
-        }
-        if (buf[[self bytesRead] - 1] == '\n') {
-            // We've got the carriage return at the end of the echo. Let's set the string.
-            NSLog(@"Reached the end of a line while reading from input");
-        }
-    }
-    [self setHasDataState:YES];
-    NSLog(@"Received data: %@", [[NSString alloc] initWithData:[self responseData] encoding:NSUTF8StringEncoding]);
-    
-    [self parseToXML];
-}
-
-- (void)disconnect {
-    if (![self isConnected] || ![self inputStream] || ![self outputStream]) {
-        NSLog(@"Warning: disconnect: method called on object that is already disconnected.");
-    }
-    [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
-                      forMode:NSDefaultRunLoopMode];
-    [[self outputStream] removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [[self inputStream] close];
-    [[self outputStream] close];
-    [self setIsConnectedState:NO];
-}
-
-- (BOOL)hasData {
-    //if ([[self inputStream] hasBytesAvailable]) {
-    //    NSLog(@"inputStream has bytes available, but did it notify the delegate?");
-    //}
-    return [self hasDataState];
-}
-
 - (void)fetchData {
     NSLog(@"Sending \"GET *ALL\" request.");
     
     NSString *message = [NSString stringWithFormat:
-                      @"GET *ALL"];
+                         @"GET *ALL"];
     /*
-    const uint8_t * rawstring = (const uint8_t *)[message UTF8String];
-    [[self outputStream] write:rawstring maxLength:[message length]];
-    */
+     const uint8_t * rawstring = (const uint8_t *)[message UTF8String];
+     [[self outputStream] write:rawstring maxLength:[message length]];
+     */
     [self sendMessage:message];
     [self setRequestWasSent:YES];
     
@@ -204,58 +138,16 @@ const BOOL DEBUG_XML = NO;
     [self receiveMessage];
 }
 
-- (void)parseToXML {
-    NSString *xpathQueryString;
-    NSArray *nodes;
-    
-    // Point of Information Data ////////////////////////////////////////
-    
-    // Fill the array (an NSMutableArray) of placemark names
-    //
-    NSMutableArray * tmp_names = [[NSMutableArray alloc] init];
-    xpathQueryString = @"/kml/Document/Placemark/name";
-    nodes = PerformXMLXPathQuery([self responseData], xpathQueryString);
-    if (DEBUG_XML || [nodes count] < 1) {
-        NSLog(@"Nodes found for names: %d", [nodes count]);
+- (void)disconnect {
+    if (![self isConnected] || ![self inputStream] || ![self outputStream]) {
+        NSLog(@"Warning: disconnect: method called on object that is already disconnected.");
     }
-    [self populateArray:tmp_names fromNodes:nodes];
-    NSLog(@"names = %@", tmp_names);
-    self.names = tmp_names;
-    
-    // Fill the array (an NSMutableArray) of placemark descriptions
-    //
-    NSMutableArray * tmp_descriptions = [[NSMutableArray alloc] init];
-    xpathQueryString = @"/kml/Document/Placemark/description";
-    nodes = PerformXMLXPathQuery((NSData *)[self responseData], xpathQueryString);
-    if (DEBUG_XML || [nodes count] < 1) {
-        NSLog(@"Nodes found for descriptions: %d", [nodes count]);
-    }
-    [self populateArray:tmp_descriptions fromNodes:nodes];
-    NSLog(@"descriptions = %@", tmp_descriptions);
-    self.descriptions = tmp_descriptions;
-    
-    // Fill the array (an NSMutableArray) of point coordinates
-    //
-    NSMutableArray * tmp_points = [[NSMutableArray alloc] init];
-    xpathQueryString = @"/kml/Document/Placemark/Point/coordinates";
-    nodes = PerformXMLXPathQuery([self responseData], xpathQueryString);
-    if (DEBUG_XML || [nodes count] < 1) {
-        NSLog(@"Nodes found for points: %d", [nodes count]);
-    }
-    [self populateArray:tmp_points fromNodes:nodes];
-    NSLog(@"points = %@", tmp_points);
-    self.points = tmp_points;
-    
-    [[self inputStream] close];
     [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
-                      forMode:NSDefaultRunLoopMode];
-    [self setInputStream:nil];
-    
-    [viewController updateMap];
-}
-
-- (void)queryService:(NSString *)pointName {
-    assert([self hasData]);
+                                  forMode:NSDefaultRunLoopMode];
+    [[self outputStream] removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [[self inputStream] close];
+    [[self outputStream] close];
+    [self setIsConnectedState:NO];
 }
 
 -(void)dealloc {
@@ -269,7 +161,13 @@ const BOOL DEBUG_XML = NO;
     
     [self setNames:nil];
     [self setDescriptions:nil];
-    [self setPoints:nil];
+    [self setCoords:nil];
+    
+    [self setPointNameToCoords:nil];
+}
+
+-(void)incrementBytesRead:(NSInteger)increment {
+    [self setBytesRead:([self bytesRead] + increment)];
 }
 
 - (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode {
@@ -294,7 +192,7 @@ const BOOL DEBUG_XML = NO;
                 assert(stream == [self outputStream]);
                 NSLog(@"outputStream opened");
             }
-
+            
             break;
         }
             
@@ -317,7 +215,7 @@ const BOOL DEBUG_XML = NO;
             NSLog(@"Can not connect to the host!");
             break;
         }
-
+            
         case NSStreamEventEndEncountered:
         {
             NSLog(@"Reached the end of a stream");
@@ -356,10 +254,100 @@ const BOOL DEBUG_XML = NO;
             }
             break;
         }
-        
+            
         default:
             NSLog(@"Unknown event");
     }
+}
+
+- (void)receiveMessage {
+    NSLog(@"Receiving message");
+    uint8_t buf[2048];
+    int actuallyRead = 0;
+    BOOL done = NO;
+    if (![self responseData]) {
+        responseData = [[NSMutableData alloc] initWithCapacity:2048];
+    }
+    while (!done) {
+        actuallyRead = [[self inputStream] read:buf maxLength:2048];
+        [self incrementBytesRead:actuallyRead];
+        if (actuallyRead >= 1) {
+            [[self responseData] appendBytes:buf length:actuallyRead];
+        } else {
+            done = YES;
+        }
+        if (buf[[self bytesRead] - 1] == '\n') {
+            // We've got the carriage return at the end of the echo. Let's set the string.
+            NSLog(@"Reached the end of a line while reading from input");
+        }
+    }
+    [self setHasDataState:YES];
+    NSLog(@"Received data: %@", [[NSString alloc] initWithData:[self responseData] encoding:NSUTF8StringEncoding]);
+    
+    [self parseToXML];
+}
+
+- (void)parseToXML {
+    NSString *xpathQueryString;
+    NSArray *nodes;
+    
+    // Point of Information Data ////////////////////////////////////////
+    
+    // Fill the array (an NSMutableArray) of placemark names
+    //
+    NSMutableArray * tmp_names = [[NSMutableArray alloc] init];
+    xpathQueryString = @"/kml/Document/Placemark/name";
+    nodes = PerformXMLXPathQuery([self responseData], xpathQueryString);
+    if (DEBUG_XML || [nodes count] < 1) {
+        NSLog(@"Nodes found for names: %d", [nodes count]);
+    }
+    [self populateArray:tmp_names fromNodes:nodes];
+    NSLog(@"names = %@", tmp_names);
+    [self setNames:tmp_names];
+    
+    // Fill the array (an NSMutableArray) of placemark descriptions
+    //
+    NSMutableArray * tmp_descriptions = [[NSMutableArray alloc] init];
+    xpathQueryString = @"/kml/Document/Placemark/description";
+    nodes = PerformXMLXPathQuery((NSData *)[self responseData], xpathQueryString);
+    if (DEBUG_XML || [nodes count] < 1) {
+        NSLog(@"Nodes found for descriptions: %d", [nodes count]);
+    }
+    [self populateArray:tmp_descriptions fromNodes:nodes];
+    NSLog(@"descriptions = %@", tmp_descriptions);
+    [self setDescriptions:tmp_descriptions];
+    
+    // Fill the array (an NSMutableArray) of point coordinates
+    //
+    NSMutableArray * tmp_coords = [[NSMutableArray alloc] init];
+    xpathQueryString = @"/kml/Document/Placemark/Point/coordinates";
+    nodes = PerformXMLXPathQuery([self responseData], xpathQueryString);
+    if (DEBUG_XML || [nodes count] < 1) {
+        NSLog(@"Nodes found for coords: %d", [nodes count]);
+    }
+    [self populateArray:tmp_coords fromNodes:nodes];
+    NSLog(@"coords = %@", tmp_coords);
+    [self setCoords:tmp_coords];
+    
+    [[self inputStream] close];
+    [[self inputStream] removeFromRunLoop:[NSRunLoop currentRunLoop]
+                                  forMode:NSDefaultRunLoopMode];
+    [self setInputStream:nil];
+    
+    //TODO?
+    
+    
+    [viewController updateMap];
+}
+
+- (void)fillPointDictionary {
+    for (int i=0; i<[[self names] count]; i++) {
+        [[self pointNameToCoords] setValue:[[CLLocation alloc] initWithLatitude:37.786947 longitude:-79.444657] forKey:[[self names] objectAtIndex:i]];
+    }
+}
+
+- (void)queryService:(NSString *)pointName {
+    assert([self hasData]);
 }
 
 // For nodes that contain more than one value we are interested in,

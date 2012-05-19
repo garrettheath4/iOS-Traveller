@@ -40,7 +40,9 @@
 // Collected point data
 @property (weak, nonatomic) NSMutableArray *names;
 @property (weak, nonatomic) NSMutableArray *descriptions;
-@property (weak, nonatomic) NSMutableArray *points;
+@property (weak, nonatomic) NSMutableArray *coords;
+
+@property (strong, nonatomic) NSMutableDictionary *pointNameToCoords;
 
 - (T5GPSquery *)initWithViewController:(UIViewController *)controller;
 - (BOOL)isConnected;

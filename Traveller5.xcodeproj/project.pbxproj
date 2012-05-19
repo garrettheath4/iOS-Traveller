@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		682138951565CCCF004172E8 /* T5SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */; };
+		6843EBFC156705A500251232 /* T5StationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */; };
 		689A26061566020300846DBC /* BlueRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = 689A26021566020300846DBC /* BlueRoute.csv */; };
 		689A26071566020300846DBC /* BlueRoute.kml in Resources */ = {isa = PBXBuildFile; fileRef = 689A26031566020300846DBC /* BlueRoute.kml */; };
 		689A26081566020300846DBC /* RedRoute.csv in Resources */ = {isa = PBXBuildFile; fileRef = 689A26041566020300846DBC /* RedRoute.csv */; };
@@ -98,7 +99,7 @@
 		FA0A80211565B37F00EAB2EC /* T5SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5SettingsViewController.m; sourceTree = "<group>"; };
 		FA0A80221565B37F00EAB2EC /* T5SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5SettingsViewController.xib; sourceTree = "<group>"; };
 		FA0A80331565CB0800EAB2EC /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
-		FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = T5StationViewController.h; sourceTree = "<group>"; };
+		FA12D6FC1566CE0D00DAE2C5 /* T5StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T5StationViewController.h; sourceTree = "<group>"; };
 		FA12D6FD1566CE0D00DAE2C5 /* T5StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T5StationViewController.m; sourceTree = "<group>"; };
 		FA12D6FE1566CE0D00DAE2C5 /* T5StationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T5StationViewController.xib; sourceTree = "<group>"; };
 		FAD87C3815668D9C002F59A3 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../../AppIcon.png; sourceTree = "<group>"; };
@@ -468,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6843EBFC156705A500251232 /* T5StationViewController.m in Sources */,
 				682138951565CCCF004172E8 /* T5SettingsViewController.m in Sources */,
 				68CC862D1565BE05009C9142 /* T5SimpleAnnotation.m in Sources */,
 				68CC862E1565BE05009C9142 /* T5InfoViewController.m in Sources */,
