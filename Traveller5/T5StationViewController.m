@@ -13,6 +13,7 @@
 @end
 
 @implementation T5StationViewController
+@synthesize station2;
 @synthesize station;
 @synthesize route;
 @synthesize image;
@@ -45,6 +46,7 @@
     [self setDetails:nil];
     [self setImage:nil];
     [self setStation:nil];
+    [self setStation2:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -56,6 +58,9 @@
 }
 
 - (IBAction)getDirections:(id)sender {
+}
+
+- (IBAction)goTo:(id)sender {
 }
 
 - (IBAction)goBack:(id)sender {

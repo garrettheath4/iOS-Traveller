@@ -13,6 +13,7 @@
 #import "T5SettingsViewController.h"
 #import "T5AppDelegate.h"
 #import "T5StationViewController.h"
+#import "T5BusViewController.h"
 
 const BOOL DEBUG_BUSES = NO;
 
@@ -559,7 +560,7 @@ const BOOL DEBUG_BUSES = NO;
         }
     
         UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        [advertButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
+        [advertButton addTarget:self action:@selector(stationButton:) forControlEvents:UIControlEventTouchUpInside];
     
         MyPin.rightCalloutAccessoryView = advertButton;
         MyPin.draggable = NO;
@@ -570,6 +571,11 @@ const BOOL DEBUG_BUSES = NO;
     }
     else if (([annotation.title isEqualToString:@"Traveller Bus #1"] || [annotation.title isEqualToString:@"Traveller Bus #2"] || [annotation.title isEqualToString:@"Traveller Bus #3"] || [annotation.title isEqualToString:@"Traveller Bus #4"])){
         MKAnnotationView *MyAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
+        
+        UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [advertButton addTarget:self action:@selector(busButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        MyAnnotation.rightCalloutAccessoryView = advertButton;
         MyAnnotation.enabled = YES;
         MyAnnotation.draggable = NO;
         MyAnnotation.highlighted = YES;
@@ -583,7 +589,13 @@ const BOOL DEBUG_BUSES = NO;
     }
 }
 
--(void)button:(id)sender {
+-(void)busButton:(id)sender {
+    T5BusViewController *annotationView = [[T5BusViewController alloc] init];
+    annotationView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController:annotationView animated:YES];
+}
+
+-(void)stationButton:(id)sender {
     T5StationViewController *annotationView = [[T5StationViewController alloc] init];
     annotationView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentModalViewController:annotationView animated:YES];

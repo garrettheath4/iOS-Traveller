@@ -10,6 +10,7 @@
 
 @interface T5StationViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UINavigationBar *station2;
 @property (weak, nonatomic) IBOutlet UILabel *station;
 @property (weak, nonatomic) IBOutlet UILabel *route;
 
@@ -22,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *indicator3;
 
 - (IBAction)getDirections:(id)sender;
+- (IBAction)goTo:(id)sender;
 - (IBAction)goBack:(id)sender;
 @end

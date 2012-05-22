@@ -13,6 +13,14 @@
 @end
 
 @implementation T5BusViewController
+@synthesize bus;
+@synthesize bus2;
+@synthesize route;
+@synthesize stations;
+@synthesize times;
+@synthesize image;
+@synthesize goBack;
+@synthesize refresh;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +39,14 @@
 
 - (void)viewDidUnload
 {
+    [self setRoute:nil];
+    [self setStations:nil];
+    [self setTimes:nil];
+    [self setImage:nil];
+    [self setGoBack:nil];
+    [self setRefresh:nil];
+    [self setBus:nil];
+    [self setBus2:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
