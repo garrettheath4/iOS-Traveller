@@ -42,7 +42,6 @@ const BOOL DEBUG_BUSES = NO;
     region.span = span;
     region.center = self.mapView.userLocation.coordinate;
     [self.mapView setRegion:region animated:YES];
-
 }
 
 - (IBAction)setMap:(id)sender {
@@ -66,7 +65,7 @@ const BOOL DEBUG_BUSES = NO;
     for (T5SimpleAnnotation *bus in self.busAnnotations) {
         CLLocation *loc = [query queryService:bus.title];
         if (DEBUG_BUSES) NSLog(@"Querying for: %s -> (%f,%f)", [bus.title UTF8String], loc.coordinate.latitude, loc.coordinate.longitude);
-        bus.coordinate = loc.coordinate;
+        [bus setCoordinate:loc.coordinate];
         if (DEBUG_BUSES) NSLog(@"%@ -> (%f,%f)", bus.title, bus.coordinate.latitude, bus.coordinate.longitude);
     }
 }
